@@ -3,25 +3,28 @@ To Install This Software
 
 Required Resources:
 -------------------
-Photoshop CS3 (and upgrading to CS6 was painless)
-PTLens (optional)
-Photomatix 
+Photoshop CS3 (- upgrading to CS6 was painless). Comes with a JS scripting API that we will call into.
+PTLens (optional) - for correcting lens distortions such as "pillow shaped" windows.
+Photomatix - we call into the "API" to build composite images from multiple exposures.
 The JavaScript scripts that loop through the CR2 files, to make TIFFs, which then loop through these to make JPEGs
 Ant 
-Java SDK (necessary?)
+Java SDK
 web site template HTML files
-The Ant build file that instantiates the web site template and uploads the files to a server.
-For the Ant FTP task: commons-net.jar (http://jakarta.apache.org/commons/net/index.html) and jakarta-oro-2.0.8.jar (http://jakarta.apache.org/oro/)
+The Ant build file that runs the show, utility functions, image compositing, instantiates the web site template and uploads the files to a server, etc.
+[currently broken] For the Ant FTP task: commons-net.jar (http://jakarta.apache.org/commons/net/index.html) and jakarta-oro-2.0.8.jar (http://jakarta.apache.org/oro/)
 (todo: broken since yahoo went to FTP over SSL - the world could use a high-level API for this.)
 
 Config:
 -------
+Photoshop requires the javascript source files (the ones that call into Photoshop) to be located in a 'safe haven', for example, C/users/steveh/Documents/Adobe Scripts.  Photoshop won't run scripts that are located outside this location -- I assume because these scripts can see and directly operate on the file system?
+
 set ANT_HOME and ANT_HOME/bin on the PATH
 set JAVA_HOME and JAVA_HOME/bin on PATH
 
 (Running devEnv.cmd will do the above.)
 
-How to process images and make a public web site:
+Process Images and Make a Public Web Site:
+
 
 1. Create a .properties file
 (This .properties file is parsed by ANT, which in turn generates a Javascript properties file for the scripts to refer to.)
@@ -30,17 +33,17 @@ How to process images and make a public web site:
     
     A typical workflow:
 
-    Set the environment:
+    i. Set the environment:
     
       ant -propertyfile=archive/somejob.properties copy-from-camera
 
-    Process the images:
+    ii. Process the images:
 
       ant -propertyfile=archive/somejob.properties photomatix-12 ptlens
 
-    Manually adjust images for color, exposure, if necessary.
+    iii. Manually adjust images for color, exposure, if necessary.
 
-    Package as a website:
+    iv. Package as a website:
 
       ant -propertyfile=archive/somejob.properties resize web invoice show
 
@@ -55,3 +58,9 @@ How to process images and make a public web site:
    Finally save the flyer in different forms, file types, particularly print quality JPEG and PDF          		
 
       ant -propertyfile=archive/somejob.properties save-flyer
+
+4. Upload to a web site.
+
+   These ant targets are broken since the time Yahoo stopped supporting FTP sans SSL (sometimes called "FTPS").
+
+   Currently using Filezilla to manually manage online content, hoping that they will expose a high-level api for FTP over SSL.

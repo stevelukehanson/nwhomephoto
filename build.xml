@@ -100,12 +100,17 @@
     <fail if="do.abort">Build aborted by user.</fail>
     <delete dir="${RAW_PATH}"/>
   </target>
+  
   <target name="clean-resize" description="cleans the build file of the Photoshop Javascript scripts">
+    <!-- Delete all directories with "JPEG_" in their names. -->
     <delete includeemptydirs="true" failonerror="false">
-      <fileset dir="${RESIZE_PATH}/JPEG_640" />
+		<fileset dir="${RESIZE_PATH}" defaultexcludes="false">
+		   <include name="**/*JPEG_*/**" />
+		</fileset>
+	  <!--<fileset dir="${RESIZE_PATH}/JPEG_640" />
       <fileset dir="${RESIZE_PATH}/JPEG_975" />
       <fileset dir="${RESIZE_PATH}/JPEG_1200" />
-      <fileset dir="${RESIZE_PATH}/JPEG_full" />
+      <fileset dir="${RESIZE_PATH}/JPEG_full" />-->
     </delete>
     <delete file="build/xxx-resize-done-xxx.jpg"/>
   </target>
@@ -419,6 +424,114 @@
     ]]> </script>
   </target>
 
+    <target name="photomatix-6">
+
+        <script language="javascript"> <![CDATA[
+      importClass(java.io.File);
+
+      // Access to Ant-Properties by their names
+      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
+
+      // Create a <fileset dir="" includes=""/>
+      fs = project.createDataType("fileset");
+      fs.setDir( new File(photomatix_dir) );
+      fs.setIncludes("*.JPG");
+      fs.setIncludes("*.jpg");
+      //fs.setIncludes("*.dng");
+      fs.setIncludes("*.CR2");
+      fs.setIncludes("*.cr2");
+
+      // Get the files (array) of that fileset
+      ds = fs.getDirectoryScanner();
+      srcFiles = ds.getIncludedFiles();
+
+      // Create a string from three file paths
+      for (i=0; i<srcFiles.length; i+=12) {
+
+        // get the values via Java API
+        var filename1 = srcFiles[i];
+        var filename2 = srcFiles[i+1];
+        var filename3 = srcFiles[i+2];
+        var filename4 = srcFiles[i+3];
+        var filename5 = srcFiles[i+4];
+        var filename6 = srcFiles[i+5];
+        var filename7 = srcFiles[i+6];
+        var filename8 = srcFiles[i+7];
+        var filename9 = srcFiles[i+8];
+        var filename10 = srcFiles[i+9];
+        var filename11 = srcFiles[i+10];
+        var filename12 = srcFiles[i+11];
+
+        // Create an <antcall> task, and configure it.
+        photomatixTask = slhphoto.createTask("antcall");
+        // <antcall target="photomatix-process-6">
+        photomatixTask.setTarget("photomatix-process-6");
+
+
+        // Set the three image files to be combined.
+        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
+        var file1 = photomatixTask.createParam();
+        file1.setName("PHOTOMATIX_FILE1");
+        file1.setValue(filename1);
+        var file2 = photomatixTask.createParam();
+        file2.setName("PHOTOMATIX_FILE2");
+        file2.setValue(filename2);
+        var file3 = photomatixTask.createParam();
+        file3.setName("PHOTOMATIX_FILE3");
+        file3.setValue(filename3);
+        var file4 = photomatixTask.createParam();
+        file4.setName("PHOTOMATIX_FILE4");
+        file4.setValue(filename4);
+        var file5 = photomatixTask.createParam();
+        file5.setName("PHOTOMATIX_FILE5");
+        file5.setValue(filename5);
+        var file6 = photomatixTask.createParam();
+        file6.setName("PHOTOMATIX_FILE6");
+        file6.setValue(filename6);
+        var file7 = photomatixTask.createParam();
+        file7.setName("PHOTOMATIX_FILE7");
+        file7.setValue(filename7);
+        var file8 = photomatixTask.createParam();
+        file8.setName("PHOTOMATIX_FILE8");
+        file8.setValue(filename8);
+        var file9 = photomatixTask.createParam();
+        file9.setName("PHOTOMATIX_FILE9");
+        file9.setValue(filename9);
+        var file10 = photomatixTask.createParam();
+        file10.setName("PHOTOMATIX_FILE10");
+        file10.setValue(filename10);
+        var file11 = photomatixTask.createParam();
+        file11.setName("PHOTOMATIX_FILE11");
+        file11.setValue(filename11);
+        var file12 = photomatixTask.createParam();
+        file12.setName("PHOTOMATIX_FILE12");
+        file12.setValue(filename12);
+
+        // call the photomatix task
+        photomatixTask.perform();
+      }
+    ]]> </script>
+  </target>
+
+    <target name="photomatix-process-6">
+    <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
+
+    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
+        <arg line="-n 2"/> <!-- Naming rule. -->
+        <arg line="-2a 5"/> <!-- Strength for Fusion/natural. -->
+        <arg line="-2b -6"/> <!-- Blending point for Fusion/natural. -->
+        <arg line="-2c 2"/>  <!-- Color saturation for Fusion/natural. -->
+        <arg line="-2s 6"/>    <!-- Shadows for Fusion/natural. -->
+        <arg line="-2w 6"/> <!-- White Point for Fusion/natural. -->
+        <arg line="-2k 6"/>  <!-- Black Point for Fusion/natural. -->
+        <arg line="-2m 2"/>  <!-- Midtone for Fusion/natural. -->
+        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
+		<arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>
+        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3}  '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7}  '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11}"/>
+    </exec>
+  </target>
+
+  
   <target name="photomatix-process-12">
     <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
 
@@ -569,6 +682,27 @@
     <echo>flyer done!!!</echo>  
   </target>
 
+  <target name="flyer-make-side2" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+      <available file="build_props.jsx"/>
+    </waitfor>
+    <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_make_flyer_side2.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>flyer done!!!</echo>  
+  </target>
+  
+  
   <target name="flyer-save" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
     <replace file="${staging}/index.html" token="&lt;!-- FLYER -->" value="HI"/>
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
@@ -590,6 +724,29 @@
     <echo>flyer done!!!</echo>  
   </target>
 
+    <target name="flyer-save-side2" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+    <replace file="${staging}/index.html" token="&lt;!-- FLYER -->" value="HI"/>
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
+      <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+          <available file="build_props.jsx"/>
+      </waitfor>
+      <exec executable="cmd">
+        <arg value="/c"/>
+        <arg value="ps_save_flyer2.cmd"/>
+      </exec>
+      <!-- ****** CompleteSignal Listener ****** -->
+      <waitfor maxwait="5" maxwaitunit="minute"
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-save-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>flyer done!!!</echo>  
+  </target>
+
+
+  
     <target name="flyer-deploy" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
         <replace file="${build}/${URL}/index.html" token='div id="flyer" style="visibility:hidden;"' value='div id="flyer" style="visibility:visible;"'/>
         <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->

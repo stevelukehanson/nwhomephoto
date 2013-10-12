@@ -1,14 +1,4 @@
-﻿///////////////////////////////////////////////////////////////////////////////
-// batchResize - the main function
-///////////////////////////////////////////////////////////////////////////////
-function saveJPEG( doc, saveFile, qty ) {
-     var saveOptions = new JPEGSaveOptions( );
-     saveOptions.embedColorProfile = true;
-     saveOptions.formatOptions = FormatOptions.STANDARDBASELINE;
-     saveOptions.matte = MatteType.NONE;
-     saveOptions.quality = qty; 
-     doc.saveAs( saveFile, saveOptions, true );
-}
+﻿//app.preferences.rulerUnits = Units.PIXELS
 
 ///////////////////////////////////////////////////////////////////////////////
 // batchResize2 - an evolution of batchResize
@@ -25,13 +15,13 @@ function batchResize2(sourcePath, sizesArray, destinationPath)
 	var sourceFiles = getFilesFunc(sourceFolder);
     
    // define what sizes you want to make
-	var resizeArray = new Array()
-	resizeArray[0] = 640;
-	resizeArray[1] = 975;
-	resizeArray[2] = 1024;
-	resizeArray[3] = 1154;
-	resizeArray[4] = 1200;
-	resizeArray[5] = "full";
+	var resizeArray = new Array(640, 975, 1200, "full");
+	//resizeArray[0] = 640;
+	//resizeArray[1] = 975;
+	//resizeArray[2] = 1024;
+	//resizeArray[3] = 1154;
+	//resizeArray[4] = 1200;
+	//resizeArray[5] = "full";
 	
 	// create the target folders
 	var outputFolder = new Array(resizeArray.length);
@@ -48,9 +38,9 @@ function batchResize2(sourcePath, sizesArray, destinationPath)
 		for(i=0;i<sourceFiles.length;i+=1) {
 			for(j=0;j<resizeArray.length;j+=1) {
 
-                var doc = open(sourceFiles[i]);
-                   if(resizeArray[j] != "full")
-                  doc.resizeImage(UnitValue(resizeArray[j],"px"),null,null,ResampleMethod.BICUBIC);
+                  var doc = open(sourceFiles[i]);
+                  if(resizeArray[j] != "full") 
+                    doc.resizeImage(UnitValue(resizeArray[j],"px"),null,null,ResampleMethod.BICUBIC);
                   doc.saveName = 1001 + i;
                   doc.flatten();
                   //app.displayDialogs = DialogModes.NO;
@@ -63,6 +53,9 @@ function batchResize2(sourcePath, sizesArray, destinationPath)
 	else alert("No files in the folder.");
 }
 
+///////////////////////////////////////////////////////////////////////////////
+// Saves a standard JPEG, corresponds to the save as UI dialog.
+///////////////////////////////////////////////////////////////////////////////
 function saveJPEG( doc, saveFile, qty ) {
      var saveOptions = new JPEGSaveOptions( );
      saveOptions.embedColorProfile = true;

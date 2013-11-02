@@ -764,7 +764,7 @@
       <fileset file="${template}/style.css"/>
     </copy>
       <copy todir="${staging}/mlspics">
-          <fileset dir="${RESIZE_PATH}/JPEG_1024"/>
+          <fileset dir="${RESIZE_PATH}/JPEG_1200"/>
       </copy>
       <copy todir="${staging}/webgallery">
           <fileset dir="${RESIZE_PATH}/JPEG_1200"/>
@@ -791,6 +791,23 @@
               <include name="**/*.CR2"/>
           </fileset>
           <fileset dir="H:/DCIM/101EOS5D">
+              <include name="**/*.CR2"/>
+          </fileset>
+          <mapper type="glob" from="*.CR2" to="${URL}_*.cr2"/>
+      </copy>
+      <copy todir="${RAW_PATH}/jpg" verbose="true" failonerror="no">
+          <fileset dir="D:/DCIM/100EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
+          <fileset dir="D:/DCIM/101EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
+      </copy>
+      <copy todir="${RAW_PATH}/cr2" verbose="true" failonerror="no">
+          <fileset dir="D:/DCIM/100EOS5D">
+              <include name="**/*.CR2"/>
+          </fileset>
+          <fileset dir="D:/DCIM/101EOS5D">
               <include name="**/*.CR2"/>
           </fileset>
           <mapper type="glob" from="*.CR2" to="${URL}_*.cr2"/>

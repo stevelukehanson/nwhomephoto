@@ -26,7 +26,7 @@ tifFolder.create();
 jpgFolder.create();
 
 // TIFF
-var saveDoc = new File(tifFolder + "/" + tifDoc);
+var saveDoc = new File(tifFolder + "/" + tifDoc.name);
 var saveOptions = new TiffSaveOptions(); 
 tifDoc.saveAs(saveDoc, saveOptions, true, Extension.LOWERCASE);
 tifDoc.close(SaveOptions.DONOTSAVECHANGES);

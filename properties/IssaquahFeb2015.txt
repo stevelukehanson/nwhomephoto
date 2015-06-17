@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=IssaquahFeb2015
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+
+ADDRESS=1741 25th Walk NE, Issaquah, WA 98029 
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Feb 5, 2015
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Issaquah Highlands
+HEADLINE2=Great Neighborhood Community
+HEADLINE3=Talk about a Walk Score!
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=4
+PHOTO3=8
+PHOTO4=13
+PHOTO5=21
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS# 740032
+BOXTEXT=2 bedrooms / 2.5 baths / 1700 sq ft / 2 garage parking spaces / HOA Dues $299/Month 
+HOUSEPRICE=$498,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

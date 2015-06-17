@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=12207CorlissN
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/jpg
+PTLENS_PATH=${ROOT_PATH}/${URL}/
+RESIZE_PATH=${ROOT_PATH}/${URL}/jpg/PhotomatixResults01/best
+SRC_PATH=
+
+ADDRESS=12207 Corliss Ave N, Seattle, WA 98133
+AGENT=Mason Wu
+PHONE=206-335-1778
+EMAIL=wpirealestate@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=July 23rd, 2014
+SHOOTPRICE=225
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Green Lake Tudor
+HEADLINE2=Classic Seattle Style is a Great Location
+HEADLINE3=Half Block from the Lake! 
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=4
+PHOTO3=10
+PHOTO4=27
+PHOTO5=15
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=MLS #
+BOXTEXT=3 bedrooms / 2 bathrooms / 2530 sq ft / fully fenced yard / 2013 taxes $5,412
+HOUSEPRICE=$719,500
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=5216_9thAveNW
+UPLOADURL=${URL}
+ROOT_PATH=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/PSD
+RESIZE_PATH=${ROOT_PATH}/${URL}/PhotomatixResults01
+SRC_PATH=
+
+ADDRESS=5216 9th Ave NW, Seattle, WA
+AGENT=Cynthia Creasey / Mack McCoy 
+PHONE=206-276-8292
+EMAIL=cynthia@lakere.com / mack@lakere.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=June 3, 2012
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Ballard Dream Come True
+HEADLINE2=Peace...Love...Ballard!
+HEADLINE3=Walking Distance To Beesalu
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=9
+PHOTO3=5
+PHOTO4=16
+PHOTO5=24
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=maintext
+BOXTEXT=box
+HOUSEPRICE=$499,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=6405NEWindermereRd
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/jpg
+PTLENS_PATH=${ROOT_PATH}/${URL}/jpg/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/jpg/PhotomatixResults06/best
+SRC_PATH=
+
+ADDRESS=6405 NE Windermere Rd, Seattle, WA 98105 
+AGENT=Joe Flick
+PHONE=(206) 999-6161
+EMAIL=joeflick@comcast.net
+FLICKR=
+JOBNAME=Photoshoots of Space Needle, Elliott Bay, and ${ADDRESS}
+DATE=May 13th, 2014
+SHOOTPRICE=400
+PORTA_EXE=C:/Program Files/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Sunset Valley Farms Home
+HEADLINE2=
+HEADLINE3=Large View Property
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=9
+PHOTO3=5
+PHOTO4=16
+PHOTO5=24
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=maintext
+BOXTEXT=box
+HOUSEPRICE=$499,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

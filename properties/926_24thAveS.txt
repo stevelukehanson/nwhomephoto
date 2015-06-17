@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=926_24thAveS
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+
+ADDRESS=926 24th Ave S, Seattle, WA 98144
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=April 3, 2015
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Farm House Style Ready to Call Home
+HEADLINE2=Spacious Rooms and Lovely Yard
+HEADLINE3=In-City Location
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=2
+PHOTO2=4
+PHOTO3=7
+PHOTO4=9
+PHOTO5=19
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #766144
+BOXTEXT=2 bedrooms / 1.5 baths / 1550 sq ft / 4,000 sq ft lot / off-street parking 
+HOUSEPRICE=$399,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

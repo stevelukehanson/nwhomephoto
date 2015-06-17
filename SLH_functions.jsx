@@ -8,14 +8,14 @@ function batchResize2(sourcePath, sizesArray, destinationPath)
     var sourceFolder = new Folder(sourcePath);
 	if (!sourceFolder.exists) 
     {
-		alert('!sourceFolder.exists', 'Script Stopped', true);
+		alert('The source folder does not exist:' + sourcePath, 'Script Stopped', true);
 		return;
 	}
 //	var sourceFiles = sourceFolder.getFiles("*.jpg");
 	var sourceFiles = getFilesFunc(sourceFolder);
     
    // define what sizes you want to make
-	var resizeArray = new Array(640, 975, 1200, "full");
+	var resizeArray = new Array(640, 975, 1024, "full");
 	//resizeArray[0] = 640;
 	//resizeArray[1] = 975;
 	//resizeArray[2] = 1024;
@@ -54,6 +54,58 @@ function batchResize2(sourcePath, sizesArray, destinationPath)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+// batchResize3 - an evolution of batchResize
+///////////////////////////////////////////////////////////////////////////////
+function batchResize3(sourcePath, sizesArray, destinationPath)
+{
+    var sourceFolder = new Folder(sourcePath);
+	if (!sourceFolder.exists) 
+    {
+		alert('The source folder does not exist: ' + sourcePath, 'Script Stopped', true);
+		return;
+	}
+
+	if (typeof sizesArray !== 'undefined' && sizesArray > 0)
+    {
+        alert('The sizes array is not specified: ' + sizesArray, 'Script Stopped', true);
+        return;
+    }
+	else
+	    var resizeArray = sizesArray;
+
+	var sourceFiles = getFilesFunc(sourceFolder);
+    if (sourceFiles.length < 1)
+	{
+            alert('No files in the folder: ' + sourceFolder, 'Script Stopped', true);
+            return;
+    }
+
+	// create the target folders
+	var outputFolder = new Array(resizeArray.length);
+	for(k=0;k<resizeArray.length;k+=1) {
+		outputFolder[k] = new Folder(destinationPath + "\\JPEG_" + resizeArray[k]);
+		if(!outputFolder[k].exists) outputFolder[k].create();
+	}	
+
+    for(i=0;i<sourceFiles.length;i+=1) {
+        for(j=0;j<resizeArray.length;j+=1) {
+
+              var doc = open(sourceFiles[i]);
+              if(resizeArray[j] != "full")
+                doc.resizeImage(UnitValue(resizeArray[j],"px"),null,null,ResampleMethod.BICUBIC);
+              doc.saveName = 1001 + i;
+              doc.flatten();
+              //app.displayDialogs = DialogModes.NO;
+              var saveFile = new File(outputFolder[j] + "/" + doc.saveName + "_" + resizeArray[j] + '.jpg')
+              saveJPEG( doc, saveFile, 10 );
+              doc.close(SaveOptions.DONOTSAVECHANGES);
+
+        }
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
 // Saves a standard JPEG, corresponds to the save as UI dialog.
 ///////////////////////////////////////////////////////////////////////////////
 function saveJPEG( doc, saveFile, qty ) {
@@ -75,6 +127,7 @@ function getFilesFunc(sourceFolder) {
 
 	// get all files in source folder
 	var docs = sourceFolder.getFiles();
+    docs.sort();
 	var len = docs.length;
 	for (var i = 0; i < len; i++) {
 		var doc = docs[i];

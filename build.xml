@@ -132,6 +132,23 @@
     <echo>RAW process done!!!</echo>    
   </target>
 
+  <target name="jpeg" depends="make-js-prop-file" description="Calls the Photoshop script.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="xxx-done-xxx.jpg"/>
+    <!-- ****** Call the JS script ****** -->
+    <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_CR2toJPEG.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="50" maxwaitunit="minute" 
+     checkevery="500" checkeveryunit="millisecond" >
+      <available file="xxx-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="xxx-done-xxx.jpg"/>
+    <echo>RAW process done!!!</echo>    
+  </target>
+  
   <target name="script-test-simple">
 
     <script language="javascript"> <![CDATA[
@@ -215,7 +232,6 @@
 
     ]]> </script>
   </target>
-
   <target name="photomatix-process-3">
         <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
 
@@ -323,7 +339,6 @@
 
     ]]> </script>
   </target>
-
   <target name="photomatix-process-11">
     <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
 
@@ -423,8 +438,243 @@
       }
     ]]> </script>
   </target>
+  <target name="photomatix-process-12">
+  <!--  <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
+    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
+        <arg line="-n 2"/> --><!-- Naming rule. -->
+<!--        <arg line="-2a 5"/>--> <!-- Strength for Fusion/natural. -->
+<!--        <arg line="-2b -6"/>--> <!-- Blending point for Fusion/natural. -->
+<!--        <arg line="-2c 2"/> --> <!-- Color saturation for Fusion/natural. -->
+<!--        <arg line="-2s 6"/> -->   <!-- Shadows for Fusion/natural. -->
+<!--        <arg line="-2w 6"/> --> <!-- White Point for Fusion/natural. -->
+<!--        <arg line="-2k 6"/> --> <!-- Black Point for Fusion/natural. -->
+<!--        <arg line="-2m 2"/> --> <!-- Midtone for Fusion/natural. -->
+        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
+<!--		<arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>  -->
+<!--        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE4} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE6} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE8} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE10} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE12}"/>
+    </exec>
+-->
 
-    <target name="photomatix-6">
+    <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
+    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
+        <arg line="-n 2"/> <!-- Naming rule. -->
+        <arg line="-2a 8"/> <!-- Strength for Fusion/natural. -->
+        <arg line="-2b 0"/> <!-- Blending point for Fusion/natural. -->
+        <arg line="-2c 4"/>  <!-- Color saturation for Fusion/natural. -->
+        <arg line="-2s 6"/>    <!-- Shadows for Fusion/natural. -->
+        <arg line="-2w 3"/> <!-- White Point for Fusion/natural. -->
+        <arg line="-2k 3"/>  <!-- Black Point for Fusion/natural. -->
+        <arg line="-2m 2"/>  <!-- Midtone for Fusion/natural. -->
+        <arg line="-a2"/> <!-- Attempt to match features -->
+        <!--<arg line="-wb 7500"/> --><!-- White balance -->
+		<arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>
+        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} 
+		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} 
+		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} 
+		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} 
+		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9}  
+		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11}"/>
+    </exec>
+    </target>
+
+     <target name="photomatix-12-natural">
+
+        <script language="javascript"> <![CDATA[
+      importClass(java.io.File);
+
+      // Access to Ant-Properties by their names
+      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
+
+      // Create a <fileset dir="" includes=""/>
+      fs = project.createDataType("fileset");
+      fs.setDir( new File(photomatix_dir) );
+      fs.setIncludes("*.JPG");
+      fs.setIncludes("*.jpg");
+      //fs.setIncludes("*.dng");
+      fs.setIncludes("*.CR2");
+      fs.setIncludes("*.cr2");
+
+      // Get the files (array) of that fileset
+      ds = fs.getDirectoryScanner();
+      srcFiles = ds.getIncludedFiles();
+
+      // Create a string from three file paths
+      for (i=0; i<srcFiles.length; i+=12) {
+
+        // get the values via Java API
+        var filename1 = srcFiles[i];
+        var filename2 = srcFiles[i+1];
+        var filename3 = srcFiles[i+2];
+        var filename4 = srcFiles[i+3];
+        var filename5 = srcFiles[i+4];
+        var filename6 = srcFiles[i+5];
+        var filename7 = srcFiles[i+6];
+        var filename8 = srcFiles[i+7];
+        var filename9 = srcFiles[i+8];
+        var filename10 = srcFiles[i+9];
+        var filename11 = srcFiles[i+10];
+        var filename12 = srcFiles[i+11];
+
+        // Create an <antcall> task, and configure it.
+        photomatixTask = slhphoto.createTask("antcall");
+        // <antcall target="photomatix-process-12-natural">
+        photomatixTask.setTarget("photomatix-process-12-natural");
+
+        // Set the image files to be combined.
+        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
+        var file1 = photomatixTask.createParam();
+        file1.setName("PHOTOMATIX_FILE1");
+        file1.setValue(filename1);
+        var file2 = photomatixTask.createParam();
+        file2.setName("PHOTOMATIX_FILE2");
+        file2.setValue(filename2);
+        var file3 = photomatixTask.createParam();
+        file3.setName("PHOTOMATIX_FILE3");
+        file3.setValue(filename3);
+        var file4 = photomatixTask.createParam();
+        file4.setName("PHOTOMATIX_FILE4");
+        file4.setValue(filename4);
+        var file5 = photomatixTask.createParam();
+        file5.setName("PHOTOMATIX_FILE5");
+        file5.setValue(filename5);
+        var file6 = photomatixTask.createParam();
+        file6.setName("PHOTOMATIX_FILE6");
+        file6.setValue(filename6);
+        var file7 = photomatixTask.createParam();
+        file7.setName("PHOTOMATIX_FILE7");
+        file7.setValue(filename7);
+        var file8 = photomatixTask.createParam();
+        file8.setName("PHOTOMATIX_FILE8");
+        file8.setValue(filename8);
+        var file9 = photomatixTask.createParam();
+        file9.setName("PHOTOMATIX_FILE9");
+        file9.setValue(filename9);
+        var file10 = photomatixTask.createParam();
+        file10.setName("PHOTOMATIX_FILE10");
+        file10.setValue(filename10);
+        var file11 = photomatixTask.createParam();
+        file11.setName("PHOTOMATIX_FILE11");
+        file11.setValue(filename11);
+        var file12 = photomatixTask.createParam();
+        file12.setName("PHOTOMATIX_FILE12");
+        file12.setValue(filename12);
+
+        // call the photomatix task
+        photomatixTask.perform();
+      }
+    ]]> </script>
+    </target>
+    <target name="photomatix-process-12-natural">
+    <mkdir dir="${PHOTOMATIX_PATH}/fused-natural"/>
+
+    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
+        <arg line="-n 2"/> <!-- Naming rule. -->
+        <!--  <arg line="-2a 5"/>  Strength for Fusion/natural. -->
+        <!--  <arg line="-2b -6"/>  Blending point for Fusion/natural. -->
+        <!--  <arg line="-2c 2"/>   Color saturation for Fusion/natural. -->
+        <!--  <arg line="-2s 6"/>   Shadows for Fusion/natural. -->
+        <!--  <arg line="-2w 6"/>   White Point for Fusion/natural. -->
+        <!--  <arg line="-2k 6"/>   Black Point for Fusion/natural. -->
+        <!--  <arg line="-2m 2"/>   Midtone for Fusion/natural. -->
+        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
+		<arg line="-d '${PHOTOMATIX_PATH}\fused-natural\'"/>
+        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE4} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE6} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE8} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE10} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE12}"/>
+    </exec>
+  </target>
+
+   <target name="photomatix-9-natural">
+
+        <script language="javascript"> <![CDATA[
+      importClass(java.io.File);
+
+      // Access to Ant-Properties by their names
+      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
+
+      // Create a <fileset dir="" includes=""/>
+      fs = project.createDataType("fileset");
+      fs.setDir( new File(photomatix_dir) );
+      fs.setIncludes("*.JPG");
+      fs.setIncludes("*.jpg");
+      //fs.setIncludes("*.dng");
+      fs.setIncludes("*.CR2");
+      fs.setIncludes("*.cr2");
+
+      // Get the files (array) of that fileset
+      ds = fs.getDirectoryScanner();
+      srcFiles = ds.getIncludedFiles();
+
+      // Create a string from three file paths
+      for (i=0; i<srcFiles.length; i+=9) {
+
+        // get the values via Java API
+        var filename1 = srcFiles[i];
+        var filename2 = srcFiles[i+1];
+        var filename3 = srcFiles[i+2];
+        var filename4 = srcFiles[i+3];
+        var filename5 = srcFiles[i+4];
+        var filename6 = srcFiles[i+5];
+        var filename7 = srcFiles[i+6];
+        var filename8 = srcFiles[i+7];
+        var filename9 = srcFiles[i+8];
+
+        // Create an <antcall> task, and configure it.
+        photomatixTask = slhphoto.createTask("antcall");
+        // <antcall target="photomatix-process-9-natural">
+        photomatixTask.setTarget("photomatix-process-9-natural");
+
+        // Set the image files to be combined.
+        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
+        var file1 = photomatixTask.createParam();
+        file1.setName("PHOTOMATIX_FILE1");
+        file1.setValue(filename1);
+        var file2 = photomatixTask.createParam();
+        file2.setName("PHOTOMATIX_FILE2");
+        file2.setValue(filename2);
+        var file3 = photomatixTask.createParam();
+        file3.setName("PHOTOMATIX_FILE3");
+        file3.setValue(filename3);
+        var file4 = photomatixTask.createParam();
+        file4.setName("PHOTOMATIX_FILE4");
+        file4.setValue(filename4);
+        var file5 = photomatixTask.createParam();
+        file5.setName("PHOTOMATIX_FILE5");
+        file5.setValue(filename5);
+        var file6 = photomatixTask.createParam();
+        file6.setName("PHOTOMATIX_FILE6");
+        file6.setValue(filename6);
+        var file7 = photomatixTask.createParam();
+        file7.setName("PHOTOMATIX_FILE7");
+        file7.setValue(filename7);
+        var file8 = photomatixTask.createParam();
+        file8.setName("PHOTOMATIX_FILE8");
+        file8.setValue(filename8);
+        var file9 = photomatixTask.createParam();
+        file9.setName("PHOTOMATIX_FILE9");
+        file9.setValue(filename9);
+
+        // call the photomatix task
+        photomatixTask.perform();
+      }
+    ]]> </script>
+  </target>
+  <target name="photomatix-process-9-natural">
+    <mkdir dir="${PHOTOMATIX_PATH}/fused-natural"/>
+    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
+        <arg line="-n 2"/> <!-- Naming rule. -->
+        <arg line="-2a 5"/>    <!-- Strength for Fusion/natural. -->
+        <!--  <arg line="-2b -6"/>  Blending point for Fusion/natural. -->
+        <!--  <arg line="-2c 2"/>   Color saturation for Fusion/natural. -->
+        <!--  <arg line="-2s 6"/>   Shadows for Fusion/natural. -->
+        <!--  <arg line="-2w 6"/>   White Point for Fusion/natural. -->
+        <!--  <arg line="-2k 6"/>   Black Point for Fusion/natural. -->
+        <!--  <arg line="-2m 2"/>   Midtone for Fusion/natural. -->
+        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
+		<arg line="-d '${PHOTOMATIX_PATH}\fused-natural\'"/>
+        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE4} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE6} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE8} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9}"/>
+    </exec>
+  </target>
+
+  <target name="photomatix-6">
 
         <script language="javascript"> <![CDATA[
       importClass(java.io.File);
@@ -512,8 +762,7 @@
       }
     ]]> </script>
   </target>
-
-    <target name="photomatix-process-6">
+  <target name="photomatix-process-6">
     <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
 
     <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
@@ -532,24 +781,6 @@
   </target>
 
   
-  <target name="photomatix-process-12">
-    <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
-
-    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
-        <arg line="-n 2"/> <!-- Naming rule. -->
-        <arg line="-2a 5"/> <!-- Strength for Fusion/natural. -->
-        <arg line="-2b -6"/> <!-- Blending point for Fusion/natural. -->
-        <arg line="-2c 2"/>  <!-- Color saturation for Fusion/natural. -->
-        <arg line="-2s 6"/>    <!-- Shadows for Fusion/natural. -->
-        <arg line="-2w 6"/> <!-- White Point for Fusion/natural. -->
-        <arg line="-2k 6"/>  <!-- Black Point for Fusion/natural. -->
-        <arg line="-2m 2"/>  <!-- Midtone for Fusion/natural. -->
-        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
-		<arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>
-        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE4} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE6} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE8} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE10} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE12}"/>
-    </exec>
-  </target>
-
 
     <target name="ptlens">
         <copydir src="${PTLENS_PATH}" dest="${PTLENS_PATH}/ptlens"/>
@@ -609,7 +840,7 @@
       <arg line="-q '${PTLENS_PATH}'\${PTLENS_FILE}"/>
     </exec>
   </target>
-
+  
   <target name="clean-photomatix">
     <delete dir="${PHOTOMATIX_PATH}/fused"/>
   </target>
@@ -662,6 +893,26 @@
     <antcall target="flyer-save"/>
   </target>
 
+  <target name="luminosity" depends="make-js-prop-file" description="Create Luminosity layer, for 'lights on' photos.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+      <available file="build_props.jsx"/>
+    </waitfor>
+     <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_makeLuminosityLayers.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>luminosity layers done!!!</echo>  
+  </target>
+  
   <target name="flyer-make" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
     <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
@@ -764,10 +1015,10 @@
       <fileset file="${template}/style.css"/>
     </copy>
       <copy todir="${staging}/mlspics">
-          <fileset dir="${RESIZE_PATH}/JPEG_1200"/>
+          <fileset dir="${RESIZE_PATH}/JPEG_1024"/>
       </copy>
       <copy todir="${staging}/webgallery">
-          <fileset dir="${RESIZE_PATH}/JPEG_1200"/>
+          <fileset dir="${RESIZE_PATH}/JPEG_1024"/>
       </copy>
     <copy todir="${staging}/JPEG_full">
       <fileset dir="${RESIZE_PATH}/JPEG_full"/>
@@ -776,8 +1027,10 @@
 
   <target name="copy-from-camera" depends="devenv" description="Creates the directory and copies images from camera/card into it.">
     <!--<touch file="${RAW_PATH}/fake.txt"/>-->
-      <mkdir dir="${RAW_PATH}/cr2"/>
-      <mkdir dir="${RAW_PATH}/jpg"/>
+	  <echo>properties:${property.file}</echo> 
+      <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/best"/>
       <copy todir="${RAW_PATH}/jpg" verbose="true" failonerror="no">
           <fileset dir="H:/DCIM/100EOS5D">
               <include name="**/*.JPG"/>
@@ -786,7 +1039,7 @@
               <include name="**/*.JPG"/>
           </fileset>
       </copy>
-      <copy todir="${RAW_PATH}/cr2" verbose="true" failonerror="no">
+      <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
           <fileset dir="H:/DCIM/100EOS5D">
               <include name="**/*.CR2"/>
           </fileset>
@@ -795,7 +1048,7 @@
           </fileset>
           <mapper type="glob" from="*.CR2" to="${URL}_*.cr2"/>
       </copy>
-      <copy todir="${RAW_PATH}/jpg" verbose="true" failonerror="no">
+      <copy todir="${ROOT_PATH}/${URL}/jpg" verbose="true" failonerror="no">
           <fileset dir="D:/DCIM/100EOS5D">
               <include name="**/*.JPG"/>
           </fileset>
@@ -803,11 +1056,28 @@
               <include name="**/*.JPG"/>
           </fileset>
       </copy>
-      <copy todir="${RAW_PATH}/cr2" verbose="true" failonerror="no">
+      <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
           <fileset dir="D:/DCIM/100EOS5D">
               <include name="**/*.CR2"/>
           </fileset>
           <fileset dir="D:/DCIM/101EOS5D">
+              <include name="**/*.CR2"/>
+          </fileset>
+          <mapper type="glob" from="*.CR2" to="${URL}_*.cr2"/>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/jpg" verbose="true" failonerror="no">
+          <fileset dir="E:/DCIM/100EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
+          <fileset dir="E:/DCIM/101EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
+          <fileset dir="E:/DCIM/100EOS5D">
+              <include name="**/*.CR2"/>
+          </fileset>
+          <fileset dir="E:/DCIM/101EOS5D">
               <include name="**/*.CR2"/>
           </fileset>
           <mapper type="glob" from="*.CR2" to="${URL}_*.cr2"/>
@@ -1116,10 +1386,12 @@
     <replace file="build_props.jsx" token="RAWPATH" value="${RAW_PATH}"/>
     <replace file="build_props.jsx" token="RESIZEPATH" value="${RESIZE_PATH}"/>
     <replace file="build_props.jsx" token="SRCPATH" value="${SRC_PATH}"/>
+    <replace file="build_props.jsx" token="LUMINOSITYPATH" value="${LUMINOSITY_PATH}"/>
     <replace file="build_props.jsx" token="AGENT" value="${AGENT}"/>
     <replace file="build_props.jsx" token="PHONE" value="${PHONE}"/>
     <replace file="build_props.jsx" token="EMAIL" value="${EMAIL}"/>
     <replace file="build_props.jsx" token="FLICKR" value="${FLICKR}"/>
+    <replace file="build_props.jsx" token="INVOICENUMBER" value="${INVOICE_NUMBER}"/>
     <replace file="build_props.jsx" token="JOBNAME" value="${JOBNAME}"/>
     <replace file="build_props.jsx" token="DATE" value="${DATE}"/>
     <replace file="build_props.jsx" token="SHOOTPRICE" value="${SHOOTPRICE}"/>

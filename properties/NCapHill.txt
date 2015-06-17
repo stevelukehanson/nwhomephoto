@@ -1,0 +1,36 @@
+	!-- Basic/Common Properties --!
+URL=NCapHill
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/jpg
+PTLENS_PATH=${ROOT_PATH}/${URL}/jpg/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/jpg/PhotomatixResults01/best
+SRC_PATH=
+
+ADDRESS=1516 17th Ave E, Seattle WA 98112
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=April 20, 2014
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Prime Capitol Hill Location
+HEADLINE2=Historic Home in Everyone’s Favorite Neighborhood
+HEADLINE3=1905 Half-Timbered Craftsman
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=8
+PHOTO3=14
+PHOTO4=31
+PHOTO5=23
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=MLS #634036
+BOXTEXT=photos:4 bedrooms / 2.5 baths / 3220 sq ft of living space / 6280 sq ft lot
+HOUSEPRICE=$1,250,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

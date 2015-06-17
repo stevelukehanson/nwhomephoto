@@ -18,10 +18,12 @@ var strtRulerUnits = app.preferences.rulerUnits;
 app.preferences.rulerUnits = Units.PIXELS;
 
 //  Open the invoice template
-var docRef = open(new File("C:\\dev\\nwhomephoto_dev\\ant_build\\template\\invoice.psd"));
+var docRef = open(new File("C:\\Users\\steve\\Documents\\Adobe Scripts\\nwhomephoto\\template\\invoice.psd"));
 
 // Date
-addLineText(docRef, 1825, 215, "date", '000000', date, 12, false, false, Justification.LEFT);
+addLineText(docRef, 1835, 205, "date", '000000', date, 12, false, false, Justification.LEFT);
+// Invoice Number
+addLineText(docRef, 1835, 263, "invoicenumber", '000000', invoicenumber, 12, false, false, Justification.LEFT);
 // jobname
 addLineText(docRef, 4, 1140, "jobname", '000000', jobname, 12, false, false, Justification.LEFT);
 // address

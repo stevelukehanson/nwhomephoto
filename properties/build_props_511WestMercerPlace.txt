@@ -1,0 +1,36 @@
+	!-- Basic/Common Properties --!
+URL=511WestMercerPlace502
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}
+PTLENS_PATH=${ROOT_PATH}/${URL}/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/fused/ptlens
+SRC_PATH=
+
+ADDRESS=511 West Mercer Place, Seattle, WA
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Oct 9, 2013
+SHOOTPRICE=$200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Elliott Bay Views
+HEADLINE2=A Charming and Elegant Penthouse for Sale
+HEADLINE3=A Rare Gem Comes on the Market
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=4
+PHOTO2=8
+PHOTO3=26
+PHOTO4=16
+PHOTO5=13
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=Enjoy breathtaking views from this penthouse unit. A rare gem with 2,427 of living space plus a patio to match its scale. Host a dinner for 12 on the patio and twice that many in the large formal dining room. The head-to-toe remodel spared no expense. Exquisite finishes in stone, hardwood, slab granite and tile. High-end kitchen with custom Italian cabinets, Sub-Zero, Viking and Bosch. Master with two walk-in closets. Plantation shutters and shade awnings for the patio. 3 parking, huge storage.
+BOXTEXT=3 bedrooms/ 2.5 baths / 2,427 sq ft of living space / HOA dues $818
+HOUSEPRICE=$1,650,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

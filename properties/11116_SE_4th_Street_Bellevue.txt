@@ -1,5 +1,5 @@
 !-- Basic/Common Properties --!
-URL=11116_SE_4th_Street_Bellevue
+URL=570-Olympia-AveNE-Renton
 UPLOADURL=${URL}
 ROOT_PATH=C:/Users/steve/Pictures/RealEstate
 RAW_PATH=${ROOT_PATH}/${URL}
@@ -9,15 +9,16 @@ RESIZE_PATH=${ROOT_PATH}/${URL}/best
 SRC_PATH=
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
 
-ADDRESS=11116 SE 4th Street, Bellevue, WA 98004
+ADDRESS=570 Olympia Ave NE, Renton, WA 98056
 AGENT=Mason Hwu
 PHONE=206-335-1778
 EMAIL=wpirealestate@gmail.com
 FLICKR=
 JOBNAME=Photoshoot of ${ADDRESS}
-DATE=March 12, 2015
+DATE=July 7, 2015
 SHOOTPRICE=300
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+INVOICE_NUMBER=7072015
 
 !-- Flyer Properties --!
 HEADLINE1=Green Lake Tudor

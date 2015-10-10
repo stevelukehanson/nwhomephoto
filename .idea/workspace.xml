@@ -2,105 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a297c95b-9d60-4408-8f6b-bc0ee2bcb384" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\1003NW65thStSeattleWA98117.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\1127_19thAveESeattle98112.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\1140N92ndStUnitASeattleWA98103.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\1140_N92ndStUnitA98103.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\1140_N92ndStUnitA98103_2.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\163_18thAveUnitB_98122.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\18127_60th_Pl_NE_Kenmore.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\22215_6thAveS206.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\2350_10thAveE104.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\2603_NE82ndSt98115.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\2609NE82ndStSeattle.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\2724_47thAveSW98116.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\3245NWEsplanade.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\3245NWEsplanade_shoot2.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\4627_1stAveNESeattleWA98105.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\4911NE65thSeattleStWA98115.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\511WestMercerPlace502flyerside2.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\5770_63rdAveNE.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\7323_23rdAveNESeattle.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\736N88thStSeattleWA98103.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\8200_SE_36thSt_MercerIsland98040.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\9048LoyalAveNW.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\9048LoyalAveNW_shoot2.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\9048LoyalAveNW_shoot3.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\917BroadwayEJuly2013Seattle.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\917TestsNov2013.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\EllaClaymation.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\Ellington1106.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\EllingtonCommons.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\MontlakeOct2013.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\MontlakeOct2013_2.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\ViewRidge.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\ViewRidge2.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_120_34thAveE.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_121 NW 49th St.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_121NW49thSt.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_1554 E Garfield Str.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_1743nw62ndSt.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_1743nw62ndSt_2.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_20623se136thStIssaquah98027.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_24118_2nd_PlaceWest_Bothell - Copy (2).properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_2510WManorPl.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_2842 NW 66th_Cynthia.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_3624WitmanAveN.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_3658 50th Avenue NE.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_4547_8thAveNE.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_4547_8thAveNE_reshoot.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_4551WRayeSt.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_4844NE43rd.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_4844NE43rdSt.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_5051HaroldPlNE.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_511WestMercerPlace - Copy.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_5216_9thAveNW_Cynthia.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_540NE86thStSeattle.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_6001_45thAveSW.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_6300_S_Graham.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_6551_23rdAveNE.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_6551_23rdAveSE.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_66Bell_206.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_7015_11thavenw.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_7755LakemontDrNE.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_8321_SE41St_MercerIsland.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_919 2nd Ave W Queen Anne.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_931_25thAveS.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_Boyer3.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_Ellington417.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_Ellington418.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_Ellington_909.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_PhinneyRidge_July2012.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_PhinneyRidge_July2012_reshoot.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_SaraWiseSept2012.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_SaraWise_EnglishCoffeeTable.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_archive.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_archive.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_jesse.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_jesse_12727 NE 200th Pl in Bothell.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_jesse_12727_reshoot.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_jesse_919 2nd Ave W on QA east side of the building.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_nickersonStorage.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_saraWise.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_test.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\build_props_test.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\corsonQ.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\labkeyaug2013.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\queenanne.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\shishi2013.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\test.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\testtest.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_prop_archive\website.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\build_props.jsx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SLH_functions.jsx" afterPath="$PROJECT_DIR$/SLH_functions.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SLH_makeFlyer.jsx" afterPath="$PROJECT_DIR$/SLH_makeFlyer.jsx" />
+      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\properties\917BroadwayMay2015.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\properties\SneeooshMay2015-2.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\properties\SneeooshMay2015-3.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\properties\SneeooshMay2015-4.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\properties\SneeooshMay2015-5.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\steve\Documents\Adobe Scripts\nwhomephoto\properties\SneeooshMay2015.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nwhomephoto-code-feb2015" afterPath="$PROJECT_DIR$/nwhomephoto-code-feb2015" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/properties/11116_SE_4th_Street_Bellevue.txt" afterPath="$PROJECT_DIR$/properties/11116_SE_4th_Street_Bellevue.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/properties/EPICenter.txt" afterPath="$PROJECT_DIR$/properties/EPICenter.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SLH_makeInvoice.jsx" afterPath="$PROJECT_DIR$/SLH_makeInvoice.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SLH_makeLuminosityLayers.jsx" afterPath="$PROJECT_DIR$/SLH_makeLuminosityLayers.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates_js/build_props.jsx" afterPath="$PROJECT_DIR$/templates_js/build_props.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/devEnv.cmd" afterPath="$PROJECT_DIR$/devEnv.cmd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/gallery.cmd" afterPath="$PROJECT_DIR$/template/gallery.cmd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/index.html" afterPath="$PROJECT_DIR$/template/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nwhomephoto.iws" />
@@ -133,7 +48,7 @@
     <file path="$PROJECT_DIR$/build/staging/gallery.html" changelist="a297c95b-9d60-4408-8f6b-bc0ee2bcb384" time="1375657047335" ignored="false" />
     <file path="$PROJECT_DIR$/build/staging/banner.html" changelist="a297c95b-9d60-4408-8f6b-bc0ee2bcb384" time="1375657047335" ignored="false" />
     <file path="$PROJECT_DIR$/build/staging/index.html" changelist="a297c95b-9d60-4408-8f6b-bc0ee2bcb384" time="1375657047335" ignored="false" />
-    <file path="/Dummy.txt" changelist="a297c95b-9d60-4408-8f6b-bc0ee2bcb384" time="1429748692444" ignored="false" />
+    <file path="/Dummy.txt" changelist="a297c95b-9d60-4408-8f6b-bc0ee2bcb384" time="1444512021529" ignored="false" />
     <file path="/SLH_cr2tojpeg.jsx" changelist="a297c95b-9d60-4408-8f6b-bc0ee2bcb384" time="1409072526309" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +118,7 @@
       <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1033" column="40" selection-start="43800" selection-end="43800" vertical-scroll-proportion="0.020070838">
+            <state line="1166" column="40" selection-start="49850" selection-end="49850" vertical-scroll-proportion="0.020070838">
               <folding />
             </state>
           </provider>
@@ -308,10 +223,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-        <subPane subId="All" />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,6 +262,10 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+        <subPane subId="All" />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -499,7 +414,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6126126" order="3" side_tool="false" content_ui="tabs" />
@@ -513,7 +428,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294676" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24493062" sideWeight="0.6128668" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24493062" sideWeight="0.6128668" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -649,6 +564,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SLH_cr2tojpeg.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="35" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SLH_functions.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="17" selection-start="2685" selection-end="2685" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -724,7 +653,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1033" column="40" selection-start="43800" selection-end="43800" vertical-scroll-proportion="0.020070838">
+        <state line="1166" column="40" selection-start="49850" selection-end="49850" vertical-scroll-proportion="0.020070838">
           <folding />
         </state>
       </provider>

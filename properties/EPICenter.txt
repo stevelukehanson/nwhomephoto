@@ -1,5 +1,5 @@
 !-- Basic/Common Properties --!
-URL=EpiCenter
+URL=EpiCenter2
 UPLOADURL=${URL}
 ROOT_PATH=C:/Users/steve/Pictures/RealEstate
 RAW_PATH=${ROOT_PATH}/${URL}
@@ -9,13 +9,13 @@ RESIZE_PATH=${ROOT_PATH}/${URL}/best
 SRC_PATH=
 
 ADDRESS=620 N. 34th Street, Seattle, WA 98103
-AGENT=John Davenport
-PHONE=206.633.7800
+AGENT=
+PHONE=
 EMAIL=epicenter@madronaridgellc.com
 FLICKR=
 JOBNAME=15 Pics - Photoshoot of ${ADDRESS}
-DATE=Feb 16, 2015
-SHOOTPRICE=250
+DATE=July 17, 2015
+SHOOTPRICE=400
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 
 !-- Flyer Properties --!

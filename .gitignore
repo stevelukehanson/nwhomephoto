@@ -32,6 +32,9 @@ local.properties
 ## IntelliJ
 ########
 .idea/
+build/
+properties/
+build.zip
 
 #################
 ## Visual Studio

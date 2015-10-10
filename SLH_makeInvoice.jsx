@@ -36,6 +36,12 @@ addLineText(docRef, 4, 711, "contact", '000000', agent, 12, false, false, Justif
 addLineText(docRef, 4, 774, "phone", '000000', phone, 12, false, false, Justification.LEFT);
 // email
 addLineText(docRef, 4, 837, "email", '000000', email, 12, false, false, Justification.LEFT);
+// photos link 
+addLineText(docRef, 6, 1950, "url", '000000', "photos at:", 12, false, false, Justification.LEFT);
+addLineText(docRef, 6, 2018, "url", '000000', "http://nwhomephoto.com/virtualMediaGalleries/" + url, 12, false, false, Justification.LEFT);
+// paypall
+addLineText(docRef, 6, 2210, "paypal", '000000', "Please mail check, or send payment via PayPal to:", 12, false, false, Justification.LEFT);
+addLineText(docRef, 6, 2280, "paypalemail", '000000', "stevelukehanson@gmail.com", 12, false, false, Justification.LEFT);
 // taxrate
 //addLineText(docRef, 2034, 2128, "taxrate", '000000', "9.5%", 12, false, false, Justification.LEFT);
 // tax

@@ -3,10 +3,10 @@
 #include "build_props.jsx"
 #include "SLH_functions.jsx"
 
-addLuminosityLayer(luminositypath, luminositypath);
+addFlashLayer(flashpath, flashpath);
 signalComplete("xxx-flyer-done-xxx.jpg");
 
-function addLuminosityLayer(sourcePath, destinationPath)
+function addFlashLayer(sourcePath, destinationPath)
 {
     // get source folder and files
     var sourceFolder = new Folder(sourcePath);
@@ -14,14 +14,14 @@ function addLuminosityLayer(sourcePath, destinationPath)
     {
 		alert('The source folder does not exist: ' + sourcePath, 'Script Stopped', true);
 		return;
-    }
+	}
 
     // make the destination folder
     outputFolder = new Folder(destinationPath + "/results");
     if(!outputFolder.exists) outputFolder.create();
 
     // Check to see if any of the images have the label color 'yellow'.  
-    // If so, load the yellow thumbnails into the luminosity layering machine.
+    // If so, load the yellow thumbnails into the Flash layering machine.
 /*    
     var sourceFiles = getFilesFunc(sourceFolder);
 	if(sourceFiles.length > 0)
@@ -44,13 +44,13 @@ function addLuminosityLayer(sourcePath, destinationPath)
 	    var brightImage = open(new File(sourceFiles[i+1]));
         brightImage.selection.selectAll();
         brightImage.selection.copy();
-        brightImage.close();
+        brightImage.close(SaveOptions.DONOTSAVECHANGES);
         activeDocument = darkImage;
         darkImage.selection.selectAll();
         var newLayer = darkImage.paste(true);
-        
-   	// make top layer luminosity blending mode
-        newLayer.blendMode = BlendMode.LUMINOSITY;
+
+   	// Lower opacity of top flash layer to 50% 
+        newLayer.opacity = 50;
         var tifDoc = darkImage.duplicate();
         var jpgDoc = darkImage.duplicate();
         app.activeDocument = darkImage;
@@ -59,16 +59,15 @@ function addLuminosityLayer(sourcePath, destinationPath)
         // save as jpg in the 'best' folder
         app.activeDocument = jpgDoc;
         jpgDoc.flatten();
-//        var saveFolder = new Folder(destinationPath + "/results");
         var saveDoc = new File(outputFolder + "/" + jpgDoc.name);
         var saveOptions = new JPEGSaveOptions(); 
         jpgDoc.saveAs(saveDoc, saveOptions, true, Extension.LOWERCASE);
         jpgDoc.close(SaveOptions.DONOTSAVECHANGES);
+        //jpgDoc.close(SaveOptions.DONOTSAVECHANGES);
 
-        // save as tiff in the 'best' folder      
+        // save as tiff in the 'results' folder      
         app.activeDocument = tifDoc;
 //        app.activeDocument.activeChannels = [app.activeDocument.channels.getByName('Red')];  
-//        var saveFolder = new Folder(destinationPath + "/results");
         var saveDoc = new File(outputFolder + "/" + tifDoc.name);
         var saveOptions = new TiffSaveOptions(); 
         tifDoc.saveAs(saveDoc, saveOptions, true, Extension.LOWERCASE);

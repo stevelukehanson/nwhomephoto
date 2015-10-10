@@ -913,6 +913,26 @@
     <echo>luminosity layers done!!!</echo>  
   </target>
   
+  <target name="flash" depends="make-js-prop-file" description="Create flash layer, reduce opacity.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+      <available file="build_props.jsx"/>
+    </waitfor>
+     <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_makeFlashLayers.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>flash layers done!!!</echo>  
+  </target>
+  
   <target name="flyer-make" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
     <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
@@ -1025,12 +1045,84 @@
     </copy>
   </target>
 
+    <target name="module-make-template" description="Creates the directory structure for a file-based LabKey module.">
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/config"/>
+<!--
+      <touch file="${TEMP_DIR}/${MODULE_NAME}/config/module.xml"/>
+		<echo file="${TEMP_DIR}/${MODULE_NAME}/config/module.xml" append="true">
+		   <![CDATA[  ]]> 
+		</echo>
+-->
+  	  <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/credits"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/assay"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/etls"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/folderTypes"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/olap"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/pipeline"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/queries"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/queries/${SCHEMA_NAME}"/>
+      <touch file="${TEMP_DIR}/${MODULE_NAME}/queries/${SCHEMA_NAME}/${QUERY_NAME.sql}"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/reports"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/reports/schemas"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/reports/schemas/${SCHEMA_NAME}"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/reports/schemas/${SCHEMA_NAME}/${QUERY_NAME}"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/schemas"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/scripts"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/scripts/dbscripts"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/scripts/dbscripts/postgressql/"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/scripts/dbscripts/sqlserver"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/views"/>
+      <touch file="${TEMP_DIR}/${MODULE_NAME}/views/begin.html"/>
+		<echo file="${TEMP_DIR}/${MODULE_NAME}/views/begin.html" append="true">
+		   Welcome to the ${MODULE_NAME} module.
+		</echo>
+      <touch file="${TEMP_DIR}/${MODULE_NAME}/views/begin.view.xml"/>
+		<echo file="${TEMP_DIR}/${MODULE_NAME}/views/begin.view.xml" append="true"><![CDATA[<view xmlns="http://labkey.org/data/xml/view">
+			<dependencies>
+			<dependency path="Ext4"/>
+			</dependencies>
+			</view>]]> 
+		</echo>
+      <touch file="${TEMP_DIR}/${MODULE_NAME}/views/SOME_WEBPART.webpart.xml"/>
+        <echo file="${TEMP_DIR}/${MODULE_NAME}/views/SOME_WEBPART.webpart.xml" append="true">
+		    <![CDATA[
+			<webpart xmlns="http://labkey.org/data/xml/webpart" title="SteveH1 Web Part">
+			<view name="begin"/>
+			<locations>
+			<location name="body"/>
+			</locations>
+			</webpart>
+			]]> 
+		</echo>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/web"/>
+      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/web/${MODULE_NAME}"/>
+      <touch file="${TEMP_DIR}/${MODULE_NAME}/web/${MODULE_NAME}/someImage.jpg"/>
+      <touch file="${TEMP_DIR}/${MODULE_NAME}/web/${MODULE_NAME}/someLib.lib.xml"/>
+      <touch file="${TEMP_DIR}/${MODULE_NAME}/web/${MODULE_NAME}/SomeScript.js"/>
+    </target>
+
+    <target name="module-clean" depends="devenv" description="Zips up and deploys the module to LabKey Server.">
+      <delete dir="${TEMP_DIR}/${MODULE_NAME}"/>
+    </target>
+  
+    <target name="module-deploy" depends="devenv" description="Zips up and deploys the module to LabKey Server.">
+      <zip destfile="${DEPLOY_DIR}/${MODULE_NAME}.module">
+          <zipfileset dir="${TEMP_DIR}/${MODULE_NAME}"> 
+          </zipfileset>
+      </zip>
+    </target>
+  
   <target name="copy-from-camera" depends="devenv" description="Creates the directory and copies images from camera/card into it.">
     <!--<touch file="${RAW_PATH}/fake.txt"/>-->
 	  <echo>properties:${property.file}</echo> 
       <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/3"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/7"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/flash"/>
       <mkdir dir="${ROOT_PATH}/${URL}/best"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/luminosity-layers"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/flash-layers"/>
       <copy todir="${RAW_PATH}/jpg" verbose="true" failonerror="no">
           <fileset dir="H:/DCIM/100EOS5D">
               <include name="**/*.JPG"/>
@@ -1072,6 +1164,32 @@
           <fileset dir="E:/DCIM/101EOS5D">
               <include name="**/*.JPG"/>
           </fileset>
+          <fileset dir="E:/DCIM/102EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
+      </copy>
+
+      <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
+          <fileset dir="E:/DCIM/100EOS5D">
+              <include name="**/*.CR2"/>
+          </fileset>
+          <fileset dir="E:/DCIM/101EOS5D">
+              <include name="**/*.CR2"/>
+          </fileset>
+          <fileset dir="E:/DCIM/102EOS5D">
+              <include name="**/*.CR2"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/jpg" verbose="true" failonerror="no">
+          <fileset dir="F:/DCIM/100EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
+          <fileset dir="F:/DCIM/101EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
+          <fileset dir="F:/DCIM/102EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
       </copy>
       <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
           <fileset dir="E:/DCIM/100EOS5D">
@@ -1099,12 +1217,17 @@
 
   <target name="string-replace" description="Fills in the template web pages.">
 
+    <tstamp>
+       <format property="TODAY" pattern="MMM d, yyyy" locale="en,GB"/>
+    </tstamp>
+
     <replace file="${staging}/index.html" token="_ADDRESS_" value="${ADDRESS}"/>
     <replace file="${staging}/index.html" token="_AGENT_" value="${AGENT}"/>
     <replace file="${staging}/index.html" token="_PHONE_" value="${PHONE}"/>
     <replace file="${staging}/index.html" token="_EMAIL_" value="${EMAIL}"/>
     <replace file="${staging}/index.html" token="_URL_" value="${URL}"/>
     <replace file="${staging}/index.html" token="_FLICKR_" value="${FLICKR}"/>
+    <replace file="${staging}/index.html" token="_DATE_" value="${TODAY}"/>
 
       <replace file="${staging}/gallery.html" token="_ADDRESS_" value="${ADDRESS}"/>
       <replace file="${staging}/gallery.html" token="_AGENT_" value="${AGENT}"/>
@@ -1387,13 +1510,20 @@
     <replace file="build_props.jsx" token="RESIZEPATH" value="${RESIZE_PATH}"/>
     <replace file="build_props.jsx" token="SRCPATH" value="${SRC_PATH}"/>
     <replace file="build_props.jsx" token="LUMINOSITYPATH" value="${LUMINOSITY_PATH}"/>
+    <replace file="build_props.jsx" token="FLASHPATH" value="${FLASH_PATH}"/>
     <replace file="build_props.jsx" token="AGENT" value="${AGENT}"/>
     <replace file="build_props.jsx" token="PHONE" value="${PHONE}"/>
     <replace file="build_props.jsx" token="EMAIL" value="${EMAIL}"/>
     <replace file="build_props.jsx" token="FLICKR" value="${FLICKR}"/>
-    <replace file="build_props.jsx" token="INVOICENUMBER" value="${INVOICE_NUMBER}"/>
+    <tstamp>
+      <format property="INVOICE" pattern="yyyyMMd" locale="en,GB"/>
+    </tstamp>
+    <replace file="build_props.jsx" token="INVOICENUMBER" value="${INVOICE}"/>
     <replace file="build_props.jsx" token="JOBNAME" value="${JOBNAME}"/>
-    <replace file="build_props.jsx" token="DATE" value="${DATE}"/>
+    <tstamp>
+      <format property="TODAY_GB" pattern="MMM d, yyyy" locale="en,GB"/>
+    </tstamp>
+    <replace file="build_props.jsx" token="DATE" value="${TODAY_GB}"/>
     <replace file="build_props.jsx" token="SHOOTPRICE" value="${SHOOTPRICE}"/>
     <replace file="build_props.jsx" token="HEADLINE1" value="${HEADLINE1}"/>
     <replace file="build_props.jsx" token="HEADLINE2" value="${HEADLINE2}"/>

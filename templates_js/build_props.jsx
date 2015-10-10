@@ -6,6 +6,7 @@ var rawpath = "RAWPATH";
 var resizepath = "RESIZEPATH";
 var srcpath = "SRCPATH";
 var luminositypath = "LUMINOSITYPATH";
+var flashpath = "FLASHPATH";
 var agent = "AGENT";
 var phone = "PHONE";
 var email = "EMAIL";

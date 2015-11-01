@@ -9,7 +9,7 @@ RESIZE_PATH=${ROOT_PATH}/${URL}/best
 SRC_PATH=
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
 
-ADDRESS=1009 Western Ave Apt. #1111, Seattle, WA 98104
+ADDRESS=1009 Western Ave, #1111, Seattle, WA 98104
 AGENT=Mary Orvis / Jane Orvis
 PHONE=(206) 619-2000 / (206) 679-5901
 EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
@@ -20,19 +20,19 @@ SHOOTPRICE=200
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 
 !-- Flyer Properties --!
-HEADLINE1=Secret Garden in The City
-HEADLINE2=Rare, Private 2.3 Acre Estate For Sale
+HEADLINE1=Waterfront Place
+HEADLINE2=Boutique Condo Home Downtown
 HEADLINE3=Courtyard Gardens and Spacious Private Terrace
 !-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
 PHOTO1=8
 PHOTO2=32
-PHOTO3=12
-PHOTO4=13
-PHOTO5=5
+PHOTO3=22
+PHOTO4=18
+PHOTO5=29
 LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
-MAINTEXT=MLS #764458
-BOXTEXT=
-HOUSEPRICE=Offered at $2,900,000
+MAINTEXT=MLS # 858848
+BOXTEXT=2 bedrooms + den / 2 baths / 1,653 sq ft/ HOA dues $1,096
+HOUSEPRICE=Offered at $995,000
 CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
 WEBSITE=www.OrvisAndOrvisRealEstate.com
 PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

@@ -19,13 +19,14 @@ app.preferences.rulerUnits = Units.PIXELS;
 var tifDoc = activeDocument.duplicate("masterFlyer_" + url + ".tif");
 var jpgDoc = activeDocument.duplicate("emailableFlyer" + ".jpg");
 var pdfDoc = activeDocument.duplicate("printableFlyer" + ".pdf");
-var tifFolder = new Folder(rawpath +"/flyers/");
+var tifFolder = new Folder(buildpath + "/" + url);
 var jpgFolder = new Folder(buildpath + "/" + url);
 var pdfFolder = new Folder(buildpath + "/" + url);
 tifFolder.create();
 jpgFolder.create();
 
 // TIFF
+app.activeDocument = tifDoc;
 var saveDoc = new File(tifFolder + "/" + tifDoc.name);
 var saveOptions = new TiffSaveOptions(); 
 tifDoc.saveAs(saveDoc, saveOptions, true, Extension.LOWERCASE);
@@ -35,7 +36,7 @@ tifDoc.close(SaveOptions.DONOTSAVECHANGES);
 // JPEG
 app.activeDocument = jpgDoc;
 jpgDoc.flatten();
-jpgDoc.resizeImage(UnitValue(700,"px"),null,null,ResampleMethod.BICUBIC);
+jpgDoc.resizeImage(UnitValue(700,"px"),null,null,ResampleMethod.BICUBICSHARPER);
 var saveDoc = new File(jpgFolder + "/" + jpgDoc.name);
 var saveOptions = new JPEGSaveOptions(); 
 jpgDoc.saveAs(saveDoc, saveOptions, true, Extension.LOWERCASE);

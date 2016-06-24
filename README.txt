@@ -80,7 +80,11 @@ The Ant build file that runs the show, utility functions, image compositing, ins
 
 Config:
 -------
-Photoshop requires the javascript source files (the ones that call into Photoshop) to be located in a 'safe haven', for example, C/users/steveh/Documents/Adobe Scripts.  Photoshop won't run scripts that are located outside this location -- I assume because these scripts can see and directly operate on the file system?
+Photoshop requires the javascript source files (the ones that call into Photoshop) to be located in a 'safe haven', for example, 
+
+C/users/steveh/Documents/Adobe Scripts.  
+
+Photoshop won't run scripts that are located outside this location -- I assume because these scripts can see and directly operate on the file system?
 
 set ANT_HOME and ANT_HOME/bin on the PATH
 set JAVA_HOME and JAVA_HOME/bin on PATH

@@ -5,6 +5,7 @@
 
   <!-- set global properties for this build -->
   <property environment="env"/>
+  <property file="${props}"/>
   <property name="template" value="template"/>
   <property name="base.dir"  value="."/>
   <property name="build"  value="build"/>
@@ -31,7 +32,7 @@
   <tstamp/>
 
   <target name="echoprops">
-    <echoproperties/>
+    <echoproperties destfile="current.properties" format="xml"/>
     <length string="${FLICKR}" property="flickr.length" />
     <echo>Length of FLICKR prop: ${flickr.length}</echo>
     <echo>RAW_PATH: ${RAW_PATH}</echo>
@@ -1118,7 +1119,7 @@
       <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/3"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/7"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/9"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/flash"/>
       <mkdir dir="${ROOT_PATH}/${URL}/best"/>
       <mkdir dir="${ROOT_PATH}/${URL}/luminosity-layers"/>
@@ -1204,7 +1205,7 @@
   </target>
 
   <target name="show">
-        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7" >
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start chrome '${basedir}/${build}/${URL}/index.html'" />
         </exec>
   </target>

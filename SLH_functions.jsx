@@ -149,8 +149,8 @@ function getFilesFunc(sourceFolder) {
 
 function signalComplete(fileName){
 
-        var doc = app.open(File("C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources/kitten.jpg"));
-		var saveFile = new File("C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/build/" + fileName);
+        var doc = app.open(File("C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources/kitten.jpg"));
+		var saveFile = new File("C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/build/" + fileName);
 		saveJPEG( doc, saveFile, 1 );
 		app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 }

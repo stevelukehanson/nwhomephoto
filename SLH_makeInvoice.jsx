@@ -18,7 +18,7 @@ var strtRulerUnits = app.preferences.rulerUnits;
 app.preferences.rulerUnits = Units.PIXELS;
 
 //  Open the invoice template
-var docRef = open(new File("C:\\Users\\steve\\Documents\\Adobe Scripts\\nwhomephoto\\template\\invoice.psd"));
+var docRef = open(new File("C:\\Users\\steveh\\Documents\\Adobe Scripts\\nwhomephoto\\template\\invoice.psd"));
 
 // Date
 addLineText(docRef, 1835, 205, "date", '000000', date, 12, false, false, Justification.LEFT);

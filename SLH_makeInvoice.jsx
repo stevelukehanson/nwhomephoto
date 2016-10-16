@@ -20,6 +20,11 @@ app.preferences.rulerUnits = Units.PIXELS;
 //  Open the invoice template
 var docRef = open(new File("C:\\Users\\steveh\\Documents\\Adobe Scripts\\nwhomephoto\\template\\invoice.psd"));
 
+// Company
+addLineText(docRef, 50, 130, "company", '8494C3', "Hanson Photo Group", 28, false, false, Justification.LEFT);
+// Name
+addLineText(docRef, 4, 263, "name", '000000', "Steve Hanson", 12, false, false, Justification.LEFT);
+
 // Date
 addLineText(docRef, 1835, 205, "date", '000000', date, 12, false, false, Justification.LEFT);
 // Invoice Number
@@ -27,7 +32,7 @@ addLineText(docRef, 1835, 263, "invoicenumber", '000000', invoicenumber, 12, fal
 // jobname
 addLineText(docRef, 4, 1140, "jobname", '000000', jobname, 12, false, false, Justification.LEFT);
 // address
-addLineText(docRef, 4, 1208, "address", '000000', address, 12, false, false, Justification.LEFT);
+// addLineText(docRef, 4, 1208, "address", '000000', address, 12, false, false, Justification.LEFT);
 // price
 addLineText(docRef, 2034, 1140, "price", '000000', "$"+shoot_price, 12, false, false, Justification.LEFT);
 // contact
@@ -38,7 +43,7 @@ addLineText(docRef, 4, 774, "phone", '000000', phone, 12, false, false, Justific
 addLineText(docRef, 4, 837, "email", '000000', email, 12, false, false, Justification.LEFT);
 // photos link 
 addLineText(docRef, 6, 1950, "url", '000000', "photos at:", 12, false, false, Justification.LEFT);
-addLineText(docRef, 6, 2018, "url", '000000', "http://nwhomephoto.com/virtualMediaGalleries/" + url, 12, false, false, Justification.LEFT);
+addLineText(docRef, 6, 2018, "url", '000000', "https://dl.dropboxusercontent.com/u/38451689/" + url + "/index.html", 12, false, false, Justification.LEFT);
 // paypall
 addLineText(docRef, 6, 2210, "paypal", '000000', "Please mail check, or send payment via PayPal to:", 12, false, false, Justification.LEFT);
 addLineText(docRef, 6, 2280, "paypalemail", '000000', "stevelukehanson@gmail.com", 12, false, false, Justification.LEFT);

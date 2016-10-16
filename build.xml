@@ -5,6 +5,7 @@
 
   <!-- set global properties for this build -->
   <property environment="env"/>
+  <property file="${clientprops}"/>
   <property file="${props}"/>
   <property name="template" value="template"/>
   <property name="base.dir"  value="."/>
@@ -15,11 +16,13 @@
   <property file="${propfile}"/>-->
     <!--<property name="propfile" value="test"/>
     <loadproperties srcfile="${propfile}"/>-->
+  <!--
   <taskdef resource="net/sf/antcontrib/antcontrib.properties">
     <classpath>
       <pathelement location="C:/apache/ant-contrib/ant-contrib-1.0b3.jar"/>
     </classpath>
   </taskdef>
+  -->
     <!-- If FLICKR is not set, or is the empty string, then set it to the Porta path: "JPEG_1200/album/index.html".  -->
   <condition property="FLICKR" value="webgallery/album/index.html">
     <or>
@@ -37,7 +40,7 @@
     <echo>Length of FLICKR prop: ${flickr.length}</echo>
     <echo>RAW_PATH: ${RAW_PATH}</echo>
     <echo>RESIZE_PATH: ${RESIZE_PATH}</echo>
-    <echo>propfile: ${propfile}</echo>
+    <echo>ClientName: ${AGENT}</echo>
     <echo>build: ${build}</echo>
   </target>
 
@@ -1044,6 +1047,9 @@
     <copy todir="${staging}/JPEG_full">
       <fileset dir="${RESIZE_PATH}/JPEG_full"/>
     </copy>
+    <copy todir="${staging}/Backup">
+      <fileset dir="${RESIZE_PATH}"/>
+    </copy>
   </target>
 
     <target name="module-make-template" description="Creates the directory structure for a file-based LabKey module.">
@@ -1115,7 +1121,7 @@
   
   <target name="copy-from-camera" depends="devenv" description="Creates the directory and copies images from camera/card into it.">
     <!--<touch file="${RAW_PATH}/fake.txt"/>-->
-	  <echo>properties:${property.file}</echo> 
+	  <!--<echo>properties:${property.file}</echo>--> 
       <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/3"/>
@@ -1168,6 +1174,9 @@
           <fileset dir="E:/DCIM/102EOS5D">
               <include name="**/*.JPG"/>
           </fileset>
+          <fileset dir="E:/DCIM/103EOS5D">
+              <include name="**/*.JPG"/>
+          </fileset>
       </copy>
 
       <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
@@ -1178,6 +1187,9 @@
               <include name="**/*.CR2"/>
           </fileset>
           <fileset dir="E:/DCIM/102EOS5D">
+              <include name="**/*.CR2"/>
+          </fileset>
+          <fileset dir="E:/DCIM/103EOS5D">
               <include name="**/*.CR2"/>
           </fileset>
       </copy>
@@ -1208,6 +1220,9 @@
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start chrome '${basedir}/${build}/${URL}/index.html'" />
         </exec>
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="/C start chrome 'https://dl.dropboxusercontent.com/u/38451689/${URL}/index.html'" />
+        </exec>		
   </target>
 
   <target name="show-porta">
@@ -1281,11 +1296,14 @@
           <fileset dir="${staging}/webgallery"/>
       </copy>
       <zip destfile="${build}/${URL}/MLS_pics.zip">
-          <zipfileset dir="${staging}/mlspics"> <!--   prefix="${URL}_MLS_pics"  -->
+          <zipfileset dir="${staging}/mlspics"> <!--  todo:  prefix="${URL}_MLS_pics"  -->
           </zipfileset>
       </zip>
       <zip destfile="${build}/${URL}/fullsize_pics.zip">
           <zipfileset dir="${staging}/JPEG_full"/> <!--   prefix="${URL}_fullsize_pics"  -->
+      </zip>
+      <zip destfile="${build}/${URL}/original_shoot.zip">
+          <zipfileset dir="${staging}/Backup"/> <!--   prefix="${URL}_fullsize_pics"  -->
       </zip>
   </target>
 

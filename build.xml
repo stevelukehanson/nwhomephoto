@@ -5,17 +5,22 @@
 
   <!-- set global properties for this build -->
   <property environment="env"/>
-  <property file="${clientprops}"/>
   <property file="${props}"/>
+  <property file="${client}"/>
   <property name="template" value="template"/>
   <property name="base.dir"  value="."/>
   <property name="build"  value="build"/>
   <property name="staging"  value="${build}\staging"/>
-  <!--<property file="build_prop_archive/2603_NE82ndSt98115.properties"/>-->
-    <!--<property name="propfile"  value="build_props_archive/build_props_test.properties"/>
-  <property file="${propfile}"/>-->
-    <!--<property name="propfile" value="test"/>
-    <loadproperties srcfile="${propfile}"/>-->
+	<loadresource property="propB">
+	  <propertyresource name="ADDRESS"/>
+	  <filterchain>
+		<tokenfilter>
+		  <filetokenizer/>
+		  <replacestring from=" " to="_"/>
+		  <replacestring from="," to=""/>
+		</tokenfilter>
+	  </filterchain>
+	</loadresource>
   <!--
   <taskdef resource="net/sf/antcontrib/antcontrib.properties">
     <classpath>
@@ -42,6 +47,7 @@
     <echo>RESIZE_PATH: ${RESIZE_PATH}</echo>
     <echo>ClientName: ${AGENT}</echo>
     <echo>build: ${build}</echo>
+    <echo>propB: ${propB}</echo>
   </target>
 
   <target name="listfiles">
@@ -1222,6 +1228,15 @@
         </exec>
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start chrome 'https://dl.dropboxusercontent.com/u/38451689/${URL}/index.html'" />
+        </exec>		
+  </target>
+
+  <target name="upload">
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="/C start chrome 'https://www.dropbox.com/home/Public/'" />
+        </exec>
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="/C start .\${build}" />
         </exec>		
   </target>
 

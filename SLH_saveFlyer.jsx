@@ -36,9 +36,11 @@ tifDoc.close(SaveOptions.DONOTSAVECHANGES);
 // JPEG
 app.activeDocument = jpgDoc;
 jpgDoc.flatten();
-jpgDoc.resizeImage(UnitValue(700,"px"),null,null,ResampleMethod.BICUBICSHARPER);
+//jpgDoc.resizeImage(UnitValue(700,"px"),null,null,ResampleMethod.BICUBICSHARPER);
+jpgDoc.resizeImage(UnitValue(700,"px"),null,null,ResampleMethod.BICUBIC);
 var saveDoc = new File(jpgFolder + "/" + jpgDoc.name);
 var saveOptions = new JPEGSaveOptions(); 
+saveOptions.quality = 9; 
 jpgDoc.saveAs(saveDoc, saveOptions, true, Extension.LOWERCASE);
 jpgDoc.close(SaveOptions.DONOTSAVECHANGES);
 

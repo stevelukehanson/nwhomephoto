@@ -38,10 +38,16 @@ function fillArea(targetDoc, x1, x2, y1, y2, r, g, b)
 }
 
 // Photos
+// Parameters are as follows: addphoto(path, pic integer, targetdoc, x1, x2, y1, y2)
 addPhoto(resizepath + "/JPEG_975", photo1, docRef, 100, 160, 1040, 775);
 addPhoto(resizepath + "/JPEG_975", photo2, docRef, 1080, 160, 2015, 770);
 addPhoto(resizepath + "/JPEG_975", photo3, docRef, 100, 820, 1045, 1465);
 addPhoto(resizepath + "/JPEG_975", photo4, docRef, 1080, 820, 2015, 1465);
+//    var folder = new Folder(resizepath + "/JPEG_975");
+//    var picArray = getFilesFunc(folder);
+//    var p5 = open(new File( picArray[photo5-1] ));
+//    p5 = p5.resizeImage(UnitValue(1200,"px"),null,null,ResampleMethod.BICUBIC);
+//    addPhoto(resizepath + "/JPEG_full", p5, docRef, 100, 1515, 2015, 2580);
 addPhoto(resizepath + "/JPEG_full", photo5, docRef, 100, 1515, 2015, 2580);
 
 // Logo

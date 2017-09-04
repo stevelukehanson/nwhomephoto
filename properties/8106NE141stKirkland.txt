@@ -1,5 +1,5 @@
 !-- Basic/Common Properties --!
-URL=8106NE141stKirkland
+URL=5922_42nd_Ave_SW_Seattle
 UPLOADURL=${URL}
 ROOT_PATH=C:/Users/steve/Pictures/RealEstate
 RAW_PATH=${ROOT_PATH}/${URL}
@@ -8,14 +8,14 @@ PTLENS_PATH=${ROOT_PATH}/${URL}/
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 SRC_PATH=
 
-ADDRESS=8106 NE 141st St, Kirkland, WA 98034
+ADDRESS=5922 42nd Ave SW, Seattle, WA 98136
 AGENT=David Marks
 PHONE=206-550-3283
 EMAIL=davidkmarks@remax.net
 FLICKR=
 JOBNAME=Photoshoot of ${ADDRESS}
-DATE=Feb 5, 2015
-SHOOTPRICE=275
+DATE=Feb 20, 2017
+SHOOTPRICE=300
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 
 !-- Flyer Properties --!

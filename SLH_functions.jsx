@@ -91,13 +91,14 @@ function batchResize3(sourcePath, sizesArray, destinationPath)
         for(j=0;j<resizeArray.length;j+=1) {
 
               var doc = open(sourceFiles[i]);
+//			  alert(sourceFiles[i]);
               if(resizeArray[j] != "full")
-                doc.resizeImage(UnitValue(resizeArray[j],"px"),null,null,ResampleMethod.BICUBIC);
+                  doc.resizeImage(UnitValue(resizeArray[j],"px"),null,null,ResampleMethod.BICUBIC);
               doc.saveName = 1001 + i;
               doc.flatten();
               //app.displayDialogs = DialogModes.NO;
               var saveFile = new File(outputFolder[j] + "/" + doc.saveName + "_" + resizeArray[j] + '.jpg')
-              saveJPEG( doc, saveFile, 10 );
+              saveJPEG( doc, saveFile, 9 );
               doc.close(SaveOptions.DONOTSAVECHANGES);
 
         }

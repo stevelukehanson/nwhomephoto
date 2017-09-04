@@ -11,7 +11,8 @@
   <property name="base.dir"  value="."/>
   <property name="build"  value="build"/>
   <property name="staging"  value="${build}\staging"/>
-	<loadresource property="propB">
+  <!--
+  <loadresource property="propB">
 	  <propertyresource name="ADDRESS"/>
 	  <filterchain>
 		<tokenfilter>
@@ -21,6 +22,7 @@
 		</tokenfilter>
 	  </filterchain>
 	</loadresource>
+  -->
   <!--
   <taskdef resource="net/sf/antcontrib/antcontrib.properties">
     <classpath>
@@ -39,6 +41,20 @@
   </condition>
   <tstamp/>
 
+  
+  <target name="help">
+  <echo>Targets:
+  - copy-from-camera - Copies from the image card to the computer. Creates a helpful folder structure for manual image editing and curation.
+  - resize - After curation, resize the images to standard pixel sizes. The resultant resized images are consumed by various next targets: luminosity, flash, web, etc.
+  - invoice - Creates a PDF invoice.
+  - web - Creates a web site and zip files for distribution of the final product.
+  - show - Opens a browser and brings up the web site, both a local and the assumed live one.
+  - update - Opens a browser (to the target upload area) and a Windows explorer to the local directory - for easy drag-and-drop. Legacy targets would perform the FTP upload, but Yahoo distinued the API, I imagine for security reasons.
+  
+  </echo>
+  </target>
+
+  
   <target name="echoprops">
     <echoproperties destfile="current.properties" format="xml"/>
     <length string="${FLICKR}" property="flickr.length" />
@@ -1053,9 +1069,11 @@
     <copy todir="${staging}/JPEG_full">
       <fileset dir="${RESIZE_PATH}/JPEG_full"/>
     </copy>
+<!--
     <copy todir="${staging}/Backup">
-      <fileset dir="${RESIZE_PATH}"/>
+      <fileset dir="${RAW_PATH}/jpg"/>
     </copy>
+-->
   </target>
 
     <target name="module-make-template" description="Creates the directory structure for a file-based LabKey module.">
@@ -1227,13 +1245,13 @@
                 <arg line="/C start chrome '${basedir}/${build}/${URL}/index.html'" />
         </exec>
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-                <arg line="/C start chrome 'https://dl.dropboxusercontent.com/u/38451689/${URL}/index.html'" />
+                <arg line="/C start chrome 'https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate/${URL}/index.html'" />
         </exec>		
   </target>
 
   <target name="upload">
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-                <arg line="/C start chrome 'https://www.dropbox.com/home/Public/'" />
+                <arg line="/C start chrome 'https://console.aws.amazon.com/s3/buckets/aws-website-hansonphotogroup-2pp1h/RealEstate/?'" />
         </exec>
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start .\${build}" />
@@ -1298,6 +1316,7 @@
       <!--<fileset file="${staging}/genericIndex.html"/>-->
       <!--<fileset file="${staging}/gallery.cmd"/>-->
       <fileset file="${staging}/gallery.html"/>
+      <fileset file="${staging}/logobanner.jpg"/>
       <!--<fileset file="${staging}/simpleGallery.html"/>-->
       <!--<fileset file="${staging}/invoice.txt"/>
       <fileset file="${staging}/invoice.php"/>-->
@@ -1317,9 +1336,11 @@
       <zip destfile="${build}/${URL}/fullsize_pics.zip">
           <zipfileset dir="${staging}/JPEG_full"/> <!--   prefix="${URL}_fullsize_pics"  -->
       </zip>
+<!--
       <zip destfile="${build}/${URL}/original_shoot.zip">
-          <zipfileset dir="${staging}/Backup"/> <!--   prefix="${URL}_fullsize_pics"  -->
+          <zipfileset dir="${staging}/Backup"/> 
       </zip>
+-->
   </target>
 
   <target name="ftp-upload-choboji" description="Upload to www.stevelukehanson.com/choboji">
@@ -1557,7 +1578,8 @@
     <tstamp>
       <format property="TODAY_GB" pattern="MMM d, yyyy" locale="en,GB"/>
     </tstamp>
-    <replace file="build_props.jsx" token="DATE" value="${TODAY_GB}"/>
+    <!--<replace file="build_props.jsx" token="DATE" value="${TODAY_GB}"/>-->
+    <replace file="build_props.jsx" token="DATE" value="${DATE}"/>
     <replace file="build_props.jsx" token="SHOOTPRICE" value="${SHOOTPRICE}"/>
     <replace file="build_props.jsx" token="HEADLINE1" value="${HEADLINE1}"/>
     <replace file="build_props.jsx" token="HEADLINE2" value="${HEADLINE2}"/>

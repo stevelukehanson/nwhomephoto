@@ -23,7 +23,7 @@ var docRef = open(new File("C:\\Users\\steveh\\Documents\\Adobe Scripts\\nwhomep
 // Company
 addLineText(docRef, 50, 130, "company", '8494C3', "Hanson Photo Group", 28, false, false, Justification.LEFT);
 // Name
-addLineText(docRef, 4, 263, "name", '000000', "Steve Hanson", 12, false, false, Justification.LEFT);
+addLineText(docRef, 4, 263, "name", '000000', "Stephen Hanson", 12, false, false, Justification.LEFT);
 
 // Date
 addLineText(docRef, 1835, 205, "date", '000000', date, 12, false, false, Justification.LEFT);
@@ -43,7 +43,7 @@ addLineText(docRef, 4, 774, "phone", '000000', phone, 12, false, false, Justific
 addLineText(docRef, 4, 837, "email", '000000', email, 12, false, false, Justification.LEFT);
 // photos link 
 addLineText(docRef, 6, 1950, "url", '000000', "photos at:", 12, false, false, Justification.LEFT);
-addLineText(docRef, 6, 2018, "url", '000000', "https://dl.dropboxusercontent.com/u/38451689/" + url + "/index.html", 12, false, false, Justification.LEFT);
+addLineText(docRef, 6, 2018, "url", '000000', "https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate/" + url + "/index.html", 8, false, false, Justification.LEFT);
 // paypall
 addLineText(docRef, 6, 2210, "paypal", '000000', "Please mail check, or send payment via PayPal to:", 12, false, false, Justification.LEFT);
 addLineText(docRef, 6, 2280, "paypalemail", '000000', "stevelukehanson@gmail.com", 12, false, false, Justification.LEFT);

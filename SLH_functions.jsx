@@ -45,7 +45,7 @@ function batchResize2(sourcePath, sizesArray, destinationPath)
                   doc.flatten();
                   //app.displayDialogs = DialogModes.NO;
                   var saveFile = new File(outputFolder[j] + "/" + doc.saveName + "_" + resizeArray[j] + '.jpg')
-                  saveJPEG( doc, saveFile, 10 );
+                  saveJPEG( doc, saveFile, 7 );
                   doc.close(SaveOptions.DONOTSAVECHANGES);
 
 			}

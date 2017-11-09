@@ -103,7 +103,7 @@ addLineText(docRef, 1390, 2650, "website", 'ffffff', website, 12, false, false, 
 // Presented By
 addLineText(docRef, 75, 2595, "presentedby", '000000', presentedby, 12, false, false, Justification.LEFT);
 // MLS
-addLineText(docRef, 75, 2520, "MLS Number 2", '000000', maintext, 14, true, true, Justification.LEFT);
+addLineText(docRef, 75, 2520, "MLS Number", '000000', mls, 14, true, true, Justification.LEFT);
 
 function addLineText(targetDoc, x1, y1, layername, hexColor, text, fontsize, fauxbold, fauxitalic, justification)
 {
@@ -131,7 +131,7 @@ var newTextLayer = docRef.artLayers.add();
 newTextLayer.kind = LayerKind.TEXT;
 newTextLayer.name = "maintext";
 //newTextLayer.textItem.contents = "Great price for so much space on Mercer Island. Private driveway leads to two car attached garage with room for RV or boat storage. The interior is clean and spacious with three bedrooms all on one level. Huge kitchen with large eating area. Formal dining room, large living room and separate family room. Two fireplaces. Gas heat with newer furnace. Large lot with sunny, western exposure. Private backyard has sunny SW exposure and is level and fully fenced. Easy commute to Seattle or Bellevue.";
-newTextLayer.textItem.contents = "-- main text here --";
+newTextLayer.textItem.contents = maintext;
 newTextLayer.textItem.kind=TextType.PARAGRAPHTEXT;
 newTextLayer.textItem.position = Array(75, 1705);
 // width and height values below are rendered at x3 value. 150 pixels here become 450 pixels plus in the flyer  Why?
@@ -152,7 +152,7 @@ var newTextLayer = docRef.artLayers.add();
 newTextLayer.name = "boxtext";
 newTextLayer.kind = LayerKind.TEXT;
 newTextLayer.textItem.kind=TextType.PARAGRAPHTEXT;
-newTextLayer.textItem.position = Array(1385, 1715);
+newTextLayer.textItem.position = Array(1385, 1662);
 // width and height values below are rendered at x3 value. 150 pixels here become 450 pixels plus in the flyer  Why?
 newTextLayer.textItem.width = 150;
 newTextLayer.textItem.height = 75;

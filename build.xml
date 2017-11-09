@@ -78,7 +78,7 @@
   <target name="clean" depends="clean-web,clean-raw,clean-resize" description="cleans up all of the build artifacts, ps and web artifacts, returning to its original template state.">
   </target>
  
-  <target name="web" depends="clean-staging,clean-web,staging,generate-gallery,string-replace,copy-to-build" description="clean the web pages, builds the web pages, but no ftp">
+  <target name="web" depends="clean-web,staging,generate-gallery,string-replace,copy-to-build,clean-staging" description="clean the web pages, builds the web pages, but no ftp">
   </target>
   <target name="clean-job" description="cleans up all of the build artifacts, returning the directory to its original template state.">
     <delete dir="${staging}"/>
@@ -899,6 +899,7 @@
       <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
           <available file="build_props.jsx"/>
       </waitfor>
+	<mkdir dir="build/${URL}"/>
 	<!-- ****** Call the JS script via an intermediary cmd file. (a pain, but i can't get Ant to call the javascript directly.) ****** -->
     <exec executable="cmd">
       <arg value="/c"/>
@@ -1147,9 +1148,12 @@
     <!--<touch file="${RAW_PATH}/fake.txt"/>-->
 	  <!--<echo>properties:${property.file}</echo>--> 
       <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/mp4"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/3"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/7"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/9"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/handheld"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/flash"/>
       <mkdir dir="${ROOT_PATH}/${URL}/best"/>
       <mkdir dir="${ROOT_PATH}/${URL}/luminosity-layers"/>
@@ -1179,6 +1183,14 @@
               <include name="**/*.JPG"/>
           </fileset>
       </copy>
+      <copy todir="${ROOT_PATH}/${URL}/mp4" verbose="true" failonerror="no">
+          <fileset dir="D:/DCIM/100EOS5D">
+              <include name="**/*.MP4"/>
+          </fileset>
+          <fileset dir="D:/DCIM/101EOS5D">
+              <include name="**/*.MP4"/>
+          </fileset>
+      </copy>
       <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
           <fileset dir="D:/DCIM/100EOS5D">
               <include name="**/*.CR2"/>
@@ -1200,6 +1212,20 @@
           </fileset>
           <fileset dir="E:/DCIM/103EOS5D">
               <include name="**/*.JPG"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/mp4" verbose="true" failonerror="no">
+          <fileset dir="E:/DCIM/100EOS5D">
+              <include name="**/*.MP4"/>
+          </fileset>
+          <fileset dir="E:/DCIM/101EOS5D">
+              <include name="**/*.MP4"/>
+          </fileset>
+          <fileset dir="E:/DCIM/102EOS5D">
+              <include name="**/*.MP4"/>
+          </fileset>
+          <fileset dir="E:/DCIM/103EOS5D">
+              <include name="**/*.MP4"/>
           </fileset>
       </copy>
 
@@ -1240,6 +1266,39 @@
 
   </target>
 
+  <target name="copy" depends="devenv" description="Creates the directory and copies images from camera/card into it.">
+      <input message="*** Please Enter Card Letter ***:" addproperty="CARD" />
+      <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/mp4"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/3"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/7"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/9"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/handheld"/>
+      <mkdir dir="${LUMINOSITY_PATH}"/>
+<!--
+      <mkdir dir="${FLASH_PATH}"/>
+-->
+      <mkdir dir="${ROOT_PATH}/${URL}/best"/>
+      <copy todir="${ROOT_PATH}/${URL}/jpg/7" flatten="true" verbose="true" failonerror="no">
+          <fileset dir="${CARD}:/">
+              <include name="**/*.JPG"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/cr2" flatten="true" verbose="true" failonerror="no">
+          <fileset dir="${CARD}:/">
+              <include name="**/*.CR2"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/mp4" flatten="true" verbose="true" failonerror="no">
+          <fileset dir="${CARD}:/">
+              <include name="**/*.MP4"/>
+          </fileset>
+      </copy>
+  </target>
+
+  
+  
   <target name="show">
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start chrome '${basedir}/${build}/${URL}/index.html'" />
@@ -1277,6 +1336,7 @@
     <replace file="${staging}/index.html" token="_URL_" value="${URL}"/>
     <replace file="${staging}/index.html" token="_FLICKR_" value="${FLICKR}"/>
     <replace file="${staging}/index.html" token="_DATE_" value="${TODAY}"/>
+    <replace file="${staging}/index.html" token="_VIDEO_" value="${VIDEO}"/>
 
       <replace file="${staging}/gallery.html" token="_ADDRESS_" value="${ADDRESS}"/>
       <replace file="${staging}/gallery.html" token="_AGENT_" value="${AGENT}"/>
@@ -1579,6 +1639,7 @@
       <format property="TODAY_GB" pattern="MMM d, yyyy" locale="en,GB"/>
     </tstamp>
     <!--<replace file="build_props.jsx" token="DATE" value="${TODAY_GB}"/>-->
+    <replace file="build_props.jsx" token="VIDEO" value="${VIDEO}"/>
     <replace file="build_props.jsx" token="DATE" value="${DATE}"/>
     <replace file="build_props.jsx" token="SHOOTPRICE" value="${SHOOTPRICE}"/>
     <replace file="build_props.jsx" token="HEADLINE1" value="${HEADLINE1}"/>
@@ -1590,6 +1651,7 @@
     <replace file="build_props.jsx" token="PHOTO4" value="${PHOTO4}"/>
     <replace file="build_props.jsx" token="PHOTO5" value="${PHOTO5}"/>
     <replace file="build_props.jsx" token="LOGO" value="${LOGO}"/>
+    <replace file="build_props.jsx" token="MLS" value="${MLS}"/>
     <replace file="build_props.jsx" token="MAINTEXT" value="${MAINTEXT}"/>
     <replace file="build_props.jsx" token="BOXTEXT" value="${BOXTEXT}"/>
     <replace file="build_props.jsx" token="HOUSEPRICE" value="${HOUSEPRICE}"/>

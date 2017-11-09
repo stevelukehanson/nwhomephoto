@@ -17,8 +17,15 @@
 var strtRulerUnits = app.preferences.rulerUnits;
 app.preferences.rulerUnits = Units.PIXELS;
 
+////////////////////////////////////////   How remove the hard coding here???  todo    //// Surprisingly difficult   /////////////////
 //  Open the invoice template
 var docRef = open(new File("C:\\Users\\steveh\\Documents\\Adobe Scripts\\nwhomephoto\\template\\invoice.psd"));
+
+//var sourceFolder = new Folder(rootpath + "\\" + url);
+//var fileRef = new File(rootpath + "\\" + url + "\\invoice.psd");
+//var docRef = app.open(fileRef);
+//alert(rootpath +" "+ url +" "+ fileRef +" "+ docRef +" "+ $.fileName);
+
 
 // Company
 addLineText(docRef, 50, 130, "company", '8494C3', "Hanson Photo Group", 28, false, false, Justification.LEFT);
@@ -75,6 +82,7 @@ function addLineText(targetDoc, x1, y1, layername, hexColor, text, fontsize, fau
 // PDF
 activeDocument.flatten();
 saveFile = new File(buildpath + "/" + url + "/invoice.pdf");
+//alert(buildpath);
 saveOptions = new PDFSaveOptions();  
       //saveOptions.jpegQuality = 3;  
       saveOptions.layers = false; 

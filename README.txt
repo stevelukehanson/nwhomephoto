@@ -1,12 +1,14 @@
- ---------------------------
-| Image Compositor Workflow |
- ---------------------------
+ --------------------------------
+| Photoshop Automation Workflows |
+ --------------------------------
 
-This software composites images in a number of ways:
+This software automates a number of Photoshop tasks: 
 
-- HDR, which composites multiple images into one single, tonally hybrid image.
+- Batch Resizing of images
+- Creating client-facing web pages
 - Flash layers, which pastes a flash-illuminated image over a base non-flash image.
 - Luminosity layers, which pastes a tungsten-illuminated image over a base sunlight-illuminated image.
+- HDR, which composites multiple images into one single, tonally hybrid image.
 
 It also provides utility functions (such as batch resizing), necessary when herding lots of images around into some finished group.
 
@@ -33,9 +35,9 @@ It will run the flash action using the properties as found in "AngelineOct2015.t
     
       ant -propertyfile=archive/somejob.properties copy-from-camera
 
-    ii. Process the images:
+    ii. Process the images into "luminosity layers":
 
-      ant -propertyfile=archive/somejob.properties photomatix-12 ptlens
+      ant -propertyfile=archive/somejob.properties luminosity
 
     iii. Manually adjust images for color, exposure, if necessary.
 
@@ -67,16 +69,9 @@ It will run the flash action using the properties as found in "AngelineOct2015.t
 
 Required Resources:
 -------------------
-Photoshop CS3 (- upgrading to CS6 was painless). Comes with a JS scripting API that we will call into.
-PTLens (optional) - for correcting lens distortions such as "pillow shaped" windows.
-Photomatix - we call into the "API" to build composite images from multiple exposures.
-The JavaScript scripts that loop through the CR2 files, to make TIFFs, which then loop through these to make JPEGs
+Photoshop CS3 or higher (- upgrading to CS6 was painless). Comes with a JS scripting API that we will call into.
 Ant 
 Java SDK
-web site template HTML files
-The Ant build file that runs the show, utility functions, image compositing, instantiates the web site template and uploads the files to a server, etc.
-[currently broken] For the Ant FTP task: commons-net.jar (http://jakarta.apache.org/commons/net/index.html) and jakarta-oro-2.0.8.jar (http://jakarta.apache.org/oro/)
-(todo: broken since yahoo went to FTP over SSL - the world could use a high-level API for this.)
 
 Config:
 -------

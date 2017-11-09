@@ -17,15 +17,12 @@
 var strtRulerUnits = app.preferences.rulerUnits;
 app.preferences.rulerUnits = Units.PIXELS;
 
-////////////////////////////////////////   How remove the hard coding here???  todo    //// Surprisingly difficult   /////////////////
-//  Open the invoice template
-var docRef = open(new File("C:\\Users\\steveh\\Documents\\Adobe Scripts\\nwhomephoto\\template\\invoice.psd"));
-
-//var sourceFolder = new Folder(rootpath + "\\" + url);
-//var fileRef = new File(rootpath + "\\" + url + "\\invoice.psd");
-//var docRef = app.open(fileRef);
-//alert(rootpath +" "+ url +" "+ fileRef +" "+ docRef +" "+ $.fileName);
-
+// Open the invoice template
+// Old Hard Coded Version
+// var docRef = open(new File("C:\\Adobe CS6\\nwhomephoto\\template\\invoice.psd"));
+// New relative path version, relative to the JSX file.
+var parentFolder = File($.fileName).parent;  // The parent folder for this very JSX file.
+var docRef = open(new File(parentFolder + "/template/invoice.psd"));  // open the invoice.psd file. 
 
 // Company
 addLineText(docRef, 50, 130, "company", '8494C3', "Hanson Photo Group", 28, false, false, Justification.LEFT);

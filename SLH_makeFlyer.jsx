@@ -44,12 +44,14 @@ addPhoto(resizepath + "/JPEG_975", photo2, docRef, 1075, 2050, 435, 1085);
 addPhoto(resizepath + "/JPEG_640", photo3, docRef, 65, 705, 1125, 1555);
 addPhoto(resizepath + "/JPEG_640", photo4, docRef, 735, 1375, 1125, 1555);
 addPhoto(resizepath + "/JPEG_640", photo5, docRef, 1410, 2050, 1125, 1555);
-// Logo
-if(logo)
-//addLogo("C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources", "logo.psd", docRef, 1350, 2045, 2090, 2595);
-   addLogo(logo, "logo.psd", docRef, 1350, 2045, 2090, 2595);
-else
-   alert('No logo. Check that the path to the logo file is correct.');
+
+// New relative path version, relative to the JSX file.
+var parentFolder = File($.fileName).parent;  // The parent folder for this very JSX file.
+var logoFolder = parentFolder + "/resources";  // The folder where the logo image lives.
+addLogo(logoFolder, "logo.psd", docRef, 1350, 2045, 2090, 2595);
+
+// Old absolute path version
+//addLogo("C:/Adobe CS6/nwhomephoto/resources", "logo.psd", docRef, 1350, 2045, 2090, 2595);
    
 // General function that pastes one doc into another as a layer.
 function addPhoto (sourcefolder, pic, pastedoc, x1, x2, y1, y2)

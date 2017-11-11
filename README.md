@@ -40,8 +40,8 @@ Here are the **details** for each step:
 **1. Make a .txt properties file (Manual)**
 
 - Go to the /properties folder and clone an existing .txt file. 
--- Make the name of the file something relevant to the job, such as "123 Ceder Ave.txt"
--- Open the .txt file and modify the property values to descibe the current job, see example
++ Make the name of the file something relevant to the job, such as "123 Ceder Ave.txt"
++ Open the .txt file and modify the property values to descibe the current job, see example
 -- Make sure the URL property is new and unique, and does not contain spaces:
 ```
 !-- Basic/Common Properties --!
@@ -103,8 +103,8 @@ ant -propsD=properties/MYJOB.txt web
 ```
 **8. Preview and Ship (Semi-Automated)**
 - Preview the web site and ship it, that is, upload it.
--- show: This task opens the website in a browser for previewing.
--- upload: This task sets up a 'drag-and-drop' upload to Amazon S3. It opens directory to be upload (or more exactly the 'build' directory) and the target cloud location (a Amazon S3 bucket).
+++ show: This task opens the website in a browser for previewing.
+++ upload: This task sets up a 'drag-and-drop' upload to Amazon S3. It opens directory to be upload (or more exactly the 'build' directory) and the target cloud location (a Amazon S3 bucket).
 ```
 ant -propsD=properties/MYJOB.txt show
 ant -propsD=properties/MYJOB.txt upload

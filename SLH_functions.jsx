@@ -150,10 +150,16 @@ function getFilesFunc(sourceFolder) {
 
 function signalComplete(fileName){
 
-        var doc = app.open(File("C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources/kitten.jpg"));
-		var saveFile = new File("C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/build/" + fileName);
-		saveJPEG( doc, saveFile, 1 );
-		app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    //Old hard coded version.    
+    //var doc = app.open(File("C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources/kitten.jpg"));
+	//var saveFile = new File("C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/build/" + fileName);
+
+    //New relative path version.
+    var parentFolder = File($.fileName).parent;                        // The parent folder for this very JSX file.
+	var doc = open(new File(parentFolder + "/resources/kitten.jpg"));  // open the kitten/signal file. 
+    var saveFile = new File(parentFolder + "/build/" + fileName);      // save the kitten/signal file in the build folder.	
+	saveJPEG( doc, saveFile, 1 );
+	app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 }
 
 

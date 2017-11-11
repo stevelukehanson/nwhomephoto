@@ -1275,8 +1275,10 @@
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/7"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/9"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/handheld"/>
-      <mkdir dir="${LUMINOSITY_PATH}"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/luminosity-layers"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/flash-layers"/>
 <!--
+      <mkdir dir="${LUMINOSITY_PATH}"/>
       <mkdir dir="${FLASH_PATH}"/>
 -->
       <mkdir dir="${ROOT_PATH}/${URL}/best"/>
@@ -1293,6 +1295,11 @@
       <copy todir="${ROOT_PATH}/${URL}/mp4" flatten="true" verbose="true" failonerror="no">
           <fileset dir="${CARD}:/">
               <include name="**/*.MP4"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/mp4" flatten="true" verbose="true" failonerror="no">
+          <fileset dir="${CARD}:/">
+              <include name="**/*.MOV"/>
           </fileset>
       </copy>
   </target>

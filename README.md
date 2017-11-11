@@ -63,6 +63,11 @@ DATE=Nov 9, 2017
 
 **2. Copy images from the card to the computer (Automated)**
 
+- Open a Windows command line shell.
+- cd to the nwhomephoto directory, for example, 
+```
+>cd C:\Adobe Scripts\nwhomephoto
+```
 - Run the following Ant command:
 ```
 ant -Dprops=properties/MYJOB.txt copy-from-camera
@@ -121,6 +126,10 @@ Required Resources:
 - Photoshop CS3 or higher (- upgrading to CS6 was painless). Comes with a JS scripting API that we will call into.
 - Ant 
 - Java SDK
+
+**Download and Intall** 
+- Download a zip file of nwhomephoto.zip from GitHub.
+- Unzip in somewhere sensible -- somewhere where you want to process and build your shippable jobs. In some cases, you may be forced to unzip it in an Adobe "safe script area".
 
 Config:
 -------

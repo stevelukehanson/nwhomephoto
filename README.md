@@ -24,16 +24,16 @@ More details below on these Ant tasks...
 
 From a **bird's eye view**, the whole workflow looks like this:
 
-1. Make a .txt properties file that describes the job. (Manual)
-1. Copy images from the card to the computer. (Automated)
-1. Manual Processes with Photomatix, Lightroom, and/or Photoshop. (Manual)
-1. Combine "Lights On/Lights Off" images into Luminosity Layers. (Semi-Automated)
-1. Assemble images to ship into the 'best' folder. (Manual)
-1. Finalize images with Photoshop and Lightroom. (Manual)
-1. Resize images into different pixel sizes. (Automated)
-1. Make a client-facing web site  (Automated)
-1. Make an invoice. (Automated)
-1. Upload to Amazon S3. (Semi-Automated)
+- Make a .txt properties file that describes the job. (Manual)
+- Copy images from the card to the computer. (Automated)
+- Manual Processes with Photomatix, Lightroom, and/or Photoshop. (Manual)
+- Combine "Lights On/Lights Off" images into Luminosity Layers. (Semi-Automated)
+- Assemble images to ship into the 'best' folder. (Manual)
+- Finalize images with Photoshop and Lightroom. (Manual)
+- Resize images into different pixel sizes. (Automated)
+- Make a client-facing web site  (Automated)
+- Make an invoice. (Automated)
+- Upload to Amazon S3. (Semi-Automated)
 
 Here are the **details** for each step:
 
@@ -62,48 +62,35 @@ ant -Dprops=properties/MYJOB.txt copy-from-camera
 ```
 ant -Dprops=properties/MYJOB.txt luminosity
 ```
-
-... to be continued...
-
-
-1 OLD Version of the Doc
-
-Run Ant tasks to create processed image artifacts, in photomatix, ptlens etc.  Also package all of the artifacts as websites for upload.
-    
-    A typical workflow:
-
-    i. Set the environment:
-    
-      ant -propertyfile=archive/somejob.properties copy-from-camera
-
-    ii. Process the images into "luminosity layers":
-
-      ant -propertyfile=archive/somejob.properties luminosity
-
-    iii. Manually adjust images for color, exposure, if necessary.
-
-    iv. Package as a website:
-
-      ant -propertyfile=archive/somejob.properties resize web invoice show
-
-3. Also make a flyer.  See the fields available in the .properties file.
-
-   The following generates a flyer from the fields you specify.
-
-      ant -propertyfile=archive/somejob.properties make-flyer
-
-   Then manually edit the flyer.
-
-   Finally save the flyer in different forms, file types, particularly print quality JPEG and PDF          		
-
-      ant -propertyfile=archive/somejob.properties save-flyer
-
-4. Upload to a web site.
-
-   These ant targets are broken since the time Yahoo stopped supporting FTP sans SSL (sometimes called "FTPS").
-
-   Currently using Filezilla to manually manage online content, hoping that they will expose a high-level api for FTP over SSL.
-
+**6. Batch Resize. (Automated)**
+- Resizes the images into four sizes: 640px, 975px, 1024px, full-sized px
+- Copy photos you plan to ship into the 'best' directory.
+- Re-order them as you want them to be presented to the client.
+- Re-named them so that the re-ordering gets "baked in".
+- Run the following ant task:
+```
+ant -Dprops=properties/MYJOB.txt resize
+```
+**7. Web Site. (Automated)**
+- Makes a web site suitable for posting online and for shipping to the client via URL.
+- Assumes you have resized pics.
+- Run the following Ant task:
+```
+ant -propsD=properties/MYJOB.txt web
+```
+**8. Preview and Ship (Automated)**
+- Preview the web site and ship it, that is, upload it.
+-- show: This task opens the website in a browser for previewing.
+-- upload: This task sets up a 'drag-and-drop' upload to Amazon S3. It opens directory to be upload (or more exactly the 'build' directory) and the target cloud location (a Amazon S3 bucket).
+```
+ant -propsD=properties/MYJOB.txt show
+ant -propsD=properties/MYJOB.txt upload
+```
+**TIPS and TRICKS**
+You can string along the fully automated tasks, for example, you can run these tasks in sequence:
+'''
+ant -propsD=properties/MYJOB.txt resize web invoice show upload
+'''
  --------------------------
 | To Install This Software |
  --------------------------
@@ -116,11 +103,11 @@ Java SDK
 
 Config:
 -------
-Photoshop requires the javascript source files (the ones that call into Photoshop) to be located in a 'safe haven', for example, 
+Photoshop requires, at least sometimes, the javascript source files (the ones that call into Photoshop) to be located in a 'safe haven', for example, 
 
 C/users/steveh/Documents/Adobe Scripts.  
 
-Photoshop won't run scripts that are located outside this location -- I assume because these scripts can see and directly operate on the file system?
+Photoshop won't run scripts that are located outside this location -- I assume because these scripts can see and directly operate on the file system? Also: as of Nov 2017 this requirement seems to have been lifted, as I have ignored this path and successfully installed on other machines.
 
 set ANT_HOME and ANT_HOME/bin on the PATH
 set JAVA_HOME and JAVA_HOME/bin on PATH

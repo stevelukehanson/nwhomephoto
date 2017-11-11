@@ -40,9 +40,9 @@ Here are the **details** for each step:
 **1. Make a .txt properties file (Manual)**
 
 - Go to the /properties folder and clone an existing .txt file. 
-+ Make the name of the file something relevant to the job, such as "123 Ceder Ave.txt"
-+ Open the .txt file and modify the property values to descibe the current job, see example
--- Make sure the URL property is new and unique, and does not contain spaces:
+- Make the name of the file something relevant to the job, such as "123 Ceder Ave.txt"
+- Open the .txt file and modify the property values to descibe the current job, see example
+- Make sure the URL property is new and unique, and does not contain spaces:
 ```
 !-- Basic/Common Properties --!
 URL=6116_127th_Pl_SE_Bellevue
@@ -143,4 +143,3 @@ set ANT_HOME and ANT_HOME/bin on the PATH
 set JAVA_HOME and JAVA_HOME/bin on PATH
 
 (Running devEnv.cmd will do the above.)
-

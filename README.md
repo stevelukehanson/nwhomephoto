@@ -26,8 +26,8 @@ From a **bird's eye view**, the whole workflow looks like this:
 
 - Make a .txt properties file that describes the job. (Manual)
 - Copy images from the card to the computer. (Automated)
-- Manual Processes with Photomatix, Lightroom, and/or Photoshop. (Manual)
-- Combine "Lights On/Lights Off" images into Luminosity Layers. (Semi-Automated)
+- Manually Process with Photomatix, Lightroom, and/or Photoshop. (Manual)
+- Combine "Lights On/Lights Off" image pairs into single images. (Semi-Automated)
 - Assemble images to ship into the 'best' folder. (Manual)
 - Finalize images with Photoshop and Lightroom. (Manual)
 - Resize images into different pixel sizes. (Automated)
@@ -78,7 +78,7 @@ ant -Dprops=properties/MYJOB.txt resize
 ```
 ant -propsD=properties/MYJOB.txt web
 ```
-**8. Preview and Ship (Automated)**
+**8. Preview and Ship (Semi-Automated)**
 - Preview the web site and ship it, that is, upload it.
 -- show: This task opens the website in a browser for previewing.
 -- upload: This task sets up a 'drag-and-drop' upload to Amazon S3. It opens directory to be upload (or more exactly the 'build' directory) and the target cloud location (a Amazon S3 bucket).
@@ -86,20 +86,23 @@ ant -propsD=properties/MYJOB.txt web
 ant -propsD=properties/MYJOB.txt show
 ant -propsD=properties/MYJOB.txt upload
 ```
+
 **TIPS and TRICKS**
-You can string along the fully automated tasks, for example, you can run these tasks in sequence:
-'''
+
+You can string along many tasks, for example, you can run these tasks in sequence:
+```
 ant -propsD=properties/MYJOB.txt resize web invoice show upload
-'''
- --------------------------
+```
+
+--------------------------
 | To Install This Software |
  --------------------------
 
 Required Resources:
 -------------------
-Photoshop CS3 or higher (- upgrading to CS6 was painless). Comes with a JS scripting API that we will call into.
-Ant 
-Java SDK
+- Photoshop CS3 or higher (- upgrading to CS6 was painless). Comes with a JS scripting API that we will call into.
+- Ant 
+- Java SDK
 
 Config:
 -------

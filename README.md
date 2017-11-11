@@ -40,7 +40,25 @@ Here are the **details** for each step:
 **1. Make a .txt properties file (Manual)**
 
 - Go to the /properties folder and clone an existing .txt file. 
-- Make sure the URL property is new and unique.
+-- Make the name of the file something relevant to the job, such as "123 Ceder Ave.txt"
+-- Open the .txt file and modify the property values to descibe the current job, see example
+-- Make sure the URL property is new and unique, and does not contain spaces:
+```
+!-- Basic/Common Properties --!
+URL=6116_127th_Pl_SE_Bellevue
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=6116 127th Pl SE, Bellevue, WA
+AGENT=Mason Hwu
+PHONE=206-335-1778
+EMAIL=realestatebymason@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=Nov 9, 2017
+```
 - (Gory details, don't worry if this makes no sense: This .txt file is parsed by ANT, which in turn generates a Javascript properties file for the scripts to refer to.)
 
 **2. Copy images from the card to the computer (Automated)**

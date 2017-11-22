@@ -1,6 +1,4 @@
- --------------------------------
-| Photoshop Automation Workflows |
- --------------------------------
+# Photoshop Automation Workflows 
 
 This software automates a number of Photoshop tasks: 
 
@@ -18,9 +16,7 @@ The software is run from the command line, via Ant tasks.  The following example
 ```
 More details below on these Ant tasks...
 
- -------------------------------------------
-| The Big Workflow: From Camera to Web Site |
- -------------------------------------------
+# The Big Workflow: From Camera to Web Site 
 
 From a **bird's eye view**, the whole workflow looks like this:
 
@@ -117,13 +113,11 @@ You can string along many tasks, for example, you can run these tasks in sequenc
 ant -propsD=properties/MYJOB.txt resize web invoice show upload
 ```
 
---------------------------
-| To Install This Software |
- --------------------------
+# To Install This Software 
 
 Required Resources:
 -------------------
-- Photoshop CS3 or higher (- upgrading to CS6 was painless). Comes with a JS scripting API that we will call into.
+- Photoshop CS3 or higher (- upgrading to CS6, and later, was painless). Comes with a JS scripting API that we will call into.
 - Ant 
 - Java SDK
 
@@ -143,6 +137,10 @@ set ANT_HOME and ANT_HOME/bin on the PATH
 set JAVA_HOME and JAVA_HOME/bin on PATH
 
 (Running devEnv.cmd will do the above.)
+
+## Install Bugs
+
+You may run into some absoulate paths/hard coded paths when installing on a new machine. I have endeavored to root these out, but there maybe some lingering still.
 
 # Properties File Reference
 

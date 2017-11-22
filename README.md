@@ -1,6 +1,8 @@
 # Photoshop Automation Workflows 
 
-This software automates a number of Photoshop tasks: 
+Processing images in Photoshop is an essentially manual activity: you are making lots of individual decions about different photos, and implementing changes in a way that can't be "canned". But many steps are routine and able to be captured by an automated process: resizeing a batch of photos, creating zip files, galleries, websites, adding such-and-such Photoshop layers.
+
+This software automates a number of these image handling tasks:
 
 - Copying images files from the camera card to the computer (in a nice, organized way).
 - Luminosity layers, which pastes a tungsten-illuminated image over a base sunlight-illuminated image.
@@ -18,7 +20,7 @@ More details below on these Ant tasks...
 
 # The Big Workflow: From Camera to Web Site 
 
-From a **bird's eye view**, the whole workflow looks like this:
+From a **bird's eye view**, the whole workflow looks like this, a series of mixed manual and automated tasks: :
 
 - Make a .txt properties file that describes the job. (Manual)
 - Copy images from the card to the computer. (Automated)

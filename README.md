@@ -156,7 +156,7 @@ Some import points:
 
 Sample Properties File
 
-'''
+```
 !-- Basic/Common Properties --!
 !-- URL is the basic namespacing property. --!
 URL=temp  
@@ -204,6 +204,6 @@ PHOTOGRAPHER_ADDR_1=917 Broadway E
 PHOTOGRAPHER_ADDR_2=Seattle, WA 98102
 PHOTOGRAPHER_PH=(206)898-0444
 PHOTOGRAPHER_E=stevelukehanson@gmail.com
-'''
+```
 
 

@@ -1,4 +1,5 @@
 !-- Basic/Common Properties --!
+!-- URL is the basic namespacing property. --!
 URL=temp
 ROOT_PATH=C:/Users/steve/Pictures/RealEstate
 RAW_PATH=${ROOT_PATH}/${URL}
@@ -6,11 +7,13 @@ RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
 
+!-- Job Properties --!
+!-- These conrol the webpage and the invoice.--!
 ADDRESS=2241 13th Ave W, Seattle, WA
 AGENT=Mary Orvis / Jane Orvis
 PHONE=(206) 619-2000 / (206) 679-5901
 EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
-FLICKR=
+FLICKR= 
 JOBNAME=Photoshoot of ${ADDRESS}
 SHOOTPRICE=200
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
@@ -33,5 +36,15 @@ CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
 WEBSITE=www.OrvisAndOrvisRealEstate.com
 PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
 LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+
+!-- Photographer Properties --!
+!-- todo: In development, these properties can be used to completely generalize the invoice. --!
+!-- todo: Notice that you can reuse 'ADDRESS' anywhere to the left of the '=' sign, as it will suffer string substitution by the Ant property ADDRESS defined above. --!
+PHOTOGRAPHER_NAME=Stephen Hanson
+PHOTOGRAPHER_ADDR_1=917 Broadway E
+PHOTOGRAPHER_ADDR_2=Seattle, WA 98102
+PHOTOGRAPHER_PH=(206)898-0444
+PHOTOGRAPHER_E=stevelukehanson@gmail.com
+
 
 

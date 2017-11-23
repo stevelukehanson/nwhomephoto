@@ -1001,7 +1001,7 @@
   </target>
   
   
-  <target name="flyer-save" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+  <target name="flyer-save" depends="staging,make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
     <replace file="${staging}/index.html" token="&lt;!-- FLYER -->" value="HI"/>
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
     <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
@@ -1019,6 +1019,7 @@
     </waitfor>
     <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
     <delete file="build_props.jsx"/>
+    <antcall target="clean-staging"/>
     <echo>flyer done!!!</echo>  
   </target>
 
@@ -1665,6 +1666,11 @@
     <replace file="build_props.jsx" token="CONTACT" value="${CONTACT}"/>
     <replace file="build_props.jsx" token="WEBSITE" value="${WEBSITE}"/>
     <replace file="build_props.jsx" token="PRESENTEDBY" value="${PRESENTEDBY}"/>
+    <replace file="build_props.jsx" token="PHOTOGRAPHERNAME" value="${PHOTOGRAPHER_NAME}"/>
+    <replace file="build_props.jsx" token="PHOTOGRAPHERADDR1" value="${PHOTOGRAPHER_ADDR_1}"/>
+    <replace file="build_props.jsx" token="PHOTOGRAPHERADDR2" value="${PHOTOGRAPHER_ADDR_2}"/>
+    <replace file="build_props.jsx" token="PHOTOGRAPHERE" value="${PHOTOGRAPHER_E}"/>
+    <replace file="build_props.jsx" token="PHOTOGRAPHERPH" value="${PHOTOGRAPHER_PH}"/>
     <replace file="build_props.jsx" token="\" value="/"/>
 </target>
 

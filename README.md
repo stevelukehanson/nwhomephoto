@@ -1,8 +1,8 @@
- --------------------------------
-| Photoshop Automation Workflows |
- --------------------------------
+# Photoshop Automation Workflows 
 
-This software automates a number of Photoshop tasks: 
+Processing images in Photoshop is an essentially manual activity: you are making lots of individual decions about different photos, and implementing changes in a way that can't be "canned". But many steps are routine and able to be captured by an automated process: resizeing a batch of photos, creating zip files, galleries, websites, adding such-and-such Photoshop layers.
+
+This software automates a number of these image handling tasks:
 
 - Copying images files from the camera card to the computer (in a nice, organized way).
 - Luminosity layers, which pastes a tungsten-illuminated image over a base sunlight-illuminated image.
@@ -18,11 +18,9 @@ The software is run from the command line, via Ant tasks.  The following example
 ```
 More details below on these Ant tasks...
 
- -------------------------------------------
-| The Big Workflow: From Camera to Web Site |
- -------------------------------------------
+# The Big Workflow: From Camera to Web Site 
 
-From a **bird's eye view**, the whole workflow looks like this:
+From a **bird's eye view**, the whole workflow looks like this, a series of mixed manual and automated tasks: :
 
 - Make a .txt properties file that describes the job. (Manual)
 - Copy images from the card to the computer. (Automated)
@@ -117,13 +115,11 @@ You can string along many tasks, for example, you can run these tasks in sequenc
 ant -propsD=properties/MYJOB.txt resize web invoice show upload
 ```
 
---------------------------
-| To Install This Software |
- --------------------------
+# To Install This Software 
 
 Required Resources:
 -------------------
-- Photoshop CS3 or higher (- upgrading to CS6 was painless). Comes with a JS scripting API that we will call into.
+- Photoshop CS3 or higher (- upgrading to CS6, and later, was painless). Comes with a JS scripting API that we will call into.
 - Ant 
 - Java SDK
 
@@ -143,3 +139,71 @@ set ANT_HOME and ANT_HOME/bin on the PATH
 set JAVA_HOME and JAVA_HOME/bin on PATH
 
 (Running devEnv.cmd will do the above.)
+
+## Install Bugs
+
+You may run into some absoulate paths/hard coded paths when installing on a new machine. I have endeavored to root these out, but there maybe some lingering still.
+
+# Properties File Reference
+
+The properties defined here control most of the behavior of the system. Some properties (portra, raw_path, flickr) are probably deprecated at this point, just from disuse. Have included them for historical reasons, and for possible re-hab.
+
+Some import points:
+
+- URL - Crops up everywhere.
+- PHOTO1...PHOTO5 - These are full paths or integers, which grab the flyer images.
+- LOGO - Has been deprecated, now controlled in script by a relative path. But one may want to switch it back the absolute path, or build in an 'if present use the abs path property' overriding behavior for the logo, to make flyers for different clients.
+
+Sample Properties File
+
+```
+!-- Basic/Common Properties --!
+!-- URL is the basic namespacing property. --!
+URL=temp  
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+!-- Job Properties --!
+!-- These conrol the webpage and the invoice.--!
+ADDRESS=2241 13th Ave W, Seattle, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR= 
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Capitol Hill Location
+HEADLINE2=Fully Remodeled and Restored Farm House
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=4
+PHOTO3=9
+PHOTO4=7
+PHOTO5=2
+LOGO=C:/Adobe CS6/nwhomephoto/resources
+MAINTEXT=MLS #968448
+BOXTEXT=3 bedrooms / 2.5 baths / 2,820 sq ft / 4,200 sq ft lot / 2016 taxes are $7,470 / Stevens Elementary assignment
+HOUSEPRICE=Offered at $1,150,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+
+!-- Photographer Properties --!
+!-- todo: In development, these properties can be used to completely generalize the invoice. --!
+!-- todo: Notice that you can reuse 'ADDRESS' anywhere to the left of the '=' sign, as it will suffer string substitution by the Ant property ADDRESS defined above. --!
+PHOTOGRAPHER_NAME=Stephen Hanson
+PHOTOGRAPHER_ADDR_1=917 Broadway E
+PHOTOGRAPHER_ADDR_2=Seattle, WA 98102
+PHOTOGRAPHER_PH=(206)898-0444
+PHOTOGRAPHER_E=stevelukehanson@gmail.com
+```
+
+

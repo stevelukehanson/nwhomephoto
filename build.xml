@@ -1001,8 +1001,7 @@
   </target>
   
   
-  <target name="flyer-save" depends="staging,make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
-    <replace file="${staging}/index.html" token="&lt;!-- FLYER -->" value="HI"/>
+  <target name="flyer-save" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
     <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
       <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
@@ -1019,12 +1018,10 @@
     </waitfor>
     <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
     <delete file="build_props.jsx"/>
-    <antcall target="clean-staging"/>
     <echo>flyer done!!!</echo>  
   </target>
 
     <target name="flyer-save-side2" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
-    <replace file="${staging}/index.html" token="&lt;!-- FLYER -->" value="HI"/>
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
     <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
       <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >

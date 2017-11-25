@@ -1,6 +1,8 @@
 <project name="slhphoto" default="show" basedir=".">
   <description>
-    Creates a Porta web site and other deliverables after processing photos in Photoshop.
+    Automates portions of a photo delivery workflow.
+	Runs Photoshop automation routines, such as creating layer composites.
+	Creates a HTML web site and other deliverables after processing photos in Photoshop.
   </description>
 
   <!-- set global properties for this build -->
@@ -11,50 +13,26 @@
   <property name="base.dir"  value="."/>
   <property name="build"  value="build"/>
   <property name="staging"  value="${build}\staging"/>
-  <!--
-  <loadresource property="propB">
-	  <propertyresource name="ADDRESS"/>
-	  <filterchain>
-		<tokenfilter>
-		  <filetokenizer/>
-		  <replacestring from=" " to="_"/>
-		  <replacestring from="," to=""/>
-		</tokenfilter>
-	  </filterchain>
-	</loadresource>
-  -->
-  <!--
-  <taskdef resource="net/sf/antcontrib/antcontrib.properties">
-    <classpath>
-      <pathelement location="C:/apache/ant-contrib/ant-contrib-1.0b3.jar"/>
-    </classpath>
-  </taskdef>
-  -->
-    <!-- If FLICKR is not set, or is the empty string, then set it to the Porta path: "JPEG_1200/album/index.html".  -->
-  <condition property="FLICKR" value="webgallery/album/index.html">
-    <or>
-        <not>
-          <isset property="FLICKR"/>
-        </not>
-    <!-- how come no worky?    <length string=" foo " trim="true" length="3" /> -->
-    </or>
-  </condition>
   <tstamp/>
 
   
   <target name="help">
-  <echo>Targets:
-  - copy-from-camera - Copies from the image card to the computer. Creates a helpful folder structure for manual image editing and curation.
-  - resize - After curation, resize the images to standard pixel sizes. The resultant resized images are consumed by various next targets: luminosity, flash, web, etc.
-  - invoice - Creates a PDF invoice.
-  - web - Creates a web site and zip files for distribution of the final product.
-  - show - Opens a browser and brings up the web site, both a local and the assumed live one.
-  - update - Opens a browser (to the target upload area) and a Windows explorer to the local directory - for easy drag-and-drop. Legacy targets would perform the FTP upload, but Yahoo distinued the API, I imagine for security reasons.
-  
-  </echo>
+	  <echo>
+	  Examples: 
+	  
+	  >ant -Dprops=properties\MYJOB.txt resize
+	  >ant -Dprops=properties\MYJOB.txt web invoice upload
+	  
+	  Targets:
+	  - copy - Copies from the image card to the computer. Creates a helpful folder structure for manual image editing and curation.
+	  - resize - After curation, resize the images to standard pixel sizes. The resultant resized images are consumed by various next targets: luminosity, flash, web, etc.
+	  - web - Creates a web site and zip files for distribution of the final product.
+	  - invoice - Creates a PDF invoice.
+	  - show - Opens a browser and brings up the web site, both a local and the assumed live one.
+	  - upload - Opens a browser (to the target upload area) and a Windows explorer to the local directory - for easy drag-and-drop. Legacy targets would perform the FTP upload, but Yahoo discontinued the API, I imagine for security reasons.  
+	  </echo>
   </target>
 
-  
   <target name="echoprops">
     <echoproperties destfile="current.properties" format="xml"/>
     <length string="${FLICKR}" property="flickr.length" />
@@ -70,9 +48,6 @@
     <fileset id="dist.contents" dir="${RESIZE_PATH}" includes="*.psd"/>
     <property name="prop.dist.contents" refid="dist.contents"/>
     <echo>${prop.dist.contents}</echo>
-  </target>
-
-  <target name="build" depends="clean-raw,clean-web,raw,resize,web,invoice,show" description="As this project develops, the build task represents the overall 'max' processing path, whatever uses the most and best of the available functionality.">
   </target>
 
   <target name="clean" depends="clean-web,clean-raw,clean-resize" description="cleans up all of the build artifacts, ps and web artifacts, returning to its original template state.">
@@ -106,14 +81,6 @@
     </exec>
   </target>
 
-  <target name="ps-workflow" depends="ps-preset-raw, raw, photomatix-11, resize" description="Processes the RAW files to PSD files, etc., and, finally, to resized JPEGs.">
-  </target>
-  <target name="ps-preset-raw">
-    <echo>**************************************</echo>
-    <echo>*** Set presets on the RAW images.!***</echo>
-    <echo>**************************************</echo>
-    <input/>
-  </target>
   <target name="clean-raw" description="Cleans out the raw jpegs and cr2 files from the camera.">
     <input
          message="All data is going to be deleted from ${RAW_PATH}.  Continue?"
@@ -175,702 +142,6 @@
     <echo>RAW process done!!!</echo>    
   </target>
   
-  <target name="script-test-simple">
-
-    <script language="javascript"> <![CDATA[
-
-      for (i=1; i<=10; i++) {
-        echo = slhphoto.createTask("echo");
-        echo.setMessage(i*i);
-        echo.perform();
-      }
-
-    ]]> </script>
-
-  </target>
-
-  <target name="test">
-    <script language="javascript" src="SLH_makeFlyer.jsx">
-    </script>
-  </target>
-
-
-  <target name="photomatix-3">
-
-    <script language="javascript"> <![CDATA[
-      importClass(java.io.File);
-
-      // Access to Ant-Properties by their names
-      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
-
-      // Create a <fileset dir="" includes=""/>
-      fs = project.createDataType("fileset");
-      fs.setDir( new File(photomatix_dir) );
-      fs.setIncludes("*.JPG");
-      fs.setIncludes("*.jpg");
-      //fs.setIncludes("*.dng");
-      fs.setIncludes("*.CR2");
-
-      // Get the files (array) of that fileset
-      ds = fs.getDirectoryScanner();
-      srcFiles = ds.getIncludedFiles();
-
-      // Create a string from three file paths
-      for (i=0; i<srcFiles.length; i+=3) {
-
-        // get the values via Java API
-        var filename1 = srcFiles[i];
-        var filename2 = srcFiles[i+1];
-        var filename3 = srcFiles[i+2];
-      
-        // Create an <antcall> task, and configure it.
-        photomatixTask = slhphoto.createTask("antcall");
-        // <antcall target="photomatix-process-3">
-        photomatixTask.setTarget("photomatix-process-3");
-
-
-        // Set the three image files to be combined.  
-        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">? 
-        var file1 = photomatixTask.createParam();
-        file1.setName("PHOTOMATIX_FILE1");
-        file1.setValue(filename1);
-        var file2 = photomatixTask.createParam();
-        file2.setName("PHOTOMATIX_FILE2");
-        file2.setValue(filename2);
-        var file3 = photomatixTask.createParam();
-        file3.setName("PHOTOMATIX_FILE3");
-        file3.setValue(filename3);
-
-        // call the photomatix task
-        photomatixTask.perform(); 
-      }
-
-      // SAMPLE //
-      // Print out the first 10 squares. 
-      // for (i=1; i<=10; i++) {
-      //   echo = slhphoto.createTask("echo");
-      //   echo.setMessage(i*i);
-      //   echo.perform();
-      // }
-
-      // import statements
-      // importPackage(java.io);
-
-    ]]> </script>
-  </target>
-  <target name="photomatix-process-3">
-        <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
-
-        <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
-            <arg line="-n 2 -a2"/>
-            <!--<arg line="-2a 7"/>-->
-            <arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>
-            <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3}"/>
-        </exec>
-  </target>
-
-  <target name="photomatix-11">
-
-        <script language="javascript"> <![CDATA[
-      importClass(java.io.File);
-
-      // Access to Ant-Properties by their names
-      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
-
-      // Create a <fileset dir="" includes=""/>
-      fs = project.createDataType("fileset");
-      fs.setDir( new File(photomatix_dir) );
-      fs.setIncludes("*.JPG");
-      fs.setIncludes("*.jpg");
-      //fs.setIncludes("*.dng");
-      fs.setIncludes("*.CR2");
-      fs.setIncludes("*.cr2");
-
-      // Get the files (array) of that fileset
-      ds = fs.getDirectoryScanner();
-      srcFiles = ds.getIncludedFiles();
-
-      // Create a string from three file paths
-      for (i=0; i<srcFiles.length; i+=11) {
-
-        // get the values via Java API
-        var filename1 = srcFiles[i];
-        var filename2 = srcFiles[i+1];
-        var filename3 = srcFiles[i+2];
-        var filename4 = srcFiles[i+3];
-        var filename5 = srcFiles[i+4];
-        var filename6 = srcFiles[i+5];
-        var filename7 = srcFiles[i+6];
-        var filename8 = srcFiles[i+7];
-        var filename9 = srcFiles[i+8];
-        var filename10 = srcFiles[i+9];
-        var filename11 = srcFiles[i+10];
-
-        // Create an <antcall> task, and configure it.
-        photomatixTask = slhphoto.createTask("antcall");
-        // <antcall target="photomatix-process-11">
-        photomatixTask.setTarget("photomatix-process-11");
-
-
-        // Set the three image files to be combined.
-        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
-        var file1 = photomatixTask.createParam();
-        file1.setName("PHOTOMATIX_FILE1");
-        file1.setValue(filename1);
-        var file2 = photomatixTask.createParam();
-        file2.setName("PHOTOMATIX_FILE2");
-        file2.setValue(filename2);
-        var file3 = photomatixTask.createParam();
-        file3.setName("PHOTOMATIX_FILE3");
-        file3.setValue(filename3);
-        var file4 = photomatixTask.createParam();
-        file4.setName("PHOTOMATIX_FILE4");
-        file4.setValue(filename4);
-        var file5 = photomatixTask.createParam();
-        file5.setName("PHOTOMATIX_FILE5");
-        file5.setValue(filename5);
-        var file6 = photomatixTask.createParam();
-        file6.setName("PHOTOMATIX_FILE6");
-        file6.setValue(filename6);
-        var file7 = photomatixTask.createParam();
-        file7.setName("PHOTOMATIX_FILE7");
-        file7.setValue(filename7);
-        var file8 = photomatixTask.createParam();
-        file8.setName("PHOTOMATIX_FILE8");
-        file8.setValue(filename8);
-        var file9 = photomatixTask.createParam();
-        file9.setName("PHOTOMATIX_FILE9");
-        file9.setValue(filename9);
-        var file10 = photomatixTask.createParam();
-        file10.setName("PHOTOMATIX_FILE10");
-        file10.setValue(filename10);
-        var file11 = photomatixTask.createParam();
-        file11.setName("PHOTOMATIX_FILE11");
-        file11.setValue(filename11);
-
-        // call the photomatix task
-        photomatixTask.perform();
-      }
-
-      // SAMPLE //
-      // Print out the first 10 squares.
-      // for (i=1; i<=10; i++) {
-      //   echo = slhphoto.createTask("echo");
-      //   echo.setMessage(i*i);
-      //   echo.perform();
-      // }
-
-      // import statements
-      // importPackage(java.io);
-
-    ]]> </script>
-  </target>
-  <target name="photomatix-process-11">
-    <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
-
-    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
-        <arg line="-n 2 -a2 -2b -0.9 -2c 1.3"/>
-        <!--<arg line="-2a 7"/>-->
-        <arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>
-        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE4} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE6} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE8} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE10} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11}"/>
-    </exec>
-  </target>
-
-  <target name="photomatix-12">
-
-        <script language="javascript"> <![CDATA[
-      importClass(java.io.File);
-
-      // Access to Ant-Properties by their names
-      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
-
-      // Create a <fileset dir="" includes=""/>
-      fs = project.createDataType("fileset");
-      fs.setDir( new File(photomatix_dir) );
-      fs.setIncludes("*.JPG");
-      fs.setIncludes("*.jpg");
-      //fs.setIncludes("*.dng");
-      fs.setIncludes("*.CR2");
-      fs.setIncludes("*.cr2");
-
-      // Get the files (array) of that fileset
-      ds = fs.getDirectoryScanner();
-      srcFiles = ds.getIncludedFiles();
-
-      // Create a string from three file paths
-      for (i=0; i<srcFiles.length; i+=12) {
-
-        // get the values via Java API
-        var filename1 = srcFiles[i];
-        var filename2 = srcFiles[i+1];
-        var filename3 = srcFiles[i+2];
-        var filename4 = srcFiles[i+3];
-        var filename5 = srcFiles[i+4];
-        var filename6 = srcFiles[i+5];
-        var filename7 = srcFiles[i+6];
-        var filename8 = srcFiles[i+7];
-        var filename9 = srcFiles[i+8];
-        var filename10 = srcFiles[i+9];
-        var filename11 = srcFiles[i+10];
-        var filename12 = srcFiles[i+11];
-
-        // Create an <antcall> task, and configure it.
-        photomatixTask = slhphoto.createTask("antcall");
-        // <antcall target="photomatix-process-12">
-        photomatixTask.setTarget("photomatix-process-12");
-
-
-        // Set the three image files to be combined.
-        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
-        var file1 = photomatixTask.createParam();
-        file1.setName("PHOTOMATIX_FILE1");
-        file1.setValue(filename1);
-        var file2 = photomatixTask.createParam();
-        file2.setName("PHOTOMATIX_FILE2");
-        file2.setValue(filename2);
-        var file3 = photomatixTask.createParam();
-        file3.setName("PHOTOMATIX_FILE3");
-        file3.setValue(filename3);
-        var file4 = photomatixTask.createParam();
-        file4.setName("PHOTOMATIX_FILE4");
-        file4.setValue(filename4);
-        var file5 = photomatixTask.createParam();
-        file5.setName("PHOTOMATIX_FILE5");
-        file5.setValue(filename5);
-        var file6 = photomatixTask.createParam();
-        file6.setName("PHOTOMATIX_FILE6");
-        file6.setValue(filename6);
-        var file7 = photomatixTask.createParam();
-        file7.setName("PHOTOMATIX_FILE7");
-        file7.setValue(filename7);
-        var file8 = photomatixTask.createParam();
-        file8.setName("PHOTOMATIX_FILE8");
-        file8.setValue(filename8);
-        var file9 = photomatixTask.createParam();
-        file9.setName("PHOTOMATIX_FILE9");
-        file9.setValue(filename9);
-        var file10 = photomatixTask.createParam();
-        file10.setName("PHOTOMATIX_FILE10");
-        file10.setValue(filename10);
-        var file11 = photomatixTask.createParam();
-        file11.setName("PHOTOMATIX_FILE11");
-        file11.setValue(filename11);
-        var file12 = photomatixTask.createParam();
-        file12.setName("PHOTOMATIX_FILE12");
-        file12.setValue(filename12);
-
-        // call the photomatix task
-        photomatixTask.perform();
-      }
-    ]]> </script>
-  </target>
-  <target name="photomatix-process-12">
-  <!--  <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
-    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
-        <arg line="-n 2"/> --><!-- Naming rule. -->
-<!--        <arg line="-2a 5"/>--> <!-- Strength for Fusion/natural. -->
-<!--        <arg line="-2b -6"/>--> <!-- Blending point for Fusion/natural. -->
-<!--        <arg line="-2c 2"/> --> <!-- Color saturation for Fusion/natural. -->
-<!--        <arg line="-2s 6"/> -->   <!-- Shadows for Fusion/natural. -->
-<!--        <arg line="-2w 6"/> --> <!-- White Point for Fusion/natural. -->
-<!--        <arg line="-2k 6"/> --> <!-- Black Point for Fusion/natural. -->
-<!--        <arg line="-2m 2"/> --> <!-- Midtone for Fusion/natural. -->
-        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
-<!--		<arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>  -->
-<!--        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE4} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE6} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE8} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE10} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE12}"/>
-    </exec>
--->
-
-    <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
-    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
-        <arg line="-n 2"/> <!-- Naming rule. -->
-        <arg line="-2a 8"/> <!-- Strength for Fusion/natural. -->
-        <arg line="-2b 0"/> <!-- Blending point for Fusion/natural. -->
-        <arg line="-2c 4"/>  <!-- Color saturation for Fusion/natural. -->
-        <arg line="-2s 6"/>    <!-- Shadows for Fusion/natural. -->
-        <arg line="-2w 3"/> <!-- White Point for Fusion/natural. -->
-        <arg line="-2k 3"/>  <!-- Black Point for Fusion/natural. -->
-        <arg line="-2m 2"/>  <!-- Midtone for Fusion/natural. -->
-        <arg line="-a2"/> <!-- Attempt to match features -->
-        <!--<arg line="-wb 7500"/> --><!-- White balance -->
-		<arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>
-        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} 
-		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} 
-		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} 
-		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} 
-		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9}  
-		'${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11}"/>
-    </exec>
-    </target>
-
-     <target name="photomatix-12-natural">
-
-        <script language="javascript"> <![CDATA[
-      importClass(java.io.File);
-
-      // Access to Ant-Properties by their names
-      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
-
-      // Create a <fileset dir="" includes=""/>
-      fs = project.createDataType("fileset");
-      fs.setDir( new File(photomatix_dir) );
-      fs.setIncludes("*.JPG");
-      fs.setIncludes("*.jpg");
-      //fs.setIncludes("*.dng");
-      fs.setIncludes("*.CR2");
-      fs.setIncludes("*.cr2");
-
-      // Get the files (array) of that fileset
-      ds = fs.getDirectoryScanner();
-      srcFiles = ds.getIncludedFiles();
-
-      // Create a string from three file paths
-      for (i=0; i<srcFiles.length; i+=12) {
-
-        // get the values via Java API
-        var filename1 = srcFiles[i];
-        var filename2 = srcFiles[i+1];
-        var filename3 = srcFiles[i+2];
-        var filename4 = srcFiles[i+3];
-        var filename5 = srcFiles[i+4];
-        var filename6 = srcFiles[i+5];
-        var filename7 = srcFiles[i+6];
-        var filename8 = srcFiles[i+7];
-        var filename9 = srcFiles[i+8];
-        var filename10 = srcFiles[i+9];
-        var filename11 = srcFiles[i+10];
-        var filename12 = srcFiles[i+11];
-
-        // Create an <antcall> task, and configure it.
-        photomatixTask = slhphoto.createTask("antcall");
-        // <antcall target="photomatix-process-12-natural">
-        photomatixTask.setTarget("photomatix-process-12-natural");
-
-        // Set the image files to be combined.
-        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
-        var file1 = photomatixTask.createParam();
-        file1.setName("PHOTOMATIX_FILE1");
-        file1.setValue(filename1);
-        var file2 = photomatixTask.createParam();
-        file2.setName("PHOTOMATIX_FILE2");
-        file2.setValue(filename2);
-        var file3 = photomatixTask.createParam();
-        file3.setName("PHOTOMATIX_FILE3");
-        file3.setValue(filename3);
-        var file4 = photomatixTask.createParam();
-        file4.setName("PHOTOMATIX_FILE4");
-        file4.setValue(filename4);
-        var file5 = photomatixTask.createParam();
-        file5.setName("PHOTOMATIX_FILE5");
-        file5.setValue(filename5);
-        var file6 = photomatixTask.createParam();
-        file6.setName("PHOTOMATIX_FILE6");
-        file6.setValue(filename6);
-        var file7 = photomatixTask.createParam();
-        file7.setName("PHOTOMATIX_FILE7");
-        file7.setValue(filename7);
-        var file8 = photomatixTask.createParam();
-        file8.setName("PHOTOMATIX_FILE8");
-        file8.setValue(filename8);
-        var file9 = photomatixTask.createParam();
-        file9.setName("PHOTOMATIX_FILE9");
-        file9.setValue(filename9);
-        var file10 = photomatixTask.createParam();
-        file10.setName("PHOTOMATIX_FILE10");
-        file10.setValue(filename10);
-        var file11 = photomatixTask.createParam();
-        file11.setName("PHOTOMATIX_FILE11");
-        file11.setValue(filename11);
-        var file12 = photomatixTask.createParam();
-        file12.setName("PHOTOMATIX_FILE12");
-        file12.setValue(filename12);
-
-        // call the photomatix task
-        photomatixTask.perform();
-      }
-    ]]> </script>
-    </target>
-    <target name="photomatix-process-12-natural">
-    <mkdir dir="${PHOTOMATIX_PATH}/fused-natural"/>
-
-    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
-        <arg line="-n 2"/> <!-- Naming rule. -->
-        <!--  <arg line="-2a 5"/>  Strength for Fusion/natural. -->
-        <!--  <arg line="-2b -6"/>  Blending point for Fusion/natural. -->
-        <!--  <arg line="-2c 2"/>   Color saturation for Fusion/natural. -->
-        <!--  <arg line="-2s 6"/>   Shadows for Fusion/natural. -->
-        <!--  <arg line="-2w 6"/>   White Point for Fusion/natural. -->
-        <!--  <arg line="-2k 6"/>   Black Point for Fusion/natural. -->
-        <!--  <arg line="-2m 2"/>   Midtone for Fusion/natural. -->
-        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
-		<arg line="-d '${PHOTOMATIX_PATH}\fused-natural\'"/>
-        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE4} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE6} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE8} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE10} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE12}"/>
-    </exec>
-  </target>
-
-   <target name="photomatix-9-natural">
-
-        <script language="javascript"> <![CDATA[
-      importClass(java.io.File);
-
-      // Access to Ant-Properties by their names
-      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
-
-      // Create a <fileset dir="" includes=""/>
-      fs = project.createDataType("fileset");
-      fs.setDir( new File(photomatix_dir) );
-      fs.setIncludes("*.JPG");
-      fs.setIncludes("*.jpg");
-      //fs.setIncludes("*.dng");
-      fs.setIncludes("*.CR2");
-      fs.setIncludes("*.cr2");
-
-      // Get the files (array) of that fileset
-      ds = fs.getDirectoryScanner();
-      srcFiles = ds.getIncludedFiles();
-
-      // Create a string from three file paths
-      for (i=0; i<srcFiles.length; i+=9) {
-
-        // get the values via Java API
-        var filename1 = srcFiles[i];
-        var filename2 = srcFiles[i+1];
-        var filename3 = srcFiles[i+2];
-        var filename4 = srcFiles[i+3];
-        var filename5 = srcFiles[i+4];
-        var filename6 = srcFiles[i+5];
-        var filename7 = srcFiles[i+6];
-        var filename8 = srcFiles[i+7];
-        var filename9 = srcFiles[i+8];
-
-        // Create an <antcall> task, and configure it.
-        photomatixTask = slhphoto.createTask("antcall");
-        // <antcall target="photomatix-process-9-natural">
-        photomatixTask.setTarget("photomatix-process-9-natural");
-
-        // Set the image files to be combined.
-        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
-        var file1 = photomatixTask.createParam();
-        file1.setName("PHOTOMATIX_FILE1");
-        file1.setValue(filename1);
-        var file2 = photomatixTask.createParam();
-        file2.setName("PHOTOMATIX_FILE2");
-        file2.setValue(filename2);
-        var file3 = photomatixTask.createParam();
-        file3.setName("PHOTOMATIX_FILE3");
-        file3.setValue(filename3);
-        var file4 = photomatixTask.createParam();
-        file4.setName("PHOTOMATIX_FILE4");
-        file4.setValue(filename4);
-        var file5 = photomatixTask.createParam();
-        file5.setName("PHOTOMATIX_FILE5");
-        file5.setValue(filename5);
-        var file6 = photomatixTask.createParam();
-        file6.setName("PHOTOMATIX_FILE6");
-        file6.setValue(filename6);
-        var file7 = photomatixTask.createParam();
-        file7.setName("PHOTOMATIX_FILE7");
-        file7.setValue(filename7);
-        var file8 = photomatixTask.createParam();
-        file8.setName("PHOTOMATIX_FILE8");
-        file8.setValue(filename8);
-        var file9 = photomatixTask.createParam();
-        file9.setName("PHOTOMATIX_FILE9");
-        file9.setValue(filename9);
-
-        // call the photomatix task
-        photomatixTask.perform();
-      }
-    ]]> </script>
-  </target>
-  <target name="photomatix-process-9-natural">
-    <mkdir dir="${PHOTOMATIX_PATH}/fused-natural"/>
-    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
-        <arg line="-n 2"/> <!-- Naming rule. -->
-        <arg line="-2a 5"/>    <!-- Strength for Fusion/natural. -->
-        <!--  <arg line="-2b -6"/>  Blending point for Fusion/natural. -->
-        <!--  <arg line="-2c 2"/>   Color saturation for Fusion/natural. -->
-        <!--  <arg line="-2s 6"/>   Shadows for Fusion/natural. -->
-        <!--  <arg line="-2w 6"/>   White Point for Fusion/natural. -->
-        <!--  <arg line="-2k 6"/>   Black Point for Fusion/natural. -->
-        <!--  <arg line="-2m 2"/>   Midtone for Fusion/natural. -->
-        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
-		<arg line="-d '${PHOTOMATIX_PATH}\fused-natural\'"/>
-        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE2} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE4} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE6} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE8} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9}"/>
-    </exec>
-  </target>
-
-  <target name="photomatix-6">
-
-        <script language="javascript"> <![CDATA[
-      importClass(java.io.File);
-
-      // Access to Ant-Properties by their names
-      photomatix_dir = project.getProperty("PHOTOMATIX_PATH");
-
-      // Create a <fileset dir="" includes=""/>
-      fs = project.createDataType("fileset");
-      fs.setDir( new File(photomatix_dir) );
-      fs.setIncludes("*.JPG");
-      fs.setIncludes("*.jpg");
-      //fs.setIncludes("*.dng");
-      fs.setIncludes("*.CR2");
-      fs.setIncludes("*.cr2");
-
-      // Get the files (array) of that fileset
-      ds = fs.getDirectoryScanner();
-      srcFiles = ds.getIncludedFiles();
-
-      // Create a string from three file paths
-      for (i=0; i<srcFiles.length; i+=12) {
-
-        // get the values via Java API
-        var filename1 = srcFiles[i];
-        var filename2 = srcFiles[i+1];
-        var filename3 = srcFiles[i+2];
-        var filename4 = srcFiles[i+3];
-        var filename5 = srcFiles[i+4];
-        var filename6 = srcFiles[i+5];
-        var filename7 = srcFiles[i+6];
-        var filename8 = srcFiles[i+7];
-        var filename9 = srcFiles[i+8];
-        var filename10 = srcFiles[i+9];
-        var filename11 = srcFiles[i+10];
-        var filename12 = srcFiles[i+11];
-
-        // Create an <antcall> task, and configure it.
-        photomatixTask = slhphoto.createTask("antcall");
-        // <antcall target="photomatix-process-6">
-        photomatixTask.setTarget("photomatix-process-6");
-
-
-        // Set the three image files to be combined.
-        // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
-        var file1 = photomatixTask.createParam();
-        file1.setName("PHOTOMATIX_FILE1");
-        file1.setValue(filename1);
-        var file2 = photomatixTask.createParam();
-        file2.setName("PHOTOMATIX_FILE2");
-        file2.setValue(filename2);
-        var file3 = photomatixTask.createParam();
-        file3.setName("PHOTOMATIX_FILE3");
-        file3.setValue(filename3);
-        var file4 = photomatixTask.createParam();
-        file4.setName("PHOTOMATIX_FILE4");
-        file4.setValue(filename4);
-        var file5 = photomatixTask.createParam();
-        file5.setName("PHOTOMATIX_FILE5");
-        file5.setValue(filename5);
-        var file6 = photomatixTask.createParam();
-        file6.setName("PHOTOMATIX_FILE6");
-        file6.setValue(filename6);
-        var file7 = photomatixTask.createParam();
-        file7.setName("PHOTOMATIX_FILE7");
-        file7.setValue(filename7);
-        var file8 = photomatixTask.createParam();
-        file8.setName("PHOTOMATIX_FILE8");
-        file8.setValue(filename8);
-        var file9 = photomatixTask.createParam();
-        file9.setName("PHOTOMATIX_FILE9");
-        file9.setValue(filename9);
-        var file10 = photomatixTask.createParam();
-        file10.setName("PHOTOMATIX_FILE10");
-        file10.setValue(filename10);
-        var file11 = photomatixTask.createParam();
-        file11.setName("PHOTOMATIX_FILE11");
-        file11.setValue(filename11);
-        var file12 = photomatixTask.createParam();
-        file12.setName("PHOTOMATIX_FILE12");
-        file12.setValue(filename12);
-
-        // call the photomatix task
-        photomatixTask.perform();
-      }
-    ]]> </script>
-  </target>
-  <target name="photomatix-process-6">
-    <mkdir dir="${PHOTOMATIX_PATH}/fused"/>
-
-    <exec dir="." executable="C:\Program Files\PhotomatixPro4\PhotomatixCL.exe" os="Windows 7">
-        <arg line="-n 2"/> <!-- Naming rule. -->
-        <arg line="-2a 5"/> <!-- Strength for Fusion/natural. -->
-        <arg line="-2b -6"/> <!-- Blending point for Fusion/natural. -->
-        <arg line="-2c 2"/>  <!-- Color saturation for Fusion/natural. -->
-        <arg line="-2s 6"/>    <!-- Shadows for Fusion/natural. -->
-        <arg line="-2w 6"/> <!-- White Point for Fusion/natural. -->
-        <arg line="-2k 6"/>  <!-- Black Point for Fusion/natural. -->
-        <arg line="-2m 2"/>  <!-- Midtone for Fusion/natural. -->
-        <!--<arg line="-a2"/>--> <!-- Attempt to match features -->
-		<arg line="-d '${PHOTOMATIX_PATH}\fused\'"/>
-        <arg line="-2 '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE1} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE3}  '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE5} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE7}  '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE9} '${PHOTOMATIX_PATH}'\${PHOTOMATIX_FILE11}"/>
-    </exec>
-  </target>
-
-  
-
-    <target name="ptlens">
-        <copydir src="${PTLENS_PATH}" dest="${PTLENS_PATH}/ptlens"/>
-        <script language="javascript"> <![CDATA[
-          importClass(java.io.File);
-
-          // Access to Ant-Properties by their names
-          ptlens_dir = project.getProperty("PTLENS_PATH");
-          ptlens_dir = ptlens_dir + "/ptlens";
-
-          // Create a <fileset dir="" includes=""/>
-          fs = project.createDataType("fileset");
-          fs.setDir( new File(ptlens_dir) );
-          fs.setIncludes("*.JPG");
-          fs.setIncludes("*.jpg");
-          fs.setIncludes("*.TIF");
-          fs.setIncludes("*.tif");
-          //fs.setIncludes("*.dng");
-          //fs.setIncludes("*.CR2");
-
-          // Get the files (array) of that fileset
-          ds = fs.getDirectoryScanner();
-          srcFiles = ds.getIncludedFiles();
-
-          // Create a string from three file paths
-          for (i=0; i<srcFiles.length; i+=3) {
-
-            // get the values via Java API
-            var filename = srcFiles[i];
-
-            // Create an <antcall> task, and configure it.
-            ptlensTask = slhphoto.createTask("antcall");
-            // <antcall target="ptlens-process">
-            ptlensTask.setTarget("ptlens-process");
-
-
-            // Set the three image files to be combined.
-            // It's sort of incorrect to hang these properties on <antcall>, they should really hang on <target name="photomatix-process-3">?
-            var file1 = ptlensTask.createParam();
-            file1.setName("PTLENS_FILE");
-            file1.setValue(filename);
-
-            // call the photomatix task
-            ptlensTask.perform();
-          }
-
-          // import statements
-          // importPackage(java.io);
-
-        ]]> </script>
-  </target>
-
-  <target name="ptlens-process">
-    <!--TODO: make and work on a copy of files, since ptlens modifies the images in place. -->
-    
-    <exec dir="." executable="C:/Program Files/ePaperPress/PTLens/PTLens.exe" os="Windows 7">
-      <arg line="-q '${PTLENS_PATH}'\${PTLENS_FILE}"/>
-    </exec>
-  </target>
-  
-  <target name="clean-photomatix">
-    <delete dir="${PHOTOMATIX_PATH}/fused"/>
-  </target>
-
   <target name="resize" depends="clean-resize,make-js-prop-file" description="Calls the Photoshop script.">
     <echo message="${RESIZE_PATH}"/>
       <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
@@ -997,7 +268,7 @@
     </waitfor>
     <delete file="build/xxx-flyer-done-xxx.jpg"/>
     <delete file="build_props.jsx"/>
-    <echo>flyer done!!!</echo>  
+    <echo>flyer side 2 done!!!</echo>  
   </target>
   
   
@@ -1018,7 +289,7 @@
     </waitfor>
     <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
     <delete file="build_props.jsx"/>
-    <echo>flyer done!!!</echo>  
+    <echo>*** Flyer saved. ***</echo>  
   </target>
 
     <target name="flyer-save-side2" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
@@ -1038,7 +309,7 @@
     </waitfor>
     <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
     <delete file="build_props.jsx"/>
-    <echo>flyer done!!!</echo>  
+    <echo>*** Flyer side 2 saved. ***</echo>  
   </target>
 
 
@@ -1046,6 +317,7 @@
     <target name="flyer-deploy" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
         <replace file="${build}/${URL}/index.html" token='div id="flyer" style="visibility:hidden;"' value='div id="flyer" style="visibility:visible;"'/>
         <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <echo>*** Flyer deployed (HTML link has been made visible on the page). ***</echo>  
     </target>
 
   <target name="save-props" description="template folder is like the src folder.  To preserve it, all work is done in the staging folder.">
@@ -1068,202 +340,8 @@
     <copy todir="${staging}/JPEG_full">
       <fileset dir="${RESIZE_PATH}/JPEG_full"/>
     </copy>
-<!--
-    <copy todir="${staging}/Backup">
-      <fileset dir="${RAW_PATH}/jpg"/>
-    </copy>
--->
   </target>
-
-    <target name="module-make-template" description="Creates the directory structure for a file-based LabKey module.">
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/config"/>
-<!--
-      <touch file="${TEMP_DIR}/${MODULE_NAME}/config/module.xml"/>
-		<echo file="${TEMP_DIR}/${MODULE_NAME}/config/module.xml" append="true">
-		   <![CDATA[  ]]> 
-		</echo>
--->
-  	  <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/credits"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/assay"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/etls"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/folderTypes"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/olap"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/pipeline"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/queries"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/queries/${SCHEMA_NAME}"/>
-      <touch file="${TEMP_DIR}/${MODULE_NAME}/queries/${SCHEMA_NAME}/${QUERY_NAME.sql}"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/reports"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/reports/schemas"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/reports/schemas/${SCHEMA_NAME}"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/reports/schemas/${SCHEMA_NAME}/${QUERY_NAME}"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/schemas"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/scripts"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/scripts/dbscripts"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/scripts/dbscripts/postgressql/"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/scripts/dbscripts/sqlserver"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/views"/>
-      <touch file="${TEMP_DIR}/${MODULE_NAME}/views/begin.html"/>
-		<echo file="${TEMP_DIR}/${MODULE_NAME}/views/begin.html" append="true">
-		   Welcome to the ${MODULE_NAME} module.
-		</echo>
-      <touch file="${TEMP_DIR}/${MODULE_NAME}/views/begin.view.xml"/>
-		<echo file="${TEMP_DIR}/${MODULE_NAME}/views/begin.view.xml" append="true"><![CDATA[<view xmlns="http://labkey.org/data/xml/view">
-			<dependencies>
-			<dependency path="Ext4"/>
-			</dependencies>
-			</view>]]> 
-		</echo>
-      <touch file="${TEMP_DIR}/${MODULE_NAME}/views/SOME_WEBPART.webpart.xml"/>
-        <echo file="${TEMP_DIR}/${MODULE_NAME}/views/SOME_WEBPART.webpart.xml" append="true">
-		    <![CDATA[
-			<webpart xmlns="http://labkey.org/data/xml/webpart" title="SteveH1 Web Part">
-			<view name="begin"/>
-			<locations>
-			<location name="body"/>
-			</locations>
-			</webpart>
-			]]> 
-		</echo>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/web"/>
-      <mkdir dir="${TEMP_DIR}/${MODULE_NAME}/web/${MODULE_NAME}"/>
-      <touch file="${TEMP_DIR}/${MODULE_NAME}/web/${MODULE_NAME}/someImage.jpg"/>
-      <touch file="${TEMP_DIR}/${MODULE_NAME}/web/${MODULE_NAME}/someLib.lib.xml"/>
-      <touch file="${TEMP_DIR}/${MODULE_NAME}/web/${MODULE_NAME}/SomeScript.js"/>
-    </target>
-
-    <target name="module-clean" depends="devenv" description="Zips up and deploys the module to LabKey Server.">
-      <delete dir="${TEMP_DIR}/${MODULE_NAME}"/>
-    </target>
   
-    <target name="module-deploy" depends="devenv" description="Zips up and deploys the module to LabKey Server.">
-      <zip destfile="${DEPLOY_DIR}/${MODULE_NAME}.module">
-          <zipfileset dir="${TEMP_DIR}/${MODULE_NAME}"> 
-          </zipfileset>
-      </zip>
-    </target>
-  
-  <target name="copy-from-camera" depends="devenv" description="Creates the directory and copies images from camera/card into it.">
-    <!--<touch file="${RAW_PATH}/fake.txt"/>-->
-	  <!--<echo>properties:${property.file}</echo>--> 
-      <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/mp4"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/3"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/7"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/9"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/handheld"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/flash"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/best"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/luminosity-layers"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/flash-layers"/>
-      <copy todir="${RAW_PATH}/jpg" verbose="true" failonerror="no">
-          <fileset dir="H:/DCIM/100EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-          <fileset dir="H:/DCIM/101EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
-          <fileset dir="H:/DCIM/100EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <fileset dir="H:/DCIM/101EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <mapper type="glob" from="*.CR2" to="${URL}_*.cr2"/>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/jpg" verbose="true" failonerror="no">
-          <fileset dir="D:/DCIM/100EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-          <fileset dir="D:/DCIM/101EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/mp4" verbose="true" failonerror="no">
-          <fileset dir="D:/DCIM/100EOS5D">
-              <include name="**/*.MP4"/>
-          </fileset>
-          <fileset dir="D:/DCIM/101EOS5D">
-              <include name="**/*.MP4"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
-          <fileset dir="D:/DCIM/100EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <fileset dir="D:/DCIM/101EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <mapper type="glob" from="*.CR2" to="${URL}_*.cr2"/>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/jpg" verbose="true" failonerror="no">
-          <fileset dir="E:/DCIM/100EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-          <fileset dir="E:/DCIM/101EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-          <fileset dir="E:/DCIM/102EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-          <fileset dir="E:/DCIM/103EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/mp4" verbose="true" failonerror="no">
-          <fileset dir="E:/DCIM/100EOS5D">
-              <include name="**/*.MP4"/>
-          </fileset>
-          <fileset dir="E:/DCIM/101EOS5D">
-              <include name="**/*.MP4"/>
-          </fileset>
-          <fileset dir="E:/DCIM/102EOS5D">
-              <include name="**/*.MP4"/>
-          </fileset>
-          <fileset dir="E:/DCIM/103EOS5D">
-              <include name="**/*.MP4"/>
-          </fileset>
-      </copy>
-
-      <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
-          <fileset dir="E:/DCIM/100EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <fileset dir="E:/DCIM/101EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <fileset dir="E:/DCIM/102EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <fileset dir="E:/DCIM/103EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/jpg" verbose="true" failonerror="no">
-          <fileset dir="F:/DCIM/100EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-          <fileset dir="F:/DCIM/101EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-          <fileset dir="F:/DCIM/102EOS5D">
-              <include name="**/*.JPG"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/cr2" verbose="true" failonerror="no">
-          <fileset dir="E:/DCIM/100EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <fileset dir="E:/DCIM/101EOS5D">
-              <include name="**/*.CR2"/>
-          </fileset>
-          <mapper type="glob" from="*.CR2" to="${URL}_*.cr2"/>
-      </copy>
-
-  </target>
-
   <target name="copy" depends="devenv" description="Creates the directory and copies images from camera/card into it.">
       <input message="*** Please Enter Card Letter ***:" addproperty="CARD" />
       <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
@@ -1275,10 +353,10 @@
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/handheld"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/luminosity-layers"/>
       <mkdir dir="${ROOT_PATH}/${URL}/jpg/flash-layers"/>
-<!--
+	  <!--
       <mkdir dir="${LUMINOSITY_PATH}"/>
       <mkdir dir="${FLASH_PATH}"/>
--->
+      -->
       <mkdir dir="${ROOT_PATH}/${URL}/best"/>
       <copy todir="${ROOT_PATH}/${URL}/jpg/7" flatten="true" verbose="true" failonerror="no">
           <fileset dir="${CARD}:/">
@@ -1302,8 +380,6 @@
       </copy>
   </target>
 
-  
-  
   <target name="show">
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start chrome '${basedir}/${build}/${URL}/index.html'" />
@@ -1320,12 +396,6 @@
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start .\${build}" />
         </exec>		
-  </target>
-
-  <target name="show-porta">
-        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XPWindows 7" >
-                <arg line="/C start chrome ${basedir}/${build}/${URL}/webgallery/album/index.html" />
-        </exec>
   </target>
 
   <target name="string-replace" description="Fills in the template web pages.">
@@ -1360,37 +430,14 @@
       <replace file="${staging}/invoice.txt" token="_FLICKR_" value="${FLICKR}"/>
       <replace file="${staging}/invoice.txt" token="_JOB_NAME_" value="${JOB_NAME}"/>
       <replace file="${staging}/invoice.txt" token="_DATE_" value="${TODAY}"/>
-</target>
-
-  <target name="porta" description="Runs Porta to generate the album, then copies the essential files to the deliverables folder.">
-    <exec dir="." executable="${PORTA_EXE}" os="Windows 7">
-      <arg line="'${basedir}\${staging}\webgallery'"/>
-      <arg line="/Automation"/>
-    </exec>
-    <!-- Fixes a quirk in Porta: removes the text above the gallery thumbnails. -->
-    <!--<replace file="${staging}/webgallery/album/gallery.xml" token="webgallery" value="${ADDRESS}"/>-->
-    <replace file="${staging}/webgallery/album/ext/xml/albuminfo.xml" token="webgallery" value="${ADDRESS}"/>
-    <replace file="${staging}/webgallery/album/ext/js/albumdef.js" token="webgallery" value="${ADDRESS}"/>
-
   </target>
 
   <target name="copy-to-build">
     <copy todir="${build}/${URL}">
-      <!--<fileset file="${staging}/banner.html"/>-->
       <fileset file="${staging}/index.html"/>
-      <!--<fileset file="${staging}/genericIndex.html"/>-->
-      <!--<fileset file="${staging}/gallery.cmd"/>-->
       <fileset file="${staging}/gallery.html"/>
       <fileset file="${staging}/logobanner.jpg"/>
-      <!--<fileset file="${staging}/simpleGallery.html"/>-->
-      <!--<fileset file="${staging}/invoice.txt"/>
-      <fileset file="${staging}/invoice.php"/>-->
-    <!--  <fileset file="${staging}/MLS_pics.zip"/> -->
-      <!--<fileset file="${staging}/${URL}_fullsize_pics.zip"/> this is taking too long to upload -->
     </copy>
-    <!--<copy todir="${build}/${URL}/webgallery/album" failonerror="false">
-      <fileset dir="${staging}/webgallery/album"/>
-    </copy>-->
       <copy todir="${build}/${URL}/webgallery">
           <fileset dir="${staging}/webgallery"/>
       </copy>
@@ -1401,188 +448,6 @@
       <zip destfile="${build}/${URL}/fullsize_pics.zip">
           <zipfileset dir="${staging}/JPEG_full"/> <!--   prefix="${URL}_fullsize_pics"  -->
       </zip>
-<!--
-      <zip destfile="${build}/${URL}/original_shoot.zip">
-          <zipfileset dir="${staging}/Backup"/> 
-      </zip>
--->
-  </target>
-
-  <target name="ftp-upload-choboji" description="Upload to www.stevelukehanson.com/choboji">
-    <ftp action="mkdir"
-        verbose="yes" passive="yes" depends="yes"
-        server="ftp.stevelukehanson.com"         
-        remotedir="choboji"
-        userid="stevelukehanson@stevelukehanson.com" password="ar!st0tle"/>
-    <ftp verbose="yes" passive="yes" depends="yes"
-	  server="ftp.stevelukehanson.com"
-        remotedir="choboji"         
-        userid="stevelukehanson@stevelukehanson.com" password="ar!st0tle">
-        <fileset dir="C:\Documents and Settings\steveh\My Documents\My Web Sites\www.choboji.com\web">
-        </fileset>
-      </ftp>
-  </target>
-
-    <target name="ftp-upload" description="Upload to www.nwhomephoto.com">
-        <exec executable="C:\Program Files (x86)\FileZilla FTP Client\filezilla.exe" spawn="true">
-            <arg value='--site=0/virtualmediagalleries'/>
-			</exec>
-    </target>
-
-    <target name="foreachtest">
-        <foreach target="bar" param="foreach.file" >
-            <fileset dir="${build}/${URL}" casesensitive="yes">
-                <include name="*.html"/>
-                <include name="*.jpg"/>
-                <include name="*.pdf"/>
-            </fileset>
-            <fileset dir="${build}/${URL}/webgallery" casesensitive="yes">
-                <include name="*.html"/>
-                <include name="*.jpg"/>
-                <include name="*.pdf"/>
-            </fileset>
-        </foreach>
-    </target>
-
-    <target name="bar" depends="init">
-        <echo message="foreach.file is ${foreach.file}" />
-<!--        <echo message="foreach.dir is ${foreach.dir}" />
-        <echo message="foreach.name.ext is ${foreach.name.ext}" />
-        <echo message="foreach.name is ${foreach.name}" />
--->    </target>
-
-    <target name="init">
-        <property name="property1" value="p1initi"/>
-    </target>
-
-<target name="placeholder">
-    <exec executable="C:/Program Files/curl_730_0_ssl/curl.exe">
-        <arg value="-u"/>
-        <arg value="stevelukehanson@nwhomephoto.com:ar!st0tle"/>
-        <arg value="--ftp-ssl"/>
-        <arg value="-verbose"/>
-        <arg value='-k'/>
-        <arg value='--ftp-create-dirs'/>
-        <arg value='-s'/>
-        <arg value="--upload-file" />
-        <arg value="${fullpath}" />
-        <arg value='${ftppath}'/>
-    </exec>
-
-</target>
-
-    <target name="testcurl">
-        <exec executable="C:/Program Files/curl_730_0_ssl/curl.exe">
-            <arg value="-u"/>
-            <arg value="stevelukehanson@nwhomephoto.com:ar!st0tle"/>
-            <arg value="--ftp-ssl"/>
-            <arg value="-verbose"/>
-            <arg value='-k'/>
-            <arg value='--ftp-create-dirs'/>
-            <arg value='-s'/>
-            <arg value="--upload-file" />
-            <arg value='C:\test.txt' />
-            <arg value='ftp://ftp.nwhomephoto.com:21/virtualMediaGalleries/testtest4/test.txt'/>
-        </exec>
-    </target>
-
-    <target name="ftp-upload-old" description="Upload to www.nwhomephoto.com">
-
-    <exec executable="cmd">
-        <arg line="/c"/>
-        <arg line="for /r %L in (C:\Users\steve\Documents\testtest\) do C:\Users\steve\Downloads\curl_730_0_ssl/curl.exe ftp://ftp.nwhomephoto.com:21/virtualMediaGalleries/${URL} -u stevelukehanson@nwhomephoto.com:ar!st0tle --ftp-ssl -verbose -k --ftp-create-dirs --upload-file %~nL"/>
-    </exec>
-
-    <!-- ######## DEPRECATED ######## Code no longer works since Yahoo started to require ftp over ssl.
-    <ftp action="mkdir"
-        verbose="yes" passive="yes" depends="yes"
-        server="ftp.nwhomephoto.com"         
-        remotedir="virtualMediaGalleries/${URL}"
-        userid="stevelukehanson@nwhomephoto.com" password="ar!st0tle"/>
-    <ftp verbose="yes" passive="yes" depends="yes"
-	  server="ftp.nwhomephoto.com"
-        remotedir="virtualMediaGalleries/${URL}"         
-        userid="stevelukehanson@nwhomephoto.com" password="ar!st0tle">
-        <fileset file="${build}/${URL}/banner.html" />
-        <fileset file="${build}/${URL}/index.html" />
-        <fileset file="${build}/${URL}/genericIndex.html" />
-        <fileset file="${build}/${URL}/gallery.html" />
-        <fileset file="${build}/${URL}/invoice.txt" />
-        <fileset file="${build}/${URL}/invoice.php" />
-        <fileset file="${build}/${URL}/invoice.pdf" />
-        <fileset file="${build}/${URL}/*.jpg" />
-        <fileset file="${build}/${URL}/*.pdf" />
-        <fileset dir="${build}/${URL}">
-           <exclude name="*.zip"/>
-        </fileset>
-        <fileset dir="${build}/${URL}">
-           <include name="*.zip"/>
-        </fileset>
-    </ftp>
-    <antcall target="email" />
-    -->
-  </target>
-
-  <target name="ftp-upload-all" description="Upload to www.nwhomephoto.com">
-    <ftp action="mkdir"
-        verbose="yes" passive="yes" depends="yes"
-        server="ftp.nwhomephoto.com"         
-        remotedir="virtualMediaGalleries/${UPLOADURL}"
-        userid="stevelukehanson@nwhomephoto.com" password="ar!st0tle"/>
-    <ftp verbose="yes" passive="yes" depends="yes"
-	  server="ftp.nwhomephoto.com"
-        remotedir="virtualMediaGalleries/${UPLOADURL}"         
-        userid="stevelukehanson@nwhomephoto.com" password="ar!st0tle">
-        <fileset dir="${build}/${URL}">
-        </fileset>
-    </ftp>
-  </target>
-
-  <target name="ftp-remove" description="Reverse the ftp-upload target.  This target is mainly intended to aid in the development of the ftp-upload target.">
-    <ftp action="delete"
-        verbose="yes" passive="yes" depends="yes"
-	  server="ftp.nwhomephoto.com"
-        remotedir="virtualMediaGalleries"         
-        userid="stevelukehanson@nwhomephoto.com" password="ar!st0tle">
-        <fileset>
-          <include name="${UPLOADURL}/**"/>
-        </fileset>
-    </ftp>
-    <ftp action="rmdir"
-        verbose="yes" passive="yes" depends="yes"
-	  server="ftp.nwhomephoto.com"
-        remotedir="virtualMediaGalleries"         
-        userid="stevelukehanson@nwhomephoto.com" password="ar!st0tle">
-        <fileset>
-          <include name="${UPLOADURL}/**"/>
-        </fileset>
-    </ftp>
-  </target>
-
-  <target name="ftp-upload-oo" description="Upload to www.orvisandorvisrealestate.com">
-    <ftp verbose="yes" passive="yes" depends="yes"
-	  server="ftp.orvisandorvisrealestate.com"
-        remotedir="pages"
-        userid="janeorvis" password="Conrad00">
-        <fileset dir="C:\Users\steve\My Web Sites\www.orvisandorvisrealestate.com\pages" />
-    </ftp>
-  </target>
-
-  <target name="ftp-download-oo" description="download from www.orvisandorvisrealestate.com">
-    <ftp action="get" verbose="yes" passive="yes" depends="yes"
-	  server="ftp.orvisandorvisrealestate.com"
-        remotedir="pages"
-        userid="janeorvis" password="Conrad00">
-        <fileset dir="C:\Users\steve\My Web Sites\www.orvisandorvisrealestate.com\pages" />
-    </ftp>
-  </target>
-
-  <target name="ftp-upload-hpg" description="Upload to www.hansonphotogroup.com">
-    <ftp verbose="yes" passive="yes" depends="yes"
-	  server="ftp.nwhomephoto.com"
-        userid="stevelukehanson@nwhomephoto.com" password="ar!st0tle">
-        <fileset dir="C:\Documents and Settings\steveh\My Documents\My Web Sites\www.hansonphotogroup.com" />
-    </ftp>
   </target>
 
 <target name="email">

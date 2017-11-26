@@ -56,7 +56,7 @@ function addFlashLayer(sourcePath, destinationPath)
         app.activeDocument = darkImage;
         darkImage.close(SaveOptions.DONOTSAVECHANGES);
 
-        // save as jpg in the 'best' folder
+        // save as jpg in the 'results' folder
         app.activeDocument = jpgDoc;
         jpgDoc.flatten();
         var saveDoc = new File(outputFolder + "/" + jpgDoc.name);

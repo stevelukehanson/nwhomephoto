@@ -44,16 +44,91 @@
     <echo>propB: ${propB}</echo>
   </target>
 
-  <target name="listfiles">
-    <fileset id="dist.contents" dir="${RESIZE_PATH}" includes="*.psd"/>
-    <property name="prop.dist.contents" refid="dist.contents"/>
-    <echo>${prop.dist.contents}</echo>
+  <target name="validate" description="Throws an informative error if the proerties are messed up. Like if URL is missing, or has a trailing white space">
+	   <fail message="I can't find the properties file.">
+		 <condition>
+		   <not>
+			<resourceexists>
+			  <file file="${props}"/>
+			</resourceexists>
+		   </not>
+		 </condition>
+	  </fail>
+      <fail message="The URL property is not set.">
+		 <condition>
+		   <not>
+			 <isset property="URL"/>
+		   </not>
+		 </condition>
+	   </fail>
+  </target>
+  
+    <target name="copy" 
+		depends="devenv" 
+		description="Creates the directory and copies images from camera/card into it.">
+      <input message="*** Please Enter Card Letter ***:" addproperty="CARD" />
+      <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/mp4"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/3"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/7"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/9"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/handheld"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/luminosity-layers"/>
+      <mkdir dir="${ROOT_PATH}/${URL}/jpg/flash-layers"/>
+	  <!--
+      <mkdir dir="${LUMINOSITY_PATH}"/>
+      <mkdir dir="${FLASH_PATH}"/>
+      -->
+      <mkdir dir="${ROOT_PATH}/${URL}/best"/>
+      <copy todir="${ROOT_PATH}/${URL}/jpg/7" flatten="true" verbose="true" failonerror="no">
+          <fileset dir="${CARD}:/">
+              <include name="**/*.JPG"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/cr2" flatten="true" verbose="true" failonerror="no">
+          <fileset dir="${CARD}:/">
+              <include name="**/*.CR2"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/mp4" flatten="true" verbose="true" failonerror="no">
+          <fileset dir="${CARD}:/">
+              <include name="**/*.MP4"/>
+          </fileset>
+      </copy>
+      <copy todir="${ROOT_PATH}/${URL}/mp4" flatten="true" verbose="true" failonerror="no">
+          <fileset dir="${CARD}:/">
+              <include name="**/*.MOV"/>
+          </fileset>
+      </copy>
   </target>
 
-  <target name="clean" depends="clean-web,clean-raw,clean-resize" description="cleans up all of the build artifacts, ps and web artifacts, returning to its original template state.">
+  <target name="show">
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="/C start chrome '${basedir}/${build}/${URL}/index.html'" />
+        </exec>
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="/C start chrome 'https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate/${URL}/index.html'" />
+        </exec>		
+  </target>
+
+  <target name="upload">
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="/C start chrome 'https://console.aws.amazon.com/s3/buckets/aws-website-hansonphotogroup-2pp1h/RealEstate/?'" />
+        </exec>
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="/C start .\${build}" />
+        </exec>		
+  </target>
+  
+  <target name="clean" 
+	depends="clean-web,clean-raw,clean-resize" 
+	description="cleans up all of the build artifacts, ps and web artifacts, returning to its original template state.">
   </target>
  
-  <target name="web" depends="clean-web,staging,generate-gallery,string-replace,copy-to-build,clean-staging" description="clean the web pages, builds the web pages, but no ftp">
+  <target name="web" 
+	depends="validate,clean-web,staging,generate-gallery,string-replace,copy-to-build,clean-staging" 
+	description="Deletes the web pages, builds the web pages, but no ftp">
   </target>
   <target name="clean-job" description="cleans up all of the build artifacts, returning the directory to its original template state.">
     <delete dir="${staging}"/>
@@ -73,14 +148,190 @@
     <delete file="${build}/${URL}/index.html"/>
   </target>
 
+  <target name="resize" depends="validate,clean-resize,make-js-prop-file" description="Calls the Photoshop script.">
+    <echo message="${RESIZE_PATH}"/>
+      <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-resize-done-xxx.jpg"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+          <available file="build_props.jsx"/>
+    </waitfor>
+      <!-- ****** Call the JS script ****** -->
+    <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_resize.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor  maxwait="15" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-resize-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-resize-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>Resize process done!!!</echo>  
+  </target>
+
+  <target name="invoice" depends="validate, make-js-prop-file" description="Creates an invoice PDF with Photoshop and modifies the index.html page">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-invoice-done-xxx.jpg"/>
+      <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+          <available file="build_props.jsx"/>
+      </waitfor>
+	<mkdir dir="build/${URL}"/>
+	<!-- ****** Call the JS script via an intermediary cmd file. (a pain, but i can't get Ant to call the javascript directly.) ****** -->
+    <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_invoice.cmd"/>
+    </exec>
+    <sleep seconds="1"/>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond">
+      <available file="build/xxx-invoice-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-invoice-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>invoice done!!!</echo>  
+  </target>
+
+  <target name="flyer">
+    <antcall target="flyer-make"/>
+    <antcall target="flyer-save"/>
+  </target>
+
+  <target name="luminosity" depends="validate, make-js-prop-file" description="Create Luminosity layer, for 'lights on' photos.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+      <available file="build_props.jsx"/>
+    </waitfor>
+     <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_makeLuminosityLayers.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>luminosity layers done!!!</echo>  
+  </target>
+  
+  <target name="flash" depends="make-js-prop-file" description="Create flash layer, reduce opacity.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+      <available file="build_props.jsx"/>
+    </waitfor>
+     <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_makeFlashLayers.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>flash layers done!!!</echo>  
+  </target>
+  
+  <target name="flyer-make" depends="validate, make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+      <available file="build_props.jsx"/>
+    </waitfor>
+    <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_make_flyer.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>flyer done!!!</echo>  
+  </target>
+
+  <target name="flyer-make-side2" depends="validate, make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+      <available file="build_props.jsx"/>
+    </waitfor>
+    <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_make_flyer_side2.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>flyer side 2 done!!!</echo>  
+  </target>
+  
+  
+  <target name="flyer-save" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
+      <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+          <available file="build_props.jsx"/>
+      </waitfor>
+      <exec executable="cmd">
+        <arg value="/c"/>
+        <arg value="ps_save_flyer.cmd"/>
+      </exec>
+      <!-- ****** CompleteSignal Listener ****** -->
+      <waitfor maxwait="5" maxwaitunit="minute"
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-save-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>*** Flyer saved. ***</echo>  
+  </target>
+
+    <target name="flyer-save-side2" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
+      <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+          <available file="build_props.jsx"/>
+      </waitfor>
+      <exec executable="cmd">
+        <arg value="/c"/>
+        <arg value="ps_save_flyer2.cmd"/>
+      </exec>
+      <!-- ****** CompleteSignal Listener ****** -->
+      <waitfor maxwait="5" maxwaitunit="minute"
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-save-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>*** Flyer side 2 saved. ***</echo>  
+  </target>
+ 
+    <target name="flyer-deploy" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+        <replace file="${build}/${URL}/index.html" token='div id="flyer" style="visibility:hidden;"' value='div id="flyer" style="visibility:visible;"'/>
+        <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <echo>*** Flyer deployed (HTML link has been made visible on the page). ***</echo>  
+    </target>
+    
   <target name="generate-gallery">
     <property name="gallery.bat.file" location="galleryStart.cmd"/>
     <exec executable="cmd">
         <arg value="/C"/>
         <arg value="${gallery.bat.file}"/>
     </exec>
-  </target>
-
+  </target>  
+  
   <target name="clean-raw" description="Cleans out the raw jpegs and cr2 files from the camera.">
     <input
          message="All data is going to be deleted from ${RAW_PATH}.  Continue?"
@@ -142,184 +393,6 @@
     <echo>RAW process done!!!</echo>    
   </target>
   
-  <target name="resize" depends="clean-resize,make-js-prop-file" description="Calls the Photoshop script.">
-    <echo message="${RESIZE_PATH}"/>
-      <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-resize-done-xxx.jpg"/>
-    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-          <available file="build_props.jsx"/>
-    </waitfor>
-      <!-- ****** Call the JS script ****** -->
-    <exec executable="cmd">
-      <arg value="/c"/>
-      <arg value="ps_resize.cmd"/>
-    </exec>
-    <!-- ****** CompleteSignal Listener ****** -->
-    <waitfor  maxwait="15" maxwaitunit="minute" 
-               checkevery="500" checkeveryunit="millisecond" >
-      <available file="build/xxx-resize-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-resize-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>Resize process done!!!</echo>  
-  </target>
-
-  <target name="invoice" depends="make-js-prop-file" description="Creates an invoice PDF with Photoshop and modifies the index.html page">
-    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-invoice-done-xxx.jpg"/>
-      <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-          <available file="build_props.jsx"/>
-      </waitfor>
-	<mkdir dir="build/${URL}"/>
-	<!-- ****** Call the JS script via an intermediary cmd file. (a pain, but i can't get Ant to call the javascript directly.) ****** -->
-    <exec executable="cmd">
-      <arg value="/c"/>
-      <arg value="ps_invoice.cmd"/>
-    </exec>
-    <sleep seconds="1"/>
-    <!-- ****** CompleteSignal Listener ****** -->
-    <waitfor maxwait="5" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond">
-      <available file="build/xxx-invoice-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-invoice-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>invoice done!!!</echo>  
-  </target>
-
-  <target name="flyer">
-    <antcall target="flyer-make"/>
-    <antcall target="flyer-save"/>
-  </target>
-
-  <target name="luminosity" depends="make-js-prop-file" description="Create Luminosity layer, for 'lights on' photos.">
-    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
-    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-      <available file="build_props.jsx"/>
-    </waitfor>
-     <exec executable="cmd">
-      <arg value="/c"/>
-      <arg value="ps_makeLuminosityLayers.cmd"/>
-    </exec>
-    <!-- ****** CompleteSignal Listener ****** -->
-    <waitfor maxwait="5" maxwaitunit="minute" 
-               checkevery="500" checkeveryunit="millisecond" >
-      <available file="build/xxx-flyer-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-flyer-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>luminosity layers done!!!</echo>  
-  </target>
-  
-  <target name="flash" depends="make-js-prop-file" description="Create flash layer, reduce opacity.">
-    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
-    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-      <available file="build_props.jsx"/>
-    </waitfor>
-     <exec executable="cmd">
-      <arg value="/c"/>
-      <arg value="ps_makeFlashLayers.cmd"/>
-    </exec>
-    <!-- ****** CompleteSignal Listener ****** -->
-    <waitfor maxwait="5" maxwaitunit="minute" 
-               checkevery="500" checkeveryunit="millisecond" >
-      <available file="build/xxx-flyer-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-flyer-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>flash layers done!!!</echo>  
-  </target>
-  
-  <target name="flyer-make" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
-    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
-    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-      <available file="build_props.jsx"/>
-    </waitfor>
-    <exec executable="cmd">
-      <arg value="/c"/>
-      <arg value="ps_make_flyer.cmd"/>
-    </exec>
-    <!-- ****** CompleteSignal Listener ****** -->
-    <waitfor maxwait="5" maxwaitunit="minute" 
-               checkevery="500" checkeveryunit="millisecond" >
-      <available file="build/xxx-flyer-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-flyer-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>flyer done!!!</echo>  
-  </target>
-
-  <target name="flyer-make-side2" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
-    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
-    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-      <available file="build_props.jsx"/>
-    </waitfor>
-    <exec executable="cmd">
-      <arg value="/c"/>
-      <arg value="ps_make_flyer_side2.cmd"/>
-    </exec>
-    <!-- ****** CompleteSignal Listener ****** -->
-    <waitfor maxwait="5" maxwaitunit="minute" 
-               checkevery="500" checkeveryunit="millisecond" >
-      <available file="build/xxx-flyer-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-flyer-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>flyer side 2 done!!!</echo>  
-  </target>
-  
-  
-  <target name="flyer-save" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
-    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
-      <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-          <available file="build_props.jsx"/>
-      </waitfor>
-      <exec executable="cmd">
-        <arg value="/c"/>
-        <arg value="ps_save_flyer.cmd"/>
-      </exec>
-      <!-- ****** CompleteSignal Listener ****** -->
-      <waitfor maxwait="5" maxwaitunit="minute"
-               checkevery="500" checkeveryunit="millisecond" >
-      <available file="build/xxx-flyer-save-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>*** Flyer saved. ***</echo>  
-  </target>
-
-    <target name="flyer-save-side2" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
-    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
-      <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-          <available file="build_props.jsx"/>
-      </waitfor>
-      <exec executable="cmd">
-        <arg value="/c"/>
-        <arg value="ps_save_flyer2.cmd"/>
-      </exec>
-      <!-- ****** CompleteSignal Listener ****** -->
-      <waitfor maxwait="5" maxwaitunit="minute"
-               checkevery="500" checkeveryunit="millisecond" >
-      <available file="build/xxx-flyer-save-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-flyer-save-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>*** Flyer side 2 saved. ***</echo>  
-  </target>
-
-
-  
-    <target name="flyer-deploy" depends="make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
-        <replace file="${build}/${URL}/index.html" token='div id="flyer" style="visibility:hidden;"' value='div id="flyer" style="visibility:visible;"'/>
-        <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <echo>*** Flyer deployed (HTML link has been made visible on the page). ***</echo>  
-    </target>
-
   <target name="save-props" description="template folder is like the src folder.  To preserve it, all work is done in the staging folder.">
     <copy file="build_props.properties" tofile="build_prop_archive/build_props_${URL}.properties" />
   </target>
@@ -342,62 +415,6 @@
     </copy>
   </target>
   
-  <target name="copy" depends="devenv" description="Creates the directory and copies images from camera/card into it.">
-      <input message="*** Please Enter Card Letter ***:" addproperty="CARD" />
-      <mkdir dir="${ROOT_PATH}/${URL}/cr2"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/mp4"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/3"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/7"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/9"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/handheld"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/luminosity-layers"/>
-      <mkdir dir="${ROOT_PATH}/${URL}/jpg/flash-layers"/>
-	  <!--
-      <mkdir dir="${LUMINOSITY_PATH}"/>
-      <mkdir dir="${FLASH_PATH}"/>
-      -->
-      <mkdir dir="${ROOT_PATH}/${URL}/best"/>
-      <copy todir="${ROOT_PATH}/${URL}/jpg/7" flatten="true" verbose="true" failonerror="no">
-          <fileset dir="${CARD}:/">
-              <include name="**/*.JPG"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/cr2" flatten="true" verbose="true" failonerror="no">
-          <fileset dir="${CARD}:/">
-              <include name="**/*.CR2"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/mp4" flatten="true" verbose="true" failonerror="no">
-          <fileset dir="${CARD}:/">
-              <include name="**/*.MP4"/>
-          </fileset>
-      </copy>
-      <copy todir="${ROOT_PATH}/${URL}/mp4" flatten="true" verbose="true" failonerror="no">
-          <fileset dir="${CARD}:/">
-              <include name="**/*.MOV"/>
-          </fileset>
-      </copy>
-  </target>
-
-  <target name="show">
-        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-                <arg line="/C start chrome '${basedir}/${build}/${URL}/index.html'" />
-        </exec>
-        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-                <arg line="/C start chrome 'https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate/${URL}/index.html'" />
-        </exec>		
-  </target>
-
-  <target name="upload">
-        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-                <arg line="/C start chrome 'https://console.aws.amazon.com/s3/buckets/aws-website-hansonphotogroup-2pp1h/RealEstate/?'" />
-        </exec>
-        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-                <arg line="/C start .\${build}" />
-        </exec>		
-  </target>
-
   <target name="string-replace" description="Fills in the template web pages.">
 
     <tstamp>

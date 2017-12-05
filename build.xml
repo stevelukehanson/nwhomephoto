@@ -1,16 +1,15 @@
-<project name="slhphoto" default="show" basedir=".">
+<project name="slhphoto" default="help" basedir=".">
   <description>
     Automates portions of a photo delivery workflow.
 	Runs Photoshop automation routines, such as creating layer composites.
 	Creates a HTML web site and other deliverables after processing photos in Photoshop.
   </description>
 
-  <!-- set global properties for this build -->
-  <property environment="env"/>
+  <!-- Grab the URL property from the name of the properties file... -->
+  <basename property="URL" file="${props}" suffix=".txt"/>
+  <!-- ...and grab the remaining properties from inside the file. -->
   <property file="${props}"/>
-  <property file="${client}"/>
   <property name="template" value="template"/>
-  <property name="base.dir"  value="."/>
   <property name="build"  value="build"/>
   <property name="staging"  value="${build}\staging"/>
   <tstamp/>
@@ -33,17 +32,15 @@
 	  </echo>
   </target>
 
-  <target name="echoprops">
+  <target name="echo">
     <echoproperties destfile="current.properties" format="xml"/>
-    <length string="${FLICKR}" property="flickr.length" />
-    <echo>Length of FLICKR prop: ${flickr.length}</echo>
-    <echo>RAW_PATH: ${RAW_PATH}</echo>
+    <echo>Property file: ${props}</echo>
+    <echo>URL: ${URL}</echo>
+    <echo>ROOT_PATH: ${ROOT_PATH}</echo>
     <echo>RESIZE_PATH: ${RESIZE_PATH}</echo>
     <echo>ClientName: ${AGENT}</echo>
-    <echo>build: ${build}</echo>
-    <echo>propB: ${propB}</echo>
   </target>
-
+  
   <target name="validate" description="Throws an informative error if the proerties are messed up. Like if URL is missing, or has a trailing white space">
 	   <fail message="I can't find the properties file.">
 		 <condition>
@@ -53,6 +50,13 @@
 			</resourceexists>
 		   </not>
 		 </condition>
+	  </fail>
+	   <fail message="I can't find image root directory, which you have set to ${ROOT_PATH} Typically a hard coded absolute path, like C:/Users/steve/Pictures/RealEstate.">
+		 <condition>
+		  <not>
+           <available file="${ROOT_PATH}" type="dir"/>
+		  </not>
+       </condition>
 	  </fail>
       <fail message="The URL property is not set.">
 		 <condition>
@@ -116,38 +120,12 @@
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start chrome 'https://console.aws.amazon.com/s3/buckets/aws-website-hansonphotogroup-2pp1h/RealEstate/?'" />
         </exec>
+		<sleep seconds="5"/>
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start .\${build}" />
         </exec>		
   </target>
   
-  <target name="clean" 
-	depends="clean-web,clean-raw,clean-resize" 
-	description="cleans up all of the build artifacts, ps and web artifacts, returning to its original template state.">
-  </target>
- 
-  <target name="web" 
-	depends="validate,clean-web,staging,generate-gallery,string-replace,copy-to-build,clean-staging" 
-	description="Deletes the web pages, builds the web pages, but no ftp">
-  </target>
-  <target name="clean-job" description="cleans up all of the build artifacts, returning the directory to its original template state.">
-    <delete dir="${staging}"/>
-    <delete dir="${build}/${URL}"/>
-  </target>
-  <target name="clean-staging" description="cleans up all of the build artifacts, returning the directory to its original template state.">
-    <delete dir="${staging}"/>
-  </target>
-  <target name="clean-web" description="cleans up all of the build artifacts, returning the directory to its original template state.">
-    <delete dir="${build}/${URL}/webgallery"/>
-    <delete file="${build}/${URL}/fullsize_pics.zip"/>
-    <delete file="${build}/${URL}/MLS_pics.zip"/>
-    <delete file="${build}/${URL}/banner.html"/>
-    <delete file="${build}/${URL}/gallery.html"/>
-    <delete file="${build}/${URL}/genericIndex.html"/>
-    <delete file="${build}/${URL}/simpleGallery.html"/>
-    <delete file="${build}/${URL}/index.html"/>
-  </target>
-
   <target name="resize" depends="validate,clean-resize,make-js-prop-file" description="Calls the Photoshop script.">
     <echo message="${RESIZE_PATH}"/>
       <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
@@ -168,6 +146,28 @@
     <delete file="build/xxx-resize-done-xxx.jpg"/>
     <delete file="build_props.jsx"/>
     <echo>Resize process done!!!</echo>  
+  </target>
+  
+  <target name="web" 
+	depends="validate,clean-web,staging,generate-gallery,string-replace,copy-to-build,clean-staging" 
+	description="Deletes the web pages, builds the web pages, but no ftp">
+  </target>
+  <target name="clean-job" description="cleans up all of the build artifacts, returning the directory to its original template state.">
+    <delete dir="${staging}"/>
+    <delete dir="${build}/${URL}"/>
+  </target>
+  <target name="clean-staging" description="cleans up all of the build artifacts, returning the directory to its original template state.">
+    <delete dir="${staging}"/>
+  </target>
+  <target name="clean-web" description="cleans up all of the build artifacts, returning the directory to its original template state.">
+    <delete dir="${build}/${URL}/webgallery"/>
+    <delete file="${build}/${URL}/fullsize_pics.zip"/>
+    <delete file="${build}/${URL}/MLS_pics.zip"/>
+    <delete file="${build}/${URL}/banner.html"/>
+    <delete file="${build}/${URL}/gallery.html"/>
+    <delete file="${build}/${URL}/genericIndex.html"/>
+    <delete file="${build}/${URL}/simpleGallery.html"/>
+    <delete file="${build}/${URL}/index.html"/>
   </target>
 
   <target name="invoice" depends="validate, make-js-prop-file" description="Creates an invoice PDF with Photoshop and modifies the index.html page">
@@ -359,6 +359,11 @@
     <delete file="build/xxx-resize-done-xxx.jpg"/>
   </target>
 
+  <target name="clean" 
+	depends="clean-web,clean-raw,clean-resize" 
+	description="cleans up all of the build artifacts, ps and web artifacts, returning to its original template state.">
+  </target>
+  
   <target name="raw" depends="make-js-prop-file" description="Calls the Photoshop script.">
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
     <delete file="xxx-done-xxx.jpg"/>

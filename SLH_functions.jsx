@@ -40,13 +40,14 @@ function batchResize2(sourcePath, sizesArray, destinationPath)
 
                   var doc = open(sourceFiles[i]);
                   if(resizeArray[j] != "full") 
-                    doc.resizeImage(UnitValue(resizeArray[j],"px"),null,null,ResampleMethod.BICUBIC);
+                    //doc.resizeImage(UnitValue(resizeArray[j],"px"),null,null,ResampleMethod.BICUBIC);
+                    doc.resizeImage(UnitValue(resizeArray[j],"px"),null,null,ResampleMethod.BICUBICSHARPER);
                   doc.saveName = 1001 + i;
                   doc.flatten();
                   //app.displayDialogs = DialogModes.NO;
                   var saveFile = new File(outputFolder[j] + "/" + doc.saveName + "_" + resizeArray[j] + '.jpg')
                   // The number below controls jpg quality, between 1 and 10.
-                  saveJPEG( doc, saveFile, 8 );
+                  saveJPEG( doc, saveFile, 10 );
                   doc.close(SaveOptions.DONOTSAVECHANGES);
 
 			}

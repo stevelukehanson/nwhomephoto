@@ -140,19 +140,23 @@ set JAVA_HOME and JAVA_HOME/bin on PATH
 
 (Running devEnv.cmd will do the above.)
 
-## Install Bugs
-
-You may run into some absoulate paths/hard coded paths when installing on a new machine. I have endeavored to root these out, but there maybe some lingering still.
-
 # Properties File Reference
 
 The properties defined here control most of the behavior of the system. Some properties (portra, raw_path, flickr) are probably deprecated at this point, just from disuse. Have included them for historical reasons, and for possible re-hab.
 
-Some import points:
+# Troublshooting
 
 - URL - Crops up everywhere.
 - PHOTO1...PHOTO5 - These are full paths or integers, which grab the flyer images.
 - LOGO - Has been deprecated, now controlled in script by a relative path. But one may want to switch it back the absolute path, or build in an 'if present use the abs path property' overriding behavior for the logo, to make flyers for different clients.
+- Call 'echo validate' it get diagnostics:
+
+```
+>ant -Dprops="properties\1000 Union #109.txt" echo validate
+```
+
+Hard coded paths: You may run into some absoulate paths/hard coded paths when installing on a new machine. I have endeavored to root these out, but there maybe some lingering still.
+
 
 Sample Properties File
 

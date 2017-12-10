@@ -34,7 +34,7 @@
 
   <target name="echo">
     <echoproperties destfile="current.properties" format="xml"/>
-    <echo>Property file: ${props}</echo>
+    <echo>Property file, $${props}: ${props}</echo>
     <echo>URL: ${URL}</echo>
     <echo>ROOT_PATH: ${ROOT_PATH}</echo>
     <echo>RESIZE_PATH: ${RESIZE_PATH}</echo>
@@ -42,16 +42,16 @@
   </target>
   
   <target name="validate" description="Throws an informative error if the proerties are messed up. Like if URL is missing, or has a trailing white space">
-	   <fail message="I can't find the properties file.">
+	   <fail message="I can't find the properties file: ./${props}">
 		 <condition>
 		   <not>
 			<resourceexists>
-			  <file file="${props}"/>
+			  <file file="./${props}"/>
 			</resourceexists>
 		   </not>
 		 </condition>
 	  </fail>
-	   <fail message="I can't find image root directory, which you have set to ${ROOT_PATH} Typically a hard coded absolute path, like C:/Users/steve/Pictures/RealEstate.">
+	  <fail message="I can't find image root directory, which you have set to ${ROOT_PATH} Typically a hard coded absolute path, like C:/Users/steve/Pictures/RealEstate.">
 		 <condition>
 		  <not>
            <available file="${ROOT_PATH}" type="dir"/>

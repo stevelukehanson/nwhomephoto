@@ -1,4 +1,4 @@
-<project name="slhphoto" default="help" basedir=".">
+<project name="Hanson Photo Group" default="help" basedir=".">
   <description>
     Automates portions of a photo delivery workflow.
 	Runs Photoshop automation routines, such as creating layer composites.
@@ -6,32 +6,128 @@
   </description>
 
   <!-- Grab the URL property from the name of the properties file... -->
-  <basename property="URL" file="${props}" suffix=".txt"/>
+  <!-- <basename property="URL" file="${props}" suffix=".txt"/> -->
   <!-- ...and grab the remaining properties from inside the file. -->
   <property file="${props}"/>
   <property name="template" value="template"/>
   <property name="build"  value="build"/>
   <property name="staging"  value="${build}\staging"/>
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
   <tstamp/>
+  <path id="antclasspath"> 
+    <fileset dir="C:\apache\apache-ant-1.9.7\lib"> 
+        <include name="postgresql-42.1.4.jar"/> 
+    </fileset> 
+  </path> 
 
   
   <target name="help">
 	  <echo>
+      These Ant targets automate portions of a photo delivery workflow.
+	  Run Photoshop automation routines, such as creating layer composites.
+	  Create an HTML web page/site and other deliverables after processing photos in Photoshop.
+
+	  Calling Targets:
+	  
+	  Point to a properties file and call various targets, such as 'resize', 
+	  or a series of targets, such as 'web invoice upload'.
+	  
 	  Examples: 
 	  
 	  >ant -Dprops=properties\MYJOB.txt resize
 	  >ant -Dprops=properties\MYJOB.txt web invoice upload
 	  
 	  Targets:
-	  - copy - Copies from the image card to the computer. Creates a helpful folder structure for manual image editing and curation.
-	  - resize - After curation, resize the images to standard pixel sizes. The resultant resized images are consumed by various next targets: luminosity, flash, web, etc.
+	  
+	  - copy - Copies from the image card to the computer. 
+	    Creates a helpful folder structure for manual image editing and curation.
+	  - resize - After curation, resize the images to standard pixel sizes. 
+	    The resultant resized images are consumed by various next targets: luminosity, flash, web, etc.
 	  - web - Creates a web site and zip files for distribution of the final product.
 	  - invoice - Creates a PDF invoice.
 	  - show - Opens a browser and brings up the web site, both a local and the assumed live one.
-	  - upload - Opens a browser (to the target upload area) and a Windows explorer to the local directory - for easy drag-and-drop. Legacy targets would perform the FTP upload, but Yahoo discontinued the API, I imagine for security reasons.  
+	  - upload - Opens a browser (to the target upload area) 
+	    and a Windows explorer to the local directory - for easy drag-and-drop. 
+	    Legacy targets would perform the FTP upload, 
+        but Yahoo discontinued the API, I imagine for security reasons.  
+	  - flyer-make, flyer-save, and flyer-deploy - Flyer creation and deployment to the index.html page.
 	  </echo>
   </target>
 
+  
+<target name="sql">
+  <sql
+    driver="org.postgresql.Driver"
+    url="jdbc:postgresql://localhost:5432/labkey"
+    userid="sa"
+    password="sa"
+    print="yes" 
+    classpathref="antclasspath">
+     -- select * from list.c2d25_AntTable
+     DELETE FROM list.c9d38_anttable;	 
+  </sql>
+  <foreach target="bar" param="theFile">
+   <path>
+    <fileset dir="C:\Users\steveh\Documents\Adobe Scripts\nwhomephoto\properties" casesensitive="yes">
+      <include name="**/*.txt"/>
+      <include name="**/*.properties"/>
+<!--
+      <include name="*.txt"/>
+      <include name="*.properties"/>
+-->
+	  </fileset>
+   </path>
+  </foreach>
+</target>
+
+<target name="bar">
+  <echo message="${theFile}"/>
+  <antcall target="sqlinsert">
+    <param name="props" value="${theFile}"/>
+  </antcall>
+</target> 
+ 
+<!-- Experimental SQL Insert -->
+<target name="sqlinsert">
+
+  <sql
+    driver="org.postgresql.Driver"
+    url="jdbc:postgresql://localhost:5432/labkey"
+    userid="sa"
+    password="sa"
+    print="yes" 
+    classpathref="antclasspath">
+     -- select * from list.c2d25_AntTable
+     INSERT INTO list.c9d38_anttable (EntityId, 
+                                Container, 
+								URL, 
+								ADDRESS, 
+								Agent,
+								ShootPrice,
+								AgentPhone,
+								AgentEmail,
+								Date,
+								PhotographerName,
+								URLPre) 
+							VALUES (
+								'f5a69c9c-e5e6-1035-9f83-68b79b05b9f8', 
+								'f5a69c9c-e5e6-1035-9f83-68b79b05b9f8', 
+								'${URL}', 
+								'${ADDRESS}', 
+								'${AGENT}',
+								'${SHOOTPRICE}',
+								'${PHONE}',
+								'${EMAIL}',
+								'${DATE}',
+								'${PHOTOGRAPHERNAME}',
+								's3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate')
+
+        -- select * from core.Users 
+        -- INSERT INTO core.Users (email) VALUES ('myemail@email.com')
+        -- select * from core.Containers 
+  </sql>
+</target>
+  
   <target name="echo">
     <echoproperties destfile="current.properties" format="xml"/>
     <echo>Property file, $${props}: ${props}</echo>

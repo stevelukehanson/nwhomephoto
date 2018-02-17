@@ -32,6 +32,8 @@ addLineText(docRef, 4, 263, "name", '000000', "Stephen Hanson", 12, false, false
 // Date
 addLineText(docRef, 1835, 205, "date", '000000', date, 12, false, false, Justification.LEFT);
 // Invoice Number
+invoicenumber = new Date(date);
+invoicenumber = invoicenumber.getFullYear() + '' + (invoicenumber.getMonth()+1) + '' + invoicenumber.getDate(); 
 addLineText(docRef, 1835, 263, "invoicenumber", '000000', invoicenumber, 12, false, false, Justification.LEFT);
 // jobname
 addLineText(docRef, 4, 1140, "jobname", '000000', jobname, 12, false, false, Justification.LEFT);

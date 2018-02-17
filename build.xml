@@ -19,7 +19,6 @@
         <include name="postgresql-42.1.4.jar"/> 
     </fileset> 
   </path> 
-
   
   <target name="help">
 	  <echo>
@@ -53,80 +52,6 @@
 	  - flyer-make, flyer-save, and flyer-deploy - Flyer creation and deployment to the index.html page.
 	  </echo>
   </target>
-
-  
-<target name="sql">
-  <sql
-    driver="org.postgresql.Driver"
-    url="jdbc:postgresql://localhost:5432/labkey"
-    userid="sa"
-    password="sa"
-    print="yes" 
-    classpathref="antclasspath">
-     -- select * from list.c2d25_AntTable
-     DELETE FROM list.c9d38_anttable;	 
-  </sql>
-  <foreach target="bar" param="theFile">
-   <path>
-    <fileset dir="C:\Users\steveh\Documents\Adobe Scripts\nwhomephoto\properties" casesensitive="yes">
-      <include name="**/*.txt"/>
-      <include name="**/*.properties"/>
-<!--
-      <include name="*.txt"/>
-      <include name="*.properties"/>
--->
-	  </fileset>
-   </path>
-  </foreach>
-</target>
-
-<target name="bar">
-  <echo message="${theFile}"/>
-  <antcall target="sqlinsert">
-    <param name="props" value="${theFile}"/>
-  </antcall>
-</target> 
- 
-<!-- Experimental SQL Insert -->
-<target name="sqlinsert">
-
-  <sql
-    driver="org.postgresql.Driver"
-    url="jdbc:postgresql://localhost:5432/labkey"
-    userid="sa"
-    password="sa"
-    print="yes" 
-    classpathref="antclasspath">
-     -- select * from list.c2d25_AntTable
-     INSERT INTO list.c9d38_anttable (EntityId, 
-                                Container, 
-								URL, 
-								ADDRESS, 
-								Agent,
-								ShootPrice,
-								AgentPhone,
-								AgentEmail,
-								Date,
-								PhotographerName,
-								URLPre) 
-							VALUES (
-								'f5a69c9c-e5e6-1035-9f83-68b79b05b9f8', 
-								'f5a69c9c-e5e6-1035-9f83-68b79b05b9f8', 
-								'${URL}', 
-								'${ADDRESS}', 
-								'${AGENT}',
-								'${SHOOTPRICE}',
-								'${PHONE}',
-								'${EMAIL}',
-								'${DATE}',
-								'${PHOTOGRAPHERNAME}',
-								's3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate')
-
-        -- select * from core.Users 
-        -- INSERT INTO core.Users (email) VALUES ('myemail@email.com')
-        -- select * from core.Containers 
-  </sql>
-</target>
   
   <target name="echo">
     <echoproperties destfile="current.properties" format="xml"/>
@@ -555,6 +480,7 @@
       <fileset file="${staging}/index.html"/>
       <fileset file="${staging}/gallery.html"/>
       <fileset file="${staging}/logobanner.jpg"/>
+      <fileset file="${props}"/>
     </copy>
       <copy todir="${build}/${URL}/webgallery">
           <fileset dir="${staging}/webgallery"/>
@@ -619,7 +545,7 @@
     <replace file="build_props.jsx" token="EMAIL" value="${EMAIL}"/>
     <replace file="build_props.jsx" token="FLICKR" value="${FLICKR}"/>
     <tstamp>
-      <format property="INVOICE" pattern="yyyyMMd" locale="en,GB"/>
+      <format property="INVOICE" pattern="yyMMdd" locale="en,GB"/>
     </tstamp>
     <replace file="build_props.jsx" token="INVOICENUMBER" value="${INVOICE}"/>
     <replace file="build_props.jsx" token="JOBNAME" value="${JOBNAME}"/>
@@ -652,6 +578,79 @@
     <replace file="build_props.jsx" token="PHOTOGRAPHERE" value="${PHOTOGRAPHER_E}"/>
     <replace file="build_props.jsx" token="PHOTOGRAPHERPH" value="${PHOTOGRAPHER_PH}"/>
     <replace file="build_props.jsx" token="\" value="/"/>
+</target>
+
+<target name="sql">
+  <sql
+    driver="org.postgresql.Driver"
+    url="jdbc:postgresql://localhost:5432/labkey"
+    userid="sa"
+    password="sa"
+    print="yes" 
+    classpathref="antclasspath">
+     -- select * from list.c2d25_AntTable
+     DELETE FROM list.c9d38_anttable;	 
+  </sql>
+  <foreach target="bar" param="theFile">
+   <path>
+    <fileset dir="C:\Users\steveh\Documents\Adobe Scripts\nwhomephoto\properties" casesensitive="yes">
+      <include name="**/*.txt"/>
+      <include name="**/*.properties"/>
+<!--
+      <include name="*.txt"/>
+      <include name="*.properties"/>
+-->
+	  </fileset>
+   </path>
+  </foreach>
+</target>
+
+<target name="bar">
+  <echo message="${theFile}"/>
+  <antcall target="sqlinsert">
+    <param name="props" value="${theFile}"/>
+  </antcall>
+</target> 
+ 
+<!-- Experimental SQL Insert -->
+<target name="sqlinsert">
+
+  <sql
+    driver="org.postgresql.Driver"
+    url="jdbc:postgresql://localhost:5432/labkey"
+    userid="sa"
+    password="sa"
+    print="yes" 
+    classpathref="antclasspath">
+     -- select * from list.c2d25_AntTable
+     INSERT INTO list.c9d38_anttable (EntityId, 
+                                Container, 
+								URL, 
+								ADDRESS, 
+								Agent,
+								ShootPrice,
+								AgentPhone,
+								AgentEmail,
+								Date,
+								PhotographerName,
+								URLPre) 
+							VALUES (
+								'f5a69c9c-e5e6-1035-9f83-68b79b05b9f8', 
+								'f5a69c9c-e5e6-1035-9f83-68b79b05b9f8', 
+								'${URL}', 
+								'${ADDRESS}', 
+								'${AGENT}',
+								'${SHOOTPRICE}',
+								'${PHONE}',
+								'${EMAIL}',
+								'${DATE}',
+								'${PHOTOGRAPHERNAME}',
+								's3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate')
+
+        -- select * from core.Users 
+        -- INSERT INTO core.Users (email) VALUES ('myemail@email.com')
+        -- select * from core.Containers 
+  </sql>
 </target>
 
 </project>

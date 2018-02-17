@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=Ellington506
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+
+ADDRESS=2801 1st Ave #506, Seattle, WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Sept 28, 2017
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Ellington Condominiums #506
+HEADLINE2=Corner Unit with Views
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=5
+PHOTO2=14
+PHOTO3=11
+PHOTO4=9
+PHOTO5=7
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MLS=MLS #1199863
+BOXTEXT=2 bedrooms / 1.75 baths / 905 sq ft / $474 HOA dues / $4,747 2017 taxes  
+HOUSEPRICE=Offered at $679,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

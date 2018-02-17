@@ -1,0 +1,34 @@
+	!-- Basic/Common Properties --!
+URL=432_NW_45th_St_Seattle_WA
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=432 NW 45th Street, Seattle WA 98107
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=June 4 2017
+
+!-- Flyer Properties --!
+HEADLINE1=Fremont Charmer Near Ross Park
+HEADLINE2=Fully Updated and Remodeled
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=9
+PHOTO3=12
+PHOTO4=13
+PHOTO5=16
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #1138367
+BOXTEXT=Stats: 2 bedrooms / 1 bathroom / 3,760 sq ft lot / 770 finished sq ft does not include garage
+HOUSEPRICE=Offered at $575,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

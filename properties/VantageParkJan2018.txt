@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=VantageParkJan2018
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=1011 East Terrace Street, Seattle, WA 98122
+AGENT=Tyson Ocheltree
+PHONE=206 831 5878
+EMAIL=mgr.vantagepark@secpropres.com
+JOBNAME=Photoshoot of #305 and #507
+SHOOTPRICE=500
+DATE=Jan 5, 2018

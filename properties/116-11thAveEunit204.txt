@@ -1,0 +1,42 @@
+!-- Basic/Common Properties --!
+URL=116-11thAveEunit204
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=116 11th Ave E, unit 204, Seattle WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Nov 16, 2015
+
+!-- Flyer Properties --!
+HEADLINE1=Capitol Hill Two Bedroom
+HEADLINE2=Private Garden Unit with Outdoor Space
+HEADLINE3=Cozy Corner Unit Completely Remodeled 
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=13
+PHOTO2=24
+PHOTO3=16
+PHOTO4=22
+PHOTO5=15
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=MLS #870906
+BOXTEXT=2 beds / 1.75 baths / 1,070 sq ft / HOA dues $522
+HOUSEPRICE=$515,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+
+

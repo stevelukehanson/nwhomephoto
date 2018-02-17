@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=2119-6th-Ave-W-Seattle-98199
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=2119 6th Ave W Seattle 98199
+AGENT=David Marks
+PHONE=
+EMAIL=
+SHOOTPRICE=300
+DATE=March 9 2016
+

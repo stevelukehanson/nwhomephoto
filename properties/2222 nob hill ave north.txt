@@ -1,0 +1,38 @@
+!-- Basic/Common Properties --!
+URL=2222-Nob-Hill-Ave-N
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=2222 Nob Hill Ave N, Seattle, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=Aug 27, 2015
+
+!-- Flyer Properties --!
+HEADLINE1=Fabulous Queen Anne Location
+HEADLINE2=Remodeled Charmer with Perfect Floor Plan
+HEADLINE3=Classic Craftsman in Newly Minted Condition
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=10
+PHOTO3=18
+PHOTO4=24
+PHOTO5=21
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #840688
+BOXTEXT=4 bedrooms / 2 full baths / 2700 sq ft / Circular floor plan / Fenced yard
+HOUSEPRICE=Offered at $1,200,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

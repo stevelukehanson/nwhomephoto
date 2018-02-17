@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=MasonJan2018Cascadia
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=4416 Cascadia Ave S. Seattle 98118
+AGENT=Mason Hwu
+PHONE=206-335-1778
+EMAIL=realestatebymason@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=Jan 12, 2018
+PHOTOGRAPHERNAME=Stephanie

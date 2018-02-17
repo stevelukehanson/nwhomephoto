@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=4607-NE-203rd-Court
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=4607 NE 203rd Court, Lake Forest Park, WA 98155 
+AGENT=TC Wu
+PHONE=
+EMAIL=
+SHOOTPRICE=250
+DATE=June 15 2016
+

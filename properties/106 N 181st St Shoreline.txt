@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=106_N_181st_St_Shorline
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=106 N 181st St, Shoreline, WA
+AGENT=Cynthia Creasey / Mack McCoy 
+PHONE=206-276-8292
+EMAIL=cynthia@lakere.com / mack@lakere.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Oct 17, 2017
+SHOOTPRICE=300

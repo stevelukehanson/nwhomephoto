@@ -1,0 +1,39 @@
+!-- Basic/Common Properties --!
+URL=EllingtonOct1
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=2801 1st Ave #419, Seattle WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=Oct 1, 2015
+
+!-- Flyer Properties --!
+HEADLINE1=The Ellington Condominiums
+HEADLINE2=Spectacular Protected Views
+HEADLINE3=Views of the Bay and Sculpture Park
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=25
+PHOTO2=4
+PHOTO3=10
+PHOTO4=2
+PHOTO5=14
+HOUSEPRICE=Offered at $915,000
+BOXTEXT=2 bedrooms + den/ 1.75 baths/ 1467 sq ft / 2015  taxes are $6,816 /HOA dues $782
+MAINTEXT=MLS# 855190
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

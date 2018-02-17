@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=RedmondFeb2016
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=25922 NE 27th Dr, Redmond, WA 98053
+AGENT=Gregg Jackson
+PHONE=
+EMAIL=
+SHOOTPRICE=300
+DATE=February 16 2016
+

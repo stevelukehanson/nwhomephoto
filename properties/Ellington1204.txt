@@ -1,0 +1,39 @@
+!-- Basic/Common Properties --!
+URL=Ellington1204
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=2801 1st Ave #1204, Seattle WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=Sept 26, 2015
+
+!-- Flyer Properties --!
+HEADLINE1=The Ellington
+HEADLINE2=Top Floor One Bedroom
+HEADLINE3=Corner Unit with City Views
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=3
+PHOTO2=8
+PHOTO3=9
+PHOTO4=12
+PHOTO5=7
+HOUSEPRICE=$439,000
+BOXTEXT=1 bed / 1 bath / 721 sq ft / HOA dues $407/ 2015 taxes $3496
+MAINTEXT=MLS # 853496
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

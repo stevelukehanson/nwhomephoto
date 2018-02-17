@@ -1,0 +1,33 @@
+	!-- Basic/Common Properties --!
+URL=ContinentalPlaceJuly2016
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=2125 1st Ave, #2305, Seattle, WA 98121
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=July 31 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Continental Place
+HEADLINE2=SW Corner Unit with Unobstructed Views
+HEADLINE3=Lake Views on Quiet Street
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=6
+PHOTO2=39
+PHOTO3=11
+PHOTO4=15
+PHOTO5=20
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS # 1007455
+BOXTEXT=2 bedrooms / 2 baths / 1459 sq ft / HOA includes heat and H2O / Dues are $1439 / taxes for 2016 $9,197
+HOUSEPRICE=Listed for $1,250,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

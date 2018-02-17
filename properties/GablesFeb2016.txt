@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=GablesFeb2016
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=2807 SW Nevada, unit A, Seattle, WA 98126
+AGENT=Gregg Jackson
+PHONE=
+EMAIL=
+SHOOTPRICE=100
+DATE=February 8 2016
+

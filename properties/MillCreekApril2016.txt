@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=MillCreekApril2016
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+SRC_PATH=
+
+ADDRESS=15 164th St SW, #G4, Mill Creek
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=May 28, 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Ironwood Townhomes
+HEADLINE2=Quiet Corner Unit Amid Greenery
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=4
+PHOTO2=7
+PHOTO3=10
+PHOTO4=14
+PHOTO5=15
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS# 951614
+BOXTEXT=3 beds / 2.5 baths / 1,835 sq ft / HOA dues $270
+HOUSEPRICE=$409,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

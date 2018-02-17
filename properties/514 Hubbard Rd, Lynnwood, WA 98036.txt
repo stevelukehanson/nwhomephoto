@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=514_Hubbard_Rd_Lynnwood_WA_98036_USA
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=514 Hubbard Rd, Lynnwood, WA 98036
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Sept 15, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=Dutch Colonial Original
+HEADLINE2=Private and Lush Setting
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=2
+PHOTO2=6
+PHOTO3=12
+PHOTO4=22
+PHOTO5=14
+HOUSEPRICE=Offered at $875,000
+MLS=MLS #1189765
+MAINTEXT=main text test
+BOXTEXT=3 bedrooms / 1.75 baths / 2,150 sq ft / 26,136 sq ft lot / .6 acres / 2017 taxes are $4,661 
+
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

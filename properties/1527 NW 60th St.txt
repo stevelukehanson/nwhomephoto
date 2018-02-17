@@ -1,0 +1,35 @@
+	!-- Basic/Common Properties --!
+URL=1527_NW_60th_St_Seattle
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best/JPEG_full
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=1527 NW 60th St, Seattle, WA 98107
+AGENT=Lori Marcoe / David Marcoe / Michael Ravenscroft
+PHONE=206 313 1124 / 206 313 1123
+EMAIL=davidmarcoe@comcast.net, mikerave@msn.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Feb 7, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=Mason Lake Luxury
+HEADLINE2=West Facing Home in Mint Condition
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=8
+PHOTO3=12
+PHOTO4=27
+PHOTO5=33
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS # 1032272
+BOXTEXT=3 bedrooms / 2.5 baths / 60 ft waterfront / dock / 3 car garage with shop space / 2016 taxes $4,372
+HOUSEPRICE=Offered for sale at $679,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

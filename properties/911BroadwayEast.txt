@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=911BroadwayE
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/cr2/fused
+SRC_PATH=
+
+ADDRESS=911 Broadway East, Seattle, WA 98102
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Feb 2, 2013
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Wonderful Capitol Hill Location
+HEADLINE2=Walking Dreamworld
+HEADLINE3= 
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=5
+PHOTO3=7
+PHOTO4=12
+PHOTO5=14
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=MLS #589097
+BOXTEXT=3 bedrooms / 2.75 baths / 2,884 sq ft / 5,000 sq ft lot / 2013 taxes were $6,834
+HOUSEPRICE=$885,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

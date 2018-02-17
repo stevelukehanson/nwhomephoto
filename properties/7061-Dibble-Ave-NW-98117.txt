@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=7061-Dibble-Ave-NW-98117
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=7061 Dibble Ave NW 98117, Seattle, WA 98117
+AGENT=Cynthia Creasey
+PHONE=
+EMAIL=
+SHOOTPRICE=250
+DATE=February 28 2016
+

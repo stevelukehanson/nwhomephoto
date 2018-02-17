@@ -1,0 +1,35 @@
+	!-- Basic/Common Properties --!
+URL=1408_NW_Richmond_Beach_Rd_Shoreline_Sept2017
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=1408 NW Richmond Beach Rd, Shoreline WA, 98177
+AGENT=mgr.meadowbrook@madronaridgellc.com
+PHONE=206.546.1014
+EMAIL=mgr.meadowbrook@madronaridgellc.com
+JOBNAME=Photoshoot of Meadowbrook Apartments - Interiors
+SHOOTPRICE=500
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Sept 20, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=Ray Anderson Rambler
+HEADLINE2=Lovely, Quiet Setting
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=4
+PHOTO3=11
+PHOTO4=7
+PHOTO5=13
+HOUSEPRICE=Offered at $559,000
+MAINTEXT=MLS 1085285
+BOXTEXT=Stats: 3 bedrooms / 1.75 baths / 1,460 sq ft / 9,756 sq ft lot / 2016 taxes were $4,153 
+
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

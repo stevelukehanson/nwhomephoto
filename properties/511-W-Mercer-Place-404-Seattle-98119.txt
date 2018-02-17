@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=511-W-Mercer-Place-404-Seattle-98119
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=511 W. Mercer Place #404, Seattle 98119
+AGENT=Mary Orvis
+PHONE=
+EMAIL=
+SHOOTPRICE=200
+DATE=March 9, 2016
+

@@ -1,0 +1,38 @@
+!-- Basic/Common Properties --!
+URL=Ellington306
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=2801 1st Ave #306, Seattle WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=Sept 30, 2015
+
+!-- Flyer Properties --!
+HEADLINE1=The Ellington
+HEADLINE2=Corner Two Bedroom
+HEADLINE3=Corner Unit with City and Sound Views
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=18
+PHOTO2=1
+PHOTO3=8
+PHOTO4=13
+PHOTO5=10
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #854886
+BOXTEXT=2 bed / 1.75 baths / 905 sq ft / $445 HOA / 2015 taxes $3932 / 2 parking spaces
+HOUSEPRICE=Offered at $525,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

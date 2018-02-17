@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=9020_27th_Ave_SE_Everett_WA_98208
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=9020 27th Ave SE, Everett, WA 98208
+AGENT=Connie Qian
+PHONE=
+EMAIL=
+SHOOTPRICE=250
+DATE=July 20 2016
+

@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=ClydeHillJan2018
+
+ADDRESS=9426 NE 24th St, Clyde Hill, WA
+AGENT=Bill Hsu
+PHONE=206.660.6979
+EMAIL=bhsu@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=Jan 19, 2018
+
+!-- Core Properties --!
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers

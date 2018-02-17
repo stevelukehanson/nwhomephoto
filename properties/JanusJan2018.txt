@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=JanusJan2018
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=121 NW 85th Street, Seattle, WA 98117
+AGENT=Dianne Fernandez
+PHONE=206.448.5687
+EMAIL=mgr.janus@secpropres.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=750
+DATE=Jan 19, 2018

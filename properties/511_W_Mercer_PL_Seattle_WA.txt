@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=511_W_Mercer_PL_Seattle_WA
+ADDRESS=511_W_Mercer_PL_Seattle_WA	
+AGENT=Mary Orvis	
+PHONE=(206) 000 - 0000
+EMAIL=maryorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Feb 15, 2018
+SHOOTPRICE=250
+
+<!-- Don't Change These Values -->
+ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

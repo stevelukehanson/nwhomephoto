@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=943_N_89th_St_Seattle_98103
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=943 N 89th St, Seattle, WA 98103
+AGENT=Jesse Paulson
+PHONE=
+EMAIL=
+SHOOTPRICE=250
+DATE=October 15, 2016
+

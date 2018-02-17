@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=3116_164th_St_SW_1009_Lynnwood
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=3116 164th St SW, #1009, Lynnwood, WA 98087
+AGENT=Fung Shum
+PHONE=206.489.9885
+EMAIL=fshum@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Feb 6, 2018

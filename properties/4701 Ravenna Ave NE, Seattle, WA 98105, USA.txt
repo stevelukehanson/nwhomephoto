@@ -1,0 +1,38 @@
+!-- Basic/Common Properties --!
+URL=4701_Ravenna_Ave_NE_Seattle
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=4701 Ravenna Ave NE, Seattle, WA 98105
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+VIDEO=https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate/4701_Ravenna_Ave_NE_Seattle/4701RavennaNE/4701RavennaNE.html
+DATE=Sept 23, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=Ravenna Modern Treehouse
+HEADLINE2=Thoughtful, Custom Designed Home
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=2
+PHOTO3=17
+PHOTO4=11
+PHOTO5=16
+HOUSEPRICE=Offered at $799,000
+MLS=MLS #1198685
+MAINTEXT=main text test
+BOXTEXT=4 bedrooms / 2 bathrooms / 190 sq ft / 7,405 sq ft lot / 2017 taxes are $5,708
+
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

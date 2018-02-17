@@ -1,0 +1,34 @@
+!-- Basic/Common Properties --!
+URL=11873_NE_162nd_Ln_Bothell_WA_98011
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=11873 NE 162nd Ln, Bothell WA 98011
+AGENT=Connie Qian
+PHONE=425.777.5911
+EMAIL=cqian@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Dec 1, 2016
+
+!-- Flyer Properties --!
+HEADLINE1=The Rosemont Cooperative
+HEADLINE2=A Very Special Vintage Building on Capitol Hill
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=8
+PHOTO3=5
+PHOTO4=17
+PHOTO5=23
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS # 1042876
+BOXTEXT=1 bed / 1 bath / 700 sq ft / $400 HOA dues include taxes
+HOUSEPRICE=Offered at $360,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

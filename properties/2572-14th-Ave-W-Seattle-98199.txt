@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=2572-14th-Ave-W-Seattle-98199
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=2572 14th Ave W, #301 Seattle 98199
+AGENT=David Marks
+PHONE=
+EMAIL=
+SHOOTPRICE=300
+DATE=April 12 2016
+

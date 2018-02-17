@@ -1,0 +1,39 @@
+!-- Basic/Common Properties --!
+URL=HilltopMay2015-nightshoot
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+
+ADDRESS=14834 SE 55th St, Bellevue, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=May 28, 2015
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+INVOICE_NUMBER=#5172015
+
+!-- Flyer Properties --!
+HEADLINE1=Hilltop Mid-Century
+HEADLINE2=2.2 Acre Property in Hilltop Community
+HEADLINE3=Views to the South
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=10
+PHOTO2=19
+PHOTO3=30
+PHOTO4=7
+PHOTO5=22
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=NWMLS #793050
+BOXTEXT=3 beds / 1.5 baths / Large Family Room / 2 Car Carport / 2014 taxes were $7,895
+HOUSEPRICE=Offered at $1,100,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

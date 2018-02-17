@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=Tobira
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=108 5th Ave S, #720, Seattle, WA 98104
+AGENT=Dave Paremski 
+PHONE=206-276-8292
+EMAIL=paremski@windermere.com
+JOBNAME=Photoshoot of ${ADDRESS}, plus Fake Fire
+DATE=Oct 15, 2017
+SHOOTPRICE=300

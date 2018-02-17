@@ -1,0 +1,33 @@
+	!-- Basic/Common Properties --!
+URL=5404_228th_St_SW
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=5404 228th St SW, Mountlake Terrace, WA 98043
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Nov 16, 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Mountlake Terrace
+HEADLINE2=Corner Lot in Excellent Condition
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=5
+PHOTO3=8
+PHOTO4=12
+PHOTO5=15
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #1053325
+BOXTEXT=2 beds / 1 bath / 1232 sq ft / 6534 sq ft lot / 2016 taxes $2,294
+HOUSEPRICE=Offered at $319,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=11806_8th_St_E_Edgewood_WA
+ADDRESS=11806 th St E, Edgewood, WA
+AGENT=David Marks
+PHONE=(206) 550 - 3282
+EMAIL=david@davidkmarksre.com
+JOBNAME=Photoshoot and Travel Charge ($50)
+DATE=Jan 30, 2018
+SHOOTPRICE=350
+PHOTOGRAPHERNAME=Stephanie
+
+<!-- Don't Change These Values -->
+ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

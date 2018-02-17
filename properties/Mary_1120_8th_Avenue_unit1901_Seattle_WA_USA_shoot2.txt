@@ -1,0 +1,34 @@
+	!-- Basic/Common Properties --!
+URL=1120_8th_Avenue_unit1901_Seattle_WA_USA_shoot2
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=1120 8th Avenue #1901, Seattle, WA, USA
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Nov 16, 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Royal Manor SW Corner, View Unit
+HEADLINE2=Custom Designed for City Living
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=30
+PHOTO2=22
+PHOTO3=13
+PHOTO4=7
+PHOTO5=17
+HOUSEPRICE=Offered at $569,000
+MAINTEXT=MLS # 1074633
+BOXTEXT=Stats: 2 bedrooms / 2 baths / 1,060 sq ft / 1 parking space / 2016 taxes were $4,144 
+
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

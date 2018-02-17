@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=AngelineGrandOpeningFeb2016
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=4801 Rainier Ave South, Seattle, WA 98118
+AGENT=Kathi Williams
+PHONE=
+EMAIL=
+SHOOTPRICE=350
+DATE=February 11 2016
+

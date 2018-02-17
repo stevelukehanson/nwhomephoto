@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=6424_Lake_Washington_Blvd_NE_Kirkland_WA_98033
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=6424 Lake Washington Blvd NE, Kirkland, WA 98033
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=July 26, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=An exceptional point of view!
+HEADLINE2=Luxury Living at View Point Condominiums
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=21	
+PHOTO3=3
+PHOTO4=6
+PHOTO5=22
+HOUSEPRICE=Offered at $1,345,000
+MAINTEXT=MLS #1166538
+BOXTEXT=Stats: 2 bedrooms / 2 baths plus den/office / 2,193 sq ft + 700 sq ft patio / 2017 taxes of $10,230 / HOA dues $1909 
+
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

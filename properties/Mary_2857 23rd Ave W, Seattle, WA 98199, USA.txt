@@ -1,0 +1,34 @@
+	!-- Basic/Common Properties --!
+URL=2857_23rd_Ave_W_Seattle_WA
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=2857 23rd Ave W, Seattle, WA 98199, USA
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Nov 16, 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Magnolia Mid-Century
+HEADLINE2=Best of Both Worlds: Quiet and Close-In
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=2
+PHOTO2=3
+PHOTO3=10
+PHOTO4=11
+PHOTO5=16
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #1069267
+BOXTEXT=4 beds / 3 baths / 2,350 sq ft / 4,500 sq ft lot / 2016 taxes of $5,791
+HOUSEPRICE=Offered at $799,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=Olive8Sept2017
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=737 Olive Way #2602, Seattle 98101
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Sept 23, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=High Style at Olive 8
+HEADLINE2=Downtown Core Living at Its Best
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=26
+PHOTO2=7
+PHOTO3=15
+PHOTO4=16
+PHOTO5=11
+HOUSEPRICE=Offered at $1,435,000
+MLS=MLS #1198960
+MAINTEXT=main text test
+BOXTEXT=2 bedrooms / 2 full baths / Private den / 1,586 sq ft / $1012 HOA dues 
+
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

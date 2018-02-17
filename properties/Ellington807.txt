@@ -1,0 +1,39 @@
+!-- Basic/Common Properties --!
+URL=Ellington807
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=2801 1st Ave #807, Seattle WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=Dec 16, 2015
+
+!-- Flyer Properties --!
+HEADLINE1=The Ellington
+HEADLINE2=One Bedroom Plus Den
+HEADLINE3=City and Sound Views
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=3
+PHOTO2=6
+PHOTO3=26
+PHOTO4=8
+PHOTO5=9
+HOUSEPRICE=Offered at $425,000
+BOXTEXT=1 bed plus den / 1 full bath / 719 sq ft / $380 HOA / 2015 taxes $3616 
+MAINTEXT=MLS # 877881
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

@@ -1,0 +1,39 @@
+!-- Basic/Common Properties --!
+URL=Austin-BellFeb2016
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=2324 1st Avenue #204, Seattle, WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=Feb 12, 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Historic Belltown Lofts
+HEADLINE2=Austin Bell Building
+HEADLINE3=West Facing Loft
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=6
+PHOTO2=13
+PHOTO3=32
+PHOTO4=23
+PHOTO5=18
+HOUSEPRICE=Offered for $695,000
+BOXTEXT=Stats: 2 bedrooms / 2 baths / 1,185 sq ft / HOA dues $905 / Taxes $4,392
+MAINTEXT=MLS # 894103
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

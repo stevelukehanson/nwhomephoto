@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=8055_45th_Ave_NE_Seattle_WA
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=8055 45th Ave NE, Seattle, WA
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=May 5, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=View Ridge One Level Home
+HEADLINE2=Quality Construction and Design
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=4
+PHOTO2=7
+PHOTO3=10
+PHOTO4=15
+PHOTO5=14
+HOUSEPRICE=Offered at $1,499,000
+MAINTEXT=MLS# 1120794
+BOXTEXT=3 bedrooms / 2.5 baths / 2,930 sq ft / 18,765 sq ft lot / 2017 taxes $7,514
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

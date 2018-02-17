@@ -1,0 +1,33 @@
+	!-- Basic/Common Properties --!
+URL=WatersEdgeJuly2016
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS= 6305 S 238th Pl, Kent, WA 98032
+AGENT=MadronaRidge
+PHONE=
+EMAIL=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=400
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=July 31 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Room to Move in Madrona/Leschi Location
+HEADLINE2=Lots of Bedrooms Make this Home so Versatile
+HEADLINE3=Lake Views on Quiet Street
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=2
+PHOTO3=3
+PHOTO4=2
+PHOTO5=1
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #642834
+BOXTEXT=photos:Stats: 5 bedrooms up and 2 bedrooms down / 1.75 baths up and 1 full bath down / 2,880 sq ft of living space /  5,750 sq foot lot
+HOUSEPRICE=$???
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

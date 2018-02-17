@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=425-23rd-Ave-S-A311
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=425 23rd Ave S, unit A311, Seattle, WA 98144
+AGENT=Mason Hwu
+PHONE=
+EMAIL=
+SHOOTPRICE=275
+DATE=March 3 2016
+

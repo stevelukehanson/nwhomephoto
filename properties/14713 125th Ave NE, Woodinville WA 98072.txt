@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=14713_125th_Ave_NE_Woodinville_WA
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=14713 125th Ave NE, Woodinville WA 98072
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=May 13, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=Kingsgate Tri-Level
+HEADLINE2=Spacious Home in Delightful Condition
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=5
+PHOTO3=7
+PHOTO4=10
+PHOTO5=23
+HOUSEPRICE=Offered at $530,000
+MAINTEXT=MLS# 1124447
+BOXTEXT=3 bedrooms / 2.5 baths / 1,750 sq ft / Lot size is 7,560 sq ft / 2 car garage
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=5554-20th-Ave-S
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+
+ADDRESS=5554 20th Ave S, Seattle, WA 98108
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=Sept 5, 2015
+
+!-- Flyer Properties --!
+HEADLINE1=Beacon Hill
+HEADLINE2=Charming Home on Large Lot
+HEADLINE3=Great location at a great price!
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=6
+PHOTO3=9
+PHOTO4=7
+PHOTO5=21
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS # 840687
+BOXTEXT=4 bedrooms / 1 bathroom / 2,250 sq ft / 6,000 sq ft lot
+HOUSEPRICE=Offered at $325,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

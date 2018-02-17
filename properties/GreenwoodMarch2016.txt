@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=GreenwoodMarch2016
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=Greenwood / Phinney Ridge Neighborhood
+AGENT=Kathi Williams
+PHONE=
+EMAIL=
+SHOOTPRICE=300
+DATE=March 16 2016
+

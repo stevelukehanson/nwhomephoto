@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=1801ECalhounSt
+UPLOADURL=${URL}
+ROOT_PATH=X:/C/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+
+ADDRESS=1801 E Calhoun St, Seattle, WA 98112
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Sept 22, 2014
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Montlake Charmer with Park Views
+HEADLINE2=Great Location and Lovely Spaces
+HEADLINE3=Easy Commute to Anywhere!
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=6
+PHOTO3=9
+PHOTO4=16
+PHOTO5=13
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #706242
+BOXTEXT=4 bedrooms / 2 full baths / 2100 sq ft / 4,416 sq ft lot / 2014 taxes are $5,789 
+HOUSEPRICE=$700,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=3711-199th-St-SE-Bothell
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=3711 199th St SE, Bothell, WA 98012
+AGENT=Jesse Paulson
+PHONE=
+EMAIL=
+SHOOTPRICE=250
+DATE=Feb 2, 2016
+

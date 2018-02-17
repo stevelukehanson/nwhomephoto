@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=925_110th_Ave_NE_PH10_Bellevue_WA_98004
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=925 110th AVE NE PH#10, Bellevue, WA 98004
+AGENT=Bill Hsu
+PHONE=206.660.6979
+EMAIL=bhsu@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=Oct 27, 2017
+

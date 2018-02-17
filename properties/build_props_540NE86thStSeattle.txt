@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=540NE86thStSeattle
+UPLOADURL=${URL}
+ROOT_PATH=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/PhotomatixResults01
+SRC_PATH=
+
+ADDRESS=540 NE 86th St, Seattle, WA
+AGENT=Joe Flick
+PHONE=(206) 999-6161
+EMAIL=joeflick@comcast.net
+FLICKR=
+JOBNAME=Photoshoot of {ADDRESS}
+DATE=April 29, 2012
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Sunset Valley Farms Home
+HEADLINE2=
+HEADLINE3=Large View Property
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=9
+PHOTO3=5
+PHOTO4=16
+PHOTO5=24
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=maintext
+BOXTEXT=box
+HOUSEPRICE=$499,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

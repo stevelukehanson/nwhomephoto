@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=630-13th-Ave-East-14
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=630 13th Ave East #14, Seattle, WA 98102
+AGENT=Christine Gibson
+PHONE=
+EMAIL=
+SHOOTPRICE=200
+DATE=February 23 2016
+

@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=350_Wells_Ave_N_Renton_WA_98057
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=350 Wells Ave N, Renton, WA 98057
+AGENT=Tracy Carver
+PHONE=206.605.3860
+EMAIL=tlcarver@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=Oct 28, 2017
+

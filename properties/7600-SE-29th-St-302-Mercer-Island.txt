@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=7600-SE-29th-St-302-Mercer-Island
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=7600 SE 29th St #302, Mercer Island, WA 98040
+AGENT=Christine Gibson
+PHONE=
+EMAIL=
+SHOOTPRICE=250
+DATE=May 18 2016
+

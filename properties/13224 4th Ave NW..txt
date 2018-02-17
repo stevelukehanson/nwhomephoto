@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=13224-4thAveNW
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}/
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+RESIZE_PATH=${ROOT_PATH}/${URL}/cr2/PhotomatixResults01/best
+SRC_PATH=
+
+ADDRESS=13224 4th Ave NW, Seattle, WA 98177
+AGENT=Jesse Paulson
+PHONE=(206) 909-3670
+EMAIL=jesse@jessepaulson.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=March 12, 2014
+SHOOTPRICE=225
+PORTA_EXE=C:/Program Files/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Ballard Dream Come True
+HEADLINE2=Peace...Love...Ballard!
+HEADLINE3=Walking Distance To Beesalu
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=4
+PHOTO3=8
+PHOTO4=13
+PHOTO5=26
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=maintext
+BOXTEXT=box
+HOUSEPRICE=$499,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

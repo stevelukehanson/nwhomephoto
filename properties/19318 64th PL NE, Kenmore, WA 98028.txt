@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=19318_64th_PL_NE_Kenmore_WA_98028
+
+ADDRESS=19318 64th PL NE, Kenmore, WA 98028
+AGENT=Bill Hsu
+PHONE=206.660.6979
+EMAIL=bhsu@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=Oct 27, 2017
+
+!-- Core Properties --!
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers

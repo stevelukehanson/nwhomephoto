@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL= 1101_Seneca_St_901_Seattle_WA_98101
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS= 1101 Seneca St, #901, Seattle, WA 98101
+AGENT=Cynthia Creasey / Mack McCoy 
+PHONE=206-276-8292
+EMAIL=cynthia@lakere.com / mack@lakere.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Oct 14, 2017
+SHOOTPRICE=300

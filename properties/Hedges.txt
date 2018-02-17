@@ -1,0 +1,38 @@
+!-- Basic/Common Properties --!
+URL=Hedges
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=900 Lenora, #103, Seattle, WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=Oct 19, 2015
+
+!-- Flyer Properties --!
+HEADLINE1=Live Work Loft in South Lake Union
+HEADLINE2=Beautifully Finished Spaces
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=11
+PHOTO2=4
+PHOTO3=14
+PHOTO4=6
+PHOTO5=9
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #864022
+BOXTEXT=1 bedroom loft plus office space / 1.5 baths /1,826 sq ft / HOA dues $1,402 /1 parking in secure garage
+HOUSEPRICE=Offered at $895,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=1432-33rd-Ave-S-Seattle-WA-98144
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+SRC_PATH=
+
+ADDRESS=1432 33rd Ave S, Seattle, WA 98144
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+DATE=May 13, 2016
+
+!-- Flyer Properties --!
+HEADLINE1=The Perfect Tudor Home
+HEADLINE2=Views from Every Room
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=3
+PHOTO2=7
+PHOTO3=15
+PHOTO4=25
+PHOTO5=28
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #943380
+BOXTEXT=4 beds / 3.5 baths / 2 lots totaling 10,797 sq ft / 2015 taxes were $8,346
+HOUSEPRICE=$1,495,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

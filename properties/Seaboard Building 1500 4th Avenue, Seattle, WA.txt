@@ -1,0 +1,33 @@
+	!-- Basic/Common Properties --!
+URL=SeaboardBuildingAug2016
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=1500 4th Avenue, Seattle, WA
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=August 12 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Seaboard Building
+HEADLINE2=Luxury Appointed Condo in Historic Setting
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=20
+PHOTO2=4
+PHOTO3=11
+PHOTO4=13
+PHOTO5=14
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS # 1014345
+BOXTEXT=Studio 1 bedroom / 863 sq ft / HOA dues
+HOUSEPRICE=Listed for $549,500
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

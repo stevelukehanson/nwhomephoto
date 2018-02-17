@@ -1,0 +1,31 @@
+	!-- Basic/Common Properties --!
+URL=13021_25th_Ave_NE_Seattle
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=13021 25th Ave NE, Seattle, WA 98125
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Oct 12, 2016
+AGENT=Jesse Paulson
+
+!-- Flyer Properties --!
+HEADLINE1=The Rosemont Cooperative
+HEADLINE2=A Very Special Vintage Building on Capitol Hill
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=8
+PHOTO3=5
+PHOTO4=17
+PHOTO5=23
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS # 1042876
+BOXTEXT=1 bed / 1 bath / 700 sq ft / $400 HOA dues include taxes
+HOUSEPRICE=Offered at $360,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

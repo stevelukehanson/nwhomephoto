@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=13326_2nd_Ave_NE_Seattle_WA_98125
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=13326 2nd Ave NE, Seattle, WA 98125
+AGENT=Mary Orvis
+PHONE=
+EMAIL=
+SHOOTPRICE=200
+DATE=March 18 2016
+

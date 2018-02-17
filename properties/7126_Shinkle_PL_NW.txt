@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=7126_Shinkle_Pl_SW_Seattle_WA
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=7126_Shinkle_Pl_SW_Seattle_WA
+AGENT=Mason Hwu
+PHONE=206-335-1778
+EMAIL=realestatebymason@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=Jan 18, 2018
+PHOTOGRAPHERNAME=Stephanie

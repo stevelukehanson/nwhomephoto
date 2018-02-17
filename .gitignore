@@ -33,8 +33,11 @@ local.properties
 ########
 .idea/
 build/
-properties/
+# properties/
+source-pics/
 build.zip
+build_props.jsx
+current.properties
 
 #################
 ## Visual Studio

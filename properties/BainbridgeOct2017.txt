@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=BainbridgeOct2017
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=Bainbridge Island, WA
+AGENT=Arne and Linda Kiel
+PHONE=(206) 226-3828
+EMAIL=kiel.l@ghc.org
+VIDEO=https://www.youtube.com/watch?v=4enAoeJ36Lg
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=0
+DATE=Oct 20, 2017
+

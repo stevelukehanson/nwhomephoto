@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=3407-NE-11th-St-Renton-98056
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=3407 NE 11th St, Renton, 98056
+AGENT=Scott Grether
+PHONE=
+EMAIL=sgrether@wpirealestate.com
+VIDEO=https://www.youtube.com/watch?v=4enAoeJ36Lg
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=June 2, 2016
+

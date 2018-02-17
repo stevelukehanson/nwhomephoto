@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=SylvaOnMain
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=10705 Main St., Bellevue, WA 
+AGENT=Deirdre Gaye
+PHONE=(425)462-7662
+EMAIL=mgr.soma@secpropres.com
+JOBNAME=Exteriors and Drone photoshoot
+SHOOTPRICE=800
+VIDEO=https://youtu.be/oCVvZAZwC88
+DATE=Dec 30, 2017

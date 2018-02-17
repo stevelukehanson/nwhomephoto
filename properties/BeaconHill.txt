@@ -1,0 +1,36 @@
+	!-- Basic/Common Properties --!
+URL=2515-16thAveS
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/cr2/fused
+SRC_PATH=
+
+ADDRESS=2515 16th Ave S, Seattle WA 98144
+AGENT=Dave Kalil
+PHONE=?
+EMAIL=?
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=March 19, 2014
+SHOOTPRICE=225
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Elliott Bay Views
+HEADLINE2=A Charming and Elegant Penthouse for Sale
+HEADLINE3=A Rare Gem Comes on the Market
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=4
+PHOTO3=12
+PHOTO4=18
+PHOTO5=16
+LOGO=C:/Documents and Settings/steveh/My Documents/My Pictures/REAL ESTATE/flyers/logo.psd
+MAINTEXT=MLS#553884
+BOXTEXT=3 bedrooms/ 2.5 baths / 2,165 sq ft of living space / HOA dues $729 / Taxes $7,480
+HOUSEPRICE=$1,275,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

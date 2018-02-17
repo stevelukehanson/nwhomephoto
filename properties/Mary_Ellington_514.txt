@@ -1,0 +1,35 @@
+	!-- Basic/Common Properties --!
+URL=2801_1st_Ave_514_Seattle_WA_98102
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=2801 1st Ave, #514, Seattle, WA 98121
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=March 4, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=The Ellington #514
+HEADLINE2=Corner Unit with City Views
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=13
+PHOTO2=3
+PHOTO3=21
+PHOTO4=22
+PHOTO5=23
+HOUSEPRICE=Offered at $489,000
+MAINTEXT=MLS 1086302
+BOXTEXT=Stats: 1 bedroom / 1 bathroom / 721 sq ft / HOA $401 / 2016 taxes $3,301 
+
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

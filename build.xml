@@ -126,6 +126,11 @@
               <include name="**/*.MOV"/>
           </fileset>
       </copy>
+<!--
+	  <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="'C:\Program Files\Adobe\Adobe Bridge CS6 (64 Bit)\bridge.exe'" />
+      </exec>
+-->
   </target>
 
   <target name="show">

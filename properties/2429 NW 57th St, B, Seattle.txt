@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=2429_NW_57th_St_B_Seattle
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=2429 NW 57th St, #B, Seattle, WA
+AGENT=Fletcher Newland
+PHONE=(206) 931-8706
+EMAIL=fletch@fletchnewland.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=Oct 17, 2017
+

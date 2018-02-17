@@ -1,0 +1,33 @@
+	!-- Basic/Common Properties --!
+URL=KeithWongBsides
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=1818 E. Mercer St., Suite 200, Seattle, WA 98112
+AGENT=Mary Ransdell
+PHONE=206-812-4494
+EMAIL=ransdellmaryc@gmail.com 
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=0
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=September 25 2016
+
+!-- Flyer Properties --!
+HEADLINE1=Highlands Modern
+HEADLINE2=Lovely Updates to this Classic Home
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=2
+PHOTO2=3
+PHOTO3=7
+PHOTO4=10
+PHOTO5=24
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #1031815
+BOXTEXT=3 bedrooms / 1.75 baths / 2,150 sq ft / 8,767 sq ft lot
+HOUSEPRICE=Offered for sale at $775,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

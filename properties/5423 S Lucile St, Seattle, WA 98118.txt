@@ -1,0 +1,52 @@
+!-- Basic/Common Properties --!
+!-- URL is the basic namespacing property. --!
+URL=5423_S_Lucile_St_Seattle_WA
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+!-- Job Properties --!
+!-- These conrol the webpage and the invoice.--!
+ADDRESS=5423 S Lucile St, Seattle, WA 98118
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR= 
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Nov 24, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=Seward Park Mid-Century
+HEADLINE2=Great Location on Quiet, Dead-End Street
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=5
+PHOTO3=9
+PHOTO4=13
+PHOTO5=26
+LOGO=C:/Adobe CS6/nwhomephoto/resources
+MAINTEXT=main text
+MLS=MLS# 1221475
+BOXTEXT=4 bedrooms / 2.5 baths / 1,890 sq ft of living space / 6,490 lot / 2 car carport
+HOUSEPRICE=Offered at $645,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+
+!-- Photographer Properties --!
+!-- todo: In development, these properties can be used to completely generalize the invoice. --!
+!-- todo: Notice that you can reuse 'ADDRESS' anywhere to the left of the '=' sign, as it will suffer string substitution by the Ant property ADDRESS defined above. --!
+PHOTOGRAPHER_NAME=Stephen Hanson
+PHOTOGRAPHER_ADDR_1=917 Broadway E
+PHOTOGRAPHER_ADDR_2=Seattle, WA 98102
+PHOTOGRAPHER_PH=(206)898-0444
+PHOTOGRAPHER_E=stevelukehanson@gmail.com
+
+
+

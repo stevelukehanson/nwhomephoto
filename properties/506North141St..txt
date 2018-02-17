@@ -1,0 +1,37 @@
+!-- Basic/Common Properties --!
+URL=506North141St
+UPLOADURL=${URL}
+ROOT_PATH=X:/C/Users/steve/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+PHOTOMATIX_PATH=${ROOT_PATH}/${URL}/cr2
+PTLENS_PATH=${ROOT_PATH}/${URL}/cr2/fused
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+SRC_PATH=
+
+ADDRESS=506 North 141st St, Seattle, WA 98133
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Sept 22, 2014
+SHOOTPRICE=200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+
+!-- Flyer Properties --!
+HEADLINE1=Remodeled Broadview Mid-Century
+HEADLINE2=Wonderful Features in this Spotless Home
+HEADLINE3=On Quiet, Dead-End Street
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=7
+PHOTO3=22
+PHOTO4=17
+PHOTO5=14
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+MAINTEXT=MLS #711726
+BOXTEXT=3 beds / 1.75 baths / 1480 sq ft / 6360 lot size 
+HOUSEPRICE=$439,900
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

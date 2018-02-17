@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=7336_28th_Ave_NW_Seattle_WA_98117
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=7336 28th Ave NW, Seattle, WA 98117
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=0
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=May 13, 2017
+
+!-- Flyer Properties --!
+HEADLINE1=Delightful Phinney Ridge
+HEADLINE2=View Home with Modern Flare
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=14
+PHOTO2=18
+PHOTO3=6
+PHOTO4=1
+PHOTO5=11
+HOUSEPRICE=Offered at $765,000
+MAINTEXT=MLS# 1115886
+BOXTEXT=4 bedrooms / 1 full bath / 2,030 sq ft / 4,000 sq ft lot / 1 car garage
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

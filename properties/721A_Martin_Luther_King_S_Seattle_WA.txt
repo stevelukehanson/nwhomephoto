@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=721A_Martin_Luther_King_S_Seattle_WA
+ADDRESS=721A_Martin_Luther_King_S_Seattle_WA
+AGENT=B. Berman
+PHONE=(206)786 - 8198
+EMAIL=ben@davidkmarksre.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=April 26, 2018
+SHOOTPRICE=350
+PHOTOGRAPHERNAME=Stephanie
+NOTES=Paid $300 to stephanie
+
+<!-- Don't Change These Values -->
+ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

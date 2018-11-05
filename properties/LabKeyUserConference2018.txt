@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=LabKeyUserConference2018
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=LabKey Software
+AGENT=LabKey
+PHONE=
+EMAIL=kelseyg@labkey.com
+JOBNAME=Presenter photos at the 2018 LKUC
+SHOOTPRICE=0
+DATE=Oct 6, 2018

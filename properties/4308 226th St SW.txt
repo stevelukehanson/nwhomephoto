@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=4308_226th_St_SW_Mountlake_Terrace
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=4308 226th St SW, Mountlake Terrace, WA
+AGENT=Steven Wang
+PHONE=
+EMAIL=stevenw@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=350
+DATE=June 18, 2018
+NOTES=

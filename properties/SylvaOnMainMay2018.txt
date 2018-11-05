@@ -1,0 +1,17 @@
+!-- Basic/Common Properties --!
+URL=SylvaOnMainMay2018
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=10705 Main St., Bellevue, WA 
+AGENT=Deirdre Gaye
+PHONE=(425)462-7662
+EMAIL=dgaye@secpropres.com
+JOBNAME=Night shoot in Infinity Forest
+SHOOTPRICE=550
+DATE=May 9, 2018
+
+URLPRE=s3-us-west-2.amazonaws.com/hansonphotogroup
+!-- URLPRE=https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h --!

@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=2688_Elm_Drive_Brier
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best again
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+NOTES=This was Stephanies very bad day. Cynthia Paid onsite, check #293
+
+ADDRESS=2688 Elm Drive, Brier, WA
+AGENT=Cynthia Creasey / Mack McCoy 
+PHONE=206-276-8292 / 206-795-9271
+EMAIL=cynthia@lakere.com / mack@lakere.com
+JOBNAME=Interior stills and drone shoot at ${ADDRESS}
+SHOOTPRICE=600
+DATE=May 15, 2018
+

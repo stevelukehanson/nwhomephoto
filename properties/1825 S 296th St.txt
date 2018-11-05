@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=1825_S_296th_St_Federal_Way
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=1825 S 296th St, Federal Way, WA
+AGENT=Mary Orvis and Jane Orvis
+PHONE=(206) 619-2000, (206) 679-5901
+EMAIL=maryorvis@gmail.com, janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=0
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Jun 16 2018
+

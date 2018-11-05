@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=2801_1st_Ave_Ellington_Seattle_WA
+ADDRESS=2801_1st_Ave_Ellington_Seattle_WA
+AGENT=M. Orvis
+PHONE=(206)619 - 2000
+EMAIL=maryorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=April 27, 2018
+SHOOTPRICE=350
+PHOTOGRAPHERNAME=Stephanie
+NOTES=Paid $300 to stephanie
+
+<!-- Don't Change These Values -->
+ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

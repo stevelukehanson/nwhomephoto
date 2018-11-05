@@ -1,14 +1,35 @@
 !-- Basic/Common Properties --!
 URL=511_W_Mercer_PL_Seattle_WA
-ADDRESS=511_W_Mercer_PL_Seattle_WA	
+ADDRESS=511 W Mercer Place #401, Seattle WA	
 AGENT=Mary Orvis	
-PHONE=(206) 000 - 0000
+PHONE=(206)619-2000
 EMAIL=maryorvis@gmail.com
 JOBNAME=Photoshoot of ${ADDRESS}
 DATE=Feb 15, 2018
 SHOOTPRICE=250
+PHOTOGRAPHERNAME=Stephanie
+NOTES=Stephanie paid $200
 
 <!-- Don't Change These Values -->
-ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate
+ROOT_PATH=./source-pics
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+
+!-- Flyer Properties --!
+HEADLINE1=511 W Mercer Place Condominium
+HEADLINE2=Luxury Two Bedroom Plus Den with Views
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=4
+PHOTO2=18	
+PHOTO3=14
+PHOTO4=19
+PHOTO5=31
+HOUSEPRICE=Offered at $930,000
+MAINTEXT=MLS# 1167258
+MLS=#1247284
+BOXTEXT=2 bedrooms plus den / 1.75 baths / HOA dues $649,000 / 3 parking spaces 
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

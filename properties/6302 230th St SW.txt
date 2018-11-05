@@ -1,0 +1,17 @@
+!-- Basic/Common Properties --!
+URL=6302_230th_St_SW_Mountlake_Terrace
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+VIDEO=youtu.be/xEJOq6gjBHI
+PHOTOGRAPHERNAME=Stephanie
+NOTES=Stephanie paid $650
+
+ADDRESS=6302 230th St SW, Mountlake Terrace, WA
+AGENT=Kate Pedersen
+PHONE=(206)841-5947
+EMAIL=kate@katesrealestate
+JOBNAME=Photoshoot and Video for ${ADDRESS}
+SHOOTPRICE=650
+DATE=March 31 2018

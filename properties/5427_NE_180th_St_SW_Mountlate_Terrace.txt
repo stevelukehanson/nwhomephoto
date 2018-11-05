@@ -16,6 +16,7 @@ SHOOTPRICE=300
 PORTA_EXE=C:/Program Files/Porta/porta.exe
 DATE=January 5, 2018
 PHOTOGRAPHERNAME=Stephanie
+NOTES=Stephanie paid directly by Jesse
 
 !-- Flyer Properties --!
 HEADLINE1=Ballard Dream Come True

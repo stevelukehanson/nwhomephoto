@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=4508_12th_Ave_S_Seattle
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=4508 12th Ave S, Seattle
+AGENT=Carolyn Holm
+PHONE=(206)719-7769 / (206)719-7729
+EMAIL=ted@tedallison.com / carolynholm1@gmail.com
+JOBNAME=Photos at ${ADDRESS}
+SHOOTPRICE=350
+DATE=2018-06-15
+

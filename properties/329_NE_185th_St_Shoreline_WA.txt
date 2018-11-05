@@ -1,0 +1,18 @@
+!-- Basic/Common Properties --!
+URL=329_NE_185th_St_Shoreline_WA
+ROOT_PATH=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+VIDEO=vimeo.com/258135012
+PHOTOGRAPHERNAME=Stephanie
+NOTES=Stephanie paid nothing for this, but got the whole $650 for the 2nd Kate shoot.
+
+ADDRESS=329 NE 185th St, Shoreline, WA
+AGENT=Kate Pedersen
+PHONE=(206)841-5947
+EMAIL=kate@katesrealestate
+JOBNAME=Photoshoot and Video for ${ADDRESS}
+SHOOTPRICE=650
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Feb 27 2018

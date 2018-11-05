@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=721A_MLK_Jr_Way_S
+ADDRESS=721 A MLK Jr Way S, Seattle 98144
+AGENT=David Marks
+PHONE=(206) 550 - 3282
+EMAIL=david@davidkmarksre.com
+JOBNAME=Photoshoot at ${ADDRESS}
+DATE=April 26, 2018
+SHOOTPRICE=350
+
+<!-- Don't Change These Values -->
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

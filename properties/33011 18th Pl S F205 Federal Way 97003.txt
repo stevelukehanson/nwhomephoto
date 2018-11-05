@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=33011_18th_Pl_S_F205_Federal_Way
+UPLOADURL=${URL}
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=33011 18th Pl S, #F205, Federal Way 97003
+AGENT=Cynthia Creasey / Mack McCoy 
+PHONE=206-276-8292
+EMAIL=cynthia@lakere.com / mack@lakere.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=June 9, 2018
+NOTES=Not paid on site initially, check #254 issued and received in mail

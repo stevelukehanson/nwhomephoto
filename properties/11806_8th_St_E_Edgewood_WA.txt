@@ -8,6 +8,7 @@ JOBNAME=Photoshoot and Travel Charge ($50)
 DATE=Jan 30, 2018
 SHOOTPRICE=350
 PHOTOGRAPHERNAME=Stephanie
+NOTES=Stephanie paid $250
 
 <!-- Don't Change These Values -->
 ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate

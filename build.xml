@@ -140,11 +140,18 @@
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start chrome 'https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate/${URL}/index.html'" />
         </exec>		
+        <!--
+        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+                <arg line="/C start chrome 'https://s3-us-west-2.amazonaws.com/hansonphotogroup/${URL}/index.html'" />
+        </exec>		
+        -->
   </target>
 
   <target name="upload">
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-                <arg line="/C start chrome 'https://console.aws.amazon.com/s3/buckets/aws-website-hansonphotogroup-2pp1h/RealEstate/?'" />
+			<arg line="/C start chrome 'https://console.aws.amazon.com/s3/buckets/aws-website-hansonphotogroup-2pp1h/RealEstate/?'" />
+			<arg line="/C 'https://console.aws.amazon.com/s3/buckets/aws-website-hansonphotogroup-2pp1h/RealEstate/${URL}/?'" />
+			<!--<arg line="/C start chrome 'https://console.aws.amazon.com/s3/buckets/hansonphotogroup/?'" />-->
         </exec>
 		<sleep seconds="5"/>
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
@@ -165,7 +172,7 @@
       <arg value="ps_resize.cmd"/>
     </exec>
     <!-- ****** CompleteSignal Listener ****** -->
-    <waitfor  maxwait="15" maxwaitunit="minute" 
+    <waitfor  maxwait="35" maxwaitunit="minute" 
                checkevery="500" checkeveryunit="millisecond" >
       <available file="build/xxx-resize-done-xxx.jpg"/>
     </waitfor>
@@ -175,7 +182,7 @@
   </target>
   
   <target name="web" 
-	depends="validate,clean-web,staging,generate-gallery,string-replace,copy-to-build,clean-staging" 
+	depends="validate,clean-web,staging,generate-gallery,string-replace, copy-to-build,clean-staging" 
 	description="Deletes the web pages, builds the web pages, but no ftp">
   </target>
   <target name="clean-job" description="cleans up all of the build artifacts, returning the directory to its original template state.">
@@ -194,6 +201,7 @@
     <delete file="${build}/${URL}/genericIndex.html"/>
     <delete file="${build}/${URL}/simpleGallery.html"/>
     <delete file="${build}/${URL}/index.html"/>
+    <delete file="${build}/${URL}/campaignDraft.html"/>
   </target>
 
   <target name="invoice" depends="validate, make-js-prop-file" description="Creates an invoice PDF with Photoshop and modifies the index.html page">
@@ -283,6 +291,28 @@
     <echo>flyer done!!!</echo>  
   </target>
 
+  <target name="flyer-campaign" depends="validate, make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
+    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
+    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
+    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
+      <available file="build_props.jsx"/>
+    </waitfor>
+    <exec executable="cmd">
+      <arg value="/c"/>
+      <arg value="ps_make_flyer_email.cmd"/>
+    </exec>
+    <!-- ****** CompleteSignal Listener ****** -->
+    <waitfor maxwait="5" maxwaitunit="minute" 
+               checkevery="500" checkeveryunit="millisecond" >
+      <available file="build/xxx-flyer-done-xxx.jpg"/>
+    </waitfor>
+    <delete file="build/xxx-flyer-done-xxx.jpg"/>
+    <delete file="build_props.jsx"/>
+    <echo>flyer done!!!</echo>  
+  </target>
+
+  
+  
   <target name="flyer-make-side2" depends="validate, make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
     <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
@@ -461,6 +491,17 @@
     <replace file="${staging}/index.html" token="_DATE_" value="${TODAY}"/>
     <replace file="${staging}/index.html" token="_VIDEO_" value="${VIDEO}"/>
 
+    <replace file="${staging}/campaignDraft.html" token="_ADDRESS_" value="${ADDRESS}"/>
+    <replace file="${staging}/campaignDraft.html" token="_AGENT_" value="${AGENT}"/>
+    <replace file="${staging}/campaignDraft.html" token="_PHONE_" value="${PHONE}"/>
+    <replace file="${staging}/campaignDraft.html" token="_EMAIL_" value="${EMAIL}"/>
+    <replace file="${staging}/campaignDraft.html" token="_URL_" value="${URL}"/>
+    <replace file="${staging}/campaignDraft.html" token="_FLICKR_" value="${FLICKR}"/>
+    <replace file="${staging}/campaignDraft.html" token="_DATE_" value="${TODAY}"/>
+    <replace file="${staging}/campaignDraft.html" token="_HOUSEPRICE_" value="${HOUSEPRICE}"/>
+    <replace file="${staging}/campaignDraft.html" token="_BOXTEXT_" value="${BOXTEXT}"/>
+    <replace file="${staging}/campaignDraft.html" token="_MLS_" value="${MLS}"/>
+
       <replace file="${staging}/gallery.html" token="_ADDRESS_" value="${ADDRESS}"/>
       <replace file="${staging}/gallery.html" token="_AGENT_" value="${AGENT}"/>
       <replace file="${staging}/gallery.html" token="_PHONE_" value="${PHONE}"/>
@@ -483,8 +524,10 @@
   <target name="copy-to-build">
     <copy todir="${build}/${URL}">
       <fileset file="${staging}/index.html"/>
+      <fileset file="${staging}/campaignDraft.html"/>
       <fileset file="${staging}/gallery.html"/>
       <fileset file="${staging}/logobanner.jpg"/>
+      <fileset file="${staging}/logo.jpg"/>
       <fileset file="${props}"/>
     </copy>
       <copy todir="${build}/${URL}/webgallery">
@@ -594,7 +637,7 @@
     print="yes" 
     classpathref="antclasspath">
      -- select * from list.c2d25_AntTable
-     DELETE FROM list.c9d38_anttable;	 
+     DELETE FROM list.c5d27_anttable;	 
   </sql>
   <foreach target="bar" param="theFile">
    <path>
@@ -608,6 +651,10 @@
 	  </fileset>
    </path>
   </foreach>
+  <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+    <arg line="/C start chrome 'http://localhost:8080/labkey/Photolab/project-begin.view?'" />
+  </exec>
+  
 </target>
 
 <target name="bar">
@@ -627,8 +674,7 @@
     password="sa"
     print="yes" 
     classpathref="antclasspath">
-     -- select * from list.c2d25_AntTable
-     INSERT INTO list.c9d38_anttable (EntityId, 
+     INSERT INTO list.c5d27_anttable (EntityId, 
                                 Container, 
 								URL, 
 								ADDRESS, 
@@ -637,11 +683,12 @@
 								AgentPhone,
 								AgentEmail,
 								Date,
+								URLPre,
 								PhotographerName,
-								URLPre) 
+								Notes) 
 							VALUES (
-								'f5a69c9c-e5e6-1035-9f83-68b79b05b9f8', 
-								'f5a69c9c-e5e6-1035-9f83-68b79b05b9f8', 
+								'7eb670f2-1e7b-1036-bf57-238a4d1fb9f0', 
+								'7eb670f2-1e7b-1036-bf57-238a4d1fb9f0', 
 								'${URL}', 
 								'${ADDRESS}', 
 								'${AGENT}',
@@ -649,8 +696,9 @@
 								'${PHONE}',
 								'${EMAIL}',
 								'${DATE}',
+								'${URLPRE}',
 								'${PHOTOGRAPHERNAME}',
-								's3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate')
+								'${NOTES}')
 
         -- select * from core.Users 
         -- INSERT INTO core.Users (email) VALUES ('myemail@email.com')

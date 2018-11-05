@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=SammamishMarch2018
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=22421 NE 28th St, Sammamish, WA 98074, USA
+AGENT=Yang Xiao
+PHONE=(425)223-7496
+EMAIL=yangxiao@remaxotl.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=350
+DATE=March 13 2018

@@ -1,6 +1,6 @@
 !-- Basic/Common Properties --!
 URL=TroyBlock
-ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+ROOT_PATH=${basedir}/source-pics
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
@@ -10,9 +10,10 @@ AGENT=Lead Pencil Studio
 PHONE=(206) 322-0227
 EMAIL=daniel@leadpencilstudio.org
 JOBNAME=Photoshoot of ${ADDRESS}
-SHOOTPRICE=250
+SHOOTPRICE=0
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 DATE=Feb 10 2018
+
 
 !-- Flyer Properties --!
 HEADLINE1=Big Views of Lake Washington

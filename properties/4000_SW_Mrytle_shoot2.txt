@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=4000_SW_Mrytle_ST_Seattle_WA
+ADDRESS=4000_SW_Mrytle_ST_Seattle_WA	
+AGENT=Cynthia Creasey/Mack McCoy
+PHONE=206-276-8292/206-795-9271
+EMAIL=cynthia@lakere.com/mack@lakere.com
+JOBNAME=Photoshoot and Drone
+DATE=June 19, 2018
+SHOOTPRICE=350
+NOTES=50 to Steve
+PHOTOGRAPHERNAME=Stephanie
+
+<!-- Don't Change These Values -->
+ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

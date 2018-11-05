@@ -1,0 +1,34 @@
+!-- Basic/Common Properties --!
+URL=Ellington809Aug2018
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2801 1st Ave #809, Seattle WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=Aug 23, 2018
+
+!-- Flyer Properties --!
+HEADLINE1=The Ellington SW Corner Two Bedroom
+HEADLINE2=Wonderful Views from this Well-Appointed Home
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=18
+PHOTO3=13
+PHOTO4=5
+PHOTO5=16
+HOUSEPRICE=$1,050,000
+BOXTEXT=2 bedrooms / 1.75 baths / 1,283 sq ft / HOA dues of $784 / 2018 taxes $9,250
+MAINTEXT=main
+MLS=MLS #1294194
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

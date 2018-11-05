@@ -1,0 +1,34 @@
+!-- Basic/Common Properties --!
+URL=Ellington815
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2801 1st Ave #815, Seattle WA 98121
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=July 3, 2018
+
+!-- Flyer Properties --!
+HEADLINE1=The Ellington in Belltown
+HEADLINE2=Charming Studio with Great Amenities
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=2
+PHOTO2=6
+PHOTO3=9
+PHOTO4=14
+PHOTO5=3
+HOUSEPRICE=$379,500
+BOXTEXT=Studio Unit / Wall Bed / Secure Parking Space / 447 sq ft / $279 HOA / $2,901 taxes
+MAINTEXT=main
+MLS=MLS #1323403
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

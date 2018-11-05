@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=3312_156th_St_SW_Unit_E4_Lynnwood
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=3312 156th St SW Unit E4, Lynnwood, WA
+AGENT=Mason Hwu
+PHONE=206-335-1778
+EMAIL=realestatebymason@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=350
+DATE=July 10, 2018
+NOTES=

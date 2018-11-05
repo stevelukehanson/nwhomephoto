@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=5713_S_Leo_St_Seattle_WA_98178
+UPLOADURL=${URL}
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=5713 S Leo St, Seattle, WA 98178
+AGENT=Cynthia Creasey / Mack McCoy 
+PHONE=206-276-8292
+EMAIL=cynthia@lakere.com / mack@lakere.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=300
+DATE=May 2, 2018
+NOTES=Paid on site, but Steve lost this check. Check #254 reissued.

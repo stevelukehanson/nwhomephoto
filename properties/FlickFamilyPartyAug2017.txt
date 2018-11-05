@@ -6,7 +6,7 @@ RAW_PATH=${ROOT_PATH}/${URL}
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
 
-ADDRESS=3715 S 182nd St, #C124, Seatac, WA 98188
+ADDRESS=917 Broadway E
 AGENT=Steve Hanson
 PHONE=
 EMAIL=

@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=136_N_203rd_St_Shoreline
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=136 N 203rd St, Shoreline, WA
+AGENT=Mason Hwu
+PHONE=206-335-1778
+EMAIL=realestatebymason@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=350
+DATE=June 17, 2018
+NOTES=

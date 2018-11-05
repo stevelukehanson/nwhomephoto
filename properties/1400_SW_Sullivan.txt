@@ -1,0 +1,13 @@
+	!-- Basic/Common Properties --!
+URL=1400_SW_Sullivan
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+
+ADDRESS=1400 SW Sullivan St, Seattle, WA 98106
+AGENT=Krista Flick
+PHONE=(360)359-5388
+EMAIL=Krista Flick
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=350
+DATE=April 20, 2018

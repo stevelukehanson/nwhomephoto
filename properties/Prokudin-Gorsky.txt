@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=Prokudin-Gorsky
+UPLOADURL=${URL}
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=Prokudin-Gorsky
+AGENT=Steve Hanson
+PHONE=???
+EMAIL=???
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=0
+DATE=June 5, 2018
+NOTES=

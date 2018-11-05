@@ -1,0 +1,34 @@
+!-- Basic/Common Properties --!
+URL=2334_Thorndyke_Ave_W_202
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2334 Thorndyke Ave W #202
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=Oct 9, 2018
+
+!-- Flyer Properties --!
+HEADLINE1=The Benson Condominiums
+HEADLINE2=Spacious Home in Boutique Building
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=5
+PHOTO3=8
+PHOTO4=11
+PHOTO5=16
+HOUSEPRICE=$549,500
+BOXTEXT=2 bedrooms / 2 full baths / 1,177 sq ft / HOA dues $592 / 2018 taxes $4,717
+MAINTEXT=main
+MLS=MLS #1373443
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

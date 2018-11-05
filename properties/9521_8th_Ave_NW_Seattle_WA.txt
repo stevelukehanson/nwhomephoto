@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=9521_8th_Ave_NW_Seattle_WA
+ADDRESS=9521 8th Ave NW, Seattle, WA
+AGENT=David Marks
+PHONE=(206)550-3283
+EMAIL=david@davidkmarksre.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=May 1, 2018
+SHOOTPRICE=350
+PHOTOGRAPHERNAME=Stephanie
+NOTES=Paid $300 to stephanie
+
+<!-- Don't Change These Values -->
+ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

@@ -1,10 +1,10 @@
 !-- Basic/Common Properties --!
 URL=2241_13th_Ave_W_Seattle_WA_98119
 UPLOADURL=${URL}
-ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+ROOT_PATH=${basedir}/source-pics
 RAW_PATH=${ROOT_PATH}/${URL}
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
-LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
 
 ADDRESS=2241 13th Ave W, Seattle, WA 98119

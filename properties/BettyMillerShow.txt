@@ -1,0 +1,16 @@
+	!-- Basic/Common Properties --!
+URL=BettyMillerShow
+UPLOADURL=${URL}
+ROOT_PATH=${basedir}/source-pics
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=5838 Seward Park Ave S, Seattle, WA 98118
+AGENT=Richie Steffen / Betty Miller Garden
+PHONE=
+EMAIL=richies@millergarden.org
+JOBNAME=Photo retouchng, 20 hours: $800, Printing: $205.50
+SHOOTPRICE=1005.50
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=Sept 14, 2018

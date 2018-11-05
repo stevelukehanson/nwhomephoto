@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=HighlandsMay2018
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=The Highlands, Seattle, WA
+AGENT=Kathleen Farrar 
+PHONE=206-954-1042
+EMAIL=kfarrar@windermere.com
+JOBNAME=Drone shoot at ${ADDRESS}
+VIDEO=https://youtu.be/Pfojp47UIBw
+SHOOTPRICE=350
+DATE=May 16, 2018
+

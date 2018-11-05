@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=14650_NE_50th_Pl_H6_Bellevue
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=14650 NE 50th Place, Apt H6, Bellevue, WA 98007
+AGENT=Mason Hwu
+PHONE=206-335-1778
+EMAIL=realestatebymason@gmail.com
+SHOOTPRICE=300
+JOBNAME=Photoshoot plus trip charge
+DATE=March 15 2018
+

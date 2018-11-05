@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=Ellington709_ART
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=2801 1st Ave, #709, Seattle, WA 98102
+AGENT=Mary Orvis / Rick Diethrick
+PHONE=(206) 619-2000
+EMAIL=maryorvis@gmail.com, rdiethrick@gmail.com 
+JOBNAME=Art photos at Ellington 709, slideshow, photo scanning and restoration.
+SHOOTPRICE=200
+DATE=Mar 17 2018
+
+URLPRE=s3-us-west-2.amazonaws.com/hansonphotogroup
+!-- URLPRE=https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h --!
+
+!-- Flyer Properties --!
+HEADLINE1=Lakemore Estates
+HEADLINE2=Dramatic NW Contemporary Home
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder. --!
+PHOTO1=1
+PHOTO2=6	
+PHOTO3=11
+PHOTO4=24
+PHOTO5=9
+HOUSEPRICE=Listed for $739,000
+MLS=MLS #1258020
+MAINTEXT=main text
+BOXTEXT=4 bedrooms / 2.5 bathrooms / 2,550 sq ft / 10,085 sq ft lot / 2017 taxes were $5,662 
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+LOGO=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/resources
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

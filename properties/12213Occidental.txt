@@ -6,7 +6,7 @@ RAW_PATH=${ROOT_PATH}/${URL}
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 
-ADDRESS=12429 NE 130th Court, G203, Kirkland
+ADDRESS=12213 Occidental Ave S, Burien
 AGENT=Jesse Paulson
 PHONE=(206) 909-3670
 EMAIL=jesse@jessepaulson.com
@@ -16,6 +16,7 @@ SHOOTPRICE=300
 PORTA_EXE=C:/Program Files/Porta/porta.exe
 DATE=Oct 30, 2017
 PHOTOGRAPHERNAME=Stephanie
+NOTES=Stephanie paid directly by Jesse
 
 !-- Flyer Properties --!
 HEADLINE1=Ballard Dream Come True

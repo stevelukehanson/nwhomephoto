@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=805_NE_98th_St_Seattle_WA
+ADDRESS=805_NE_98th_St_Seattle_WA	
+AGENT=Jess Paulson	
+PHONE=(206) 909 - 3670
+EMAIL=jesse@jessepaulson.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=May 03, 2018
+SHOOTPRICE=350
+PHOTOGRAPHERNAME=Stephanie
+NOTES=Paid $300 to stephanie
+
+<!-- Don't Change These Values -->
+ROOT_PATH=C:/Users/Stephanie/Pictures/RealEstate
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

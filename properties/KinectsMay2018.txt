@@ -1,0 +1,18 @@
+!-- Basic/Common Properties --!
+URL=KinectsMay2018
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=1823 Minor Ave, Seattle, WA 98101
+AGENT=Security Properties Residential
+PHONE=206-682-0511
+EMAIL=mgr.kinects@secpropres.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=1200
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=May 30, 2018
+
+
+

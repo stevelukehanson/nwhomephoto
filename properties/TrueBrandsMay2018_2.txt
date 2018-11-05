@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=TrueBrandsMay2018_2
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+
+ADDRESS=1055 N 38th St, Seattle, WA 98103
+AGENT=Ali Jeevanjee
+PHONE=(310) 666-5094
+EMAIL=ali@loc-arch.com
+JOBNAME=Interiors at ${ADDRESS}
+SHOOTPRICE=500
+DATE=May 9, 2018
+VIDEO=https://www.youtube.com/watch?v=eQ8LHVWu8sU

@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=1412_E_Aloha_St
+UPLOADURL=${URL}
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg-shoot2/luminosity-layers
+
+ADDRESS=1412 E Aloha St, Seattle, WA
+AGENT=Gregg Jackson
+PHONE=206 383 8061
+EMAIL=gregg@windermere.com
+JOBNAME=Photoshoot of ${ADDRESS}
+DATE=Oct 25, 2018
+SHOOTPRICE=450

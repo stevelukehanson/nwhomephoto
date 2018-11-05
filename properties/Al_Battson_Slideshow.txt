@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=Al_Battson_Slideshow
+ROOT_PATH=C:/Users/steveh/Documents/Adobe Scripts/nwhomephoto/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=Seattle, WA
+AGENT=Mary Orvis
+PHONE=(206) 619-2000
+EMAIL=maryorvis@gmail
+JOBNAME=
+SHOOTPRICE=0
+DATE=Feb 23 2018

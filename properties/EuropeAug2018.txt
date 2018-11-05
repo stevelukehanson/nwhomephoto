@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=EuropeAug2018
+ROOT_PATH=${basedir}/source-pics
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=France and the Netherlands
+AGENT=Steve Hanson
+PHONE=
+EMAIL=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=0
+DATE=8/20/2018

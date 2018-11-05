@@ -13,3 +13,4 @@ JOBNAME=Photoshoot of ${ADDRESS}
 SHOOTPRICE=300
 DATE=Jan 18, 2018
 PHOTOGRAPHERNAME=Stephanie
+NOTES=Stephanie paid $250 (see the $700 paypal payment)

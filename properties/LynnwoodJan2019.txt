@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=LynnwoodJan2019.txt
+ROOT_PATH=${basedir}/source-pics
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=16527 42nd AVE W, Lynnwood WA 98037
+AGENT=Fung Shum
+PHONE=206.489.9885
+EMAIL=fshum@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=375
+DATE=Jan 30, 2019

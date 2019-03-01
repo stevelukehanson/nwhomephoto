@@ -1,32 +1,32 @@
 !-- Basic/Common Properties --!
-URL=Ellington609
+URL=719_141st_Lane_SE_Bellevue_2
 ROOT_PATH=${basedir}/source-pics
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
 
-ADDRESS=2801 1st Ave #609, Seattle WA 98121
-AGENT=Mary Orvis / Jane Orvis
+ADDRESS=719 141st Ln SE, #19, Bellevue, WA 98007
+AGENT=Jo Flick
 PHONE=(206) 619-2000 / (206) 679-5901
 EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
-JOBNAME=Photoshoot of ${ADDRESS}
+JOBNAME=Photoshoot at ${ADDRESS}
 SHOOTPRICE=250
-DATE=Oct 13, 2018
+DATE=Jan 11, 2019
 
 !-- Flyer Properties --!
-HEADLINE1=The Ellington Condominiums
-HEADLINE2=Southwest Corner with Views
+HEADLINE1=South Bellevue Townhome
+HEADLINE2=Charming 2 bedroom home in The Villas
 HEADLINE3=
 !-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
 PHOTO1=1
-PHOTO2=17
-PHOTO3=3
-PHOTO4=8
-PHOTO5=12
-HOUSEPRICE=$875,000
-BOXTEXT=2 bedrooms / 1.75 baths / 1,282 sq ft / HOA dues $753
+PHOTO2=3
+PHOTO3=11
+PHOTO4=5
+PHOTO5=16
+HOUSEPRICE=$389,000
+BOXTEXT=2 bedrooms / 1.5 baths / 1,027 Sq. Ft. / HOA dues: $446
 MAINTEXT=main
-MLS=MLS #1372675
+MLS=MLS #1390477
 CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
 WEBSITE=www.OrvisAndOrvisRealEstate.com
 PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

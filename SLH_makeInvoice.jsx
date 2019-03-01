@@ -25,7 +25,7 @@ var parentFolder = File($.fileName).parent;  // The parent folder for this very 
 var docRef = open(new File(parentFolder + "/template/invoice.psd"));  // open the invoice.psd file. 
 
 // Company
-addLineText(docRef, 50, 130, "company", '8494C3', "Hanson Photo Group", 28, false, false, Justification.LEFT);
+// addLineText(docRef, 50, 130, "company", '8494C3', "Hanson Photo Group", 28, false, false, Justification.LEFT);
 // Name
 addLineText(docRef, 14, 263, "name", '000000', "Stephen Hanson", 12, false, false, Justification.LEFT);
 

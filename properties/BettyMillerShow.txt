@@ -11,6 +11,6 @@ AGENT=Richie Steffen / Betty Miller Garden
 PHONE=
 EMAIL=richies@millergarden.org
 JOBNAME=Photo retouchng, 20 hours: $800, Printing: $205.50
-SHOOTPRICE=1005.50
+SHOOTPRICE=1005
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 DATE=Sept 14, 2018

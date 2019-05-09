@@ -1,35 +1,34 @@
 !-- Basic/Common Properties --!
-URL=Temp
+URL=13302_20th_Ave_NE
 ROOT_PATH=${basedir}/source-pics
 RAW_PATH=${ROOT_PATH}/${URL}
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
 
-ADDRESS=2241 13th Ave W, Seattle, WA
-AGENT=Steve Hanson
-PHONE=(206) 619-2000 / (206) 679-5901
-EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+ADDRESS=13302 20th Ave NE, Seattle, WA
+AGENT=Mary Orvis
+PHONE=(206)619-2000
+EMAIL=maryorvis@gmail.com
 FLICKR=
 JOBNAME=Photoshoot of ${ADDRESS}
-SHOOTPRICE=0
-PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
-DATE=1/1/2018
+SHOOTPRICE=250
+DATE=5/7/2019
 
 !-- Flyer Properties --!
-HEADLINE1=Capitol Hill Location
-HEADLINE2=Fully Remodeled and Restored Farm House
+HEADLINE1=Lush Olympic Hills Home
+HEADLINE2=Move-in Ready Rambler on Quiet Street
 HEADLINE3=
 !-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
 PHOTO1=1
-PHOTO2=4
-PHOTO3=9
-PHOTO4=7
-PHOTO5=2
+PHOTO2=3
+PHOTO3=13
+PHOTO4=21
+PHOTO5=7
 LOGO=C:/Adobe CS6/nwhomephoto/resources
-MAINTEXT=MLS #968448
-BOXTEXT=3 bedrooms / 2.5 baths / 2,820 sq ft / 4,200 sq ft lot / 2016 taxes are $7,470 / Stevens Elementary assignment
-HOUSEPRICE=Offered at $1,150,000
+MAINTEXT=MLS #1452232
+BOXTEXT=3 bedrooms / 1 bathroom / 1,220 sq ft / 6,001 st ft lot / 2018 taxes $4,739
+HOUSEPRICE=Offered at $540,000
 CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
 WEBSITE=www.OrvisAndOrvisRealEstate.com
 PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

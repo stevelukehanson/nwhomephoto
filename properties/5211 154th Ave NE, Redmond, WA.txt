@@ -1,20 +1,19 @@
 !-- Basic/Common Properties --!
-URL=Temp
+URL=5211_154th_Ave_NE_Redmond
 ROOT_PATH=${basedir}/source-pics
 RAW_PATH=${ROOT_PATH}/${URL}
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
 
-ADDRESS=2241 13th Ave W, Seattle, WA
-AGENT=Steve Hanson
-PHONE=(206) 619-2000 / (206) 679-5901
-EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+ADDRESS=5211 154th Ave NE, Redmond, WA
+AGENT=Mary Orvis
+PHONE=(206) 619-2000
+EMAIL=maryorvis@gmail.com
 FLICKR=
 JOBNAME=Photoshoot of ${ADDRESS}
-SHOOTPRICE=0
-PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
-DATE=1/1/2018
+SHOOTPRICE=250
+DATE=5/6/2019
 
 !-- Flyer Properties --!
 HEADLINE1=Capitol Hill Location

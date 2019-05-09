@@ -15,8 +15,8 @@
   <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
   <tstamp/>
   <path id="antclasspath"> 
-    <fileset dir="C:\apache\apache-ant-1.9.7\lib"> 
-        <include name="postgresql-42.1.4.jar"/> 
+    <fileset dir="C:\apache\apache-ant-1.10.5\lib"> 
+        <include name="postgresql-42.2.5.jar"/> 
     </fileset> 
   </path> 
   
@@ -631,17 +631,17 @@
 <target name="sql">
   <sql
     driver="org.postgresql.Driver"
-    url="jdbc:postgresql://localhost:5432/labkey"
-    userid="sa"
+    url="jdbc:postgresql://localhost:5432/externalsteve"
+    userid="postgres"
     password="sa"
     print="yes" 
     classpathref="antclasspath">
-     -- select * from list.c2d25_AntTable
-     DELETE FROM list.c5d27_anttable;	 
+     -- SELECT * from photolab.jobs;
+     DELETE FROM photolab.jobs; 
   </sql>
   <foreach target="bar" param="theFile">
    <path>
-    <fileset dir="C:\Users\steveh\Documents\Adobe Scripts\nwhomephoto\properties" casesensitive="yes">
+    <fileset dir="C:\Users\SteveH\Documents\nwhomephoto\properties" casesensitive="yes">
       <include name="**/*.txt"/>
       <include name="**/*.properties"/>
 <!--
@@ -669,36 +669,29 @@
 
   <sql
     driver="org.postgresql.Driver"
-    url="jdbc:postgresql://localhost:5432/labkey"
-    userid="sa"
+    url="jdbc:postgresql://localhost:5432/externalsteve"
+    userid="postgres"
     password="sa"
     print="yes" 
     classpathref="antclasspath">
-     INSERT INTO list.c5d27_anttable (EntityId, 
-                                Container, 
-								URL, 
-								ADDRESS, 
-								Agent,
-								ShootPrice,
-								AgentPhone,
-								AgentEmail,
-								Date,
-								URLPre,
-								PhotographerName,
-								Notes) 
+     INSERT INTO photolab.jobs ( 
+								url, 
+								address, 
+								agent,
+								shootprice,
+								agentphone,
+								agentemail,
+								date
+								) 
 							VALUES (
-								'7eb670f2-1e7b-1036-bf57-238a4d1fb9f0', 
-								'7eb670f2-1e7b-1036-bf57-238a4d1fb9f0', 
 								'${URL}', 
 								'${ADDRESS}', 
 								'${AGENT}',
 								'${SHOOTPRICE}',
 								'${PHONE}',
 								'${EMAIL}',
-								'${DATE}',
-								'${URLPRE}',
-								'${PHOTOGRAPHERNAME}',
-								'${NOTES}')
+								'${DATE}'
+								)
 
         -- select * from core.Users 
         -- INSERT INTO core.Users (email) VALUES ('myemail@email.com')

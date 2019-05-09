@@ -1,32 +1,32 @@
 !-- Basic/Common Properties --!
-URL=511_Lakeside_Ave_S_Dec2018
+URL=Ellington806
 ROOT_PATH=${basedir}/source-pics
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
 
-ADDRESS=511 Lakeside Ave S, Seattle WA
+ADDRESS=2801 1st Ave #806, Seattle 98121
 AGENT=Mary Orvis / Jane Orvis
 PHONE=(206) 619-2000 / (206) 679-5901
 EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
-JOBNAME=Photoshoots and drone ${ADDRESS}
-SHOOTPRICE=200
-DATE=Dec 5, 2018
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=March 14, 2019
 
 !-- Flyer Properties --!
-HEADLINE1=Dramatic Front Row Views
-HEADLINE2=Leschi Contemporary Home Available for the First Time
+HEADLINE1=The Ellington Lifestyle
+HEADLINE2=Two Bedroom View Condo
 HEADLINE3=
 !-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
-PHOTO1=4
-PHOTO2=27
-PHOTO3=8
-PHOTO4=15
-PHOTO5=19
-HOUSEPRICE=$2,500,000
-BOXTEXT=4 bedrooms / 3.5 baths / 4,450 sq ft / 5,580 sq ft lot / 2018 taxes: $15,927
+PHOTO1=20
+PHOTO2=16
+PHOTO3=1
+PHOTO4=6
+PHOTO5=11
+HOUSEPRICE=$729,000
+BOXTEXT=2 bedrooms / 2 bathrooms /905 sq ft / HOA dues $525/ Parking with charger
 MAINTEXT=main
-MLS=MLS #1381636
+MLS=MLS #1425315
 CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
 WEBSITE=www.OrvisAndOrvisRealEstate.com
 PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

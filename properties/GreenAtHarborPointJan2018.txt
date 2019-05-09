@@ -13,3 +13,4 @@ JOBNAME=Photoshoot of ${ADDRESS}
 SHOOTPRICE=750
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 DATE=Jan 11, 2018
+W9=true

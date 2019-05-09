@@ -1,32 +1,32 @@
 !-- Basic/Common Properties --!
-URL=511_Lakeside_Ave_S_Dec2018
+URL=ArborPlace2203
 ROOT_PATH=${basedir}/source-pics
 RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
 
-ADDRESS=511 Lakeside Ave S, Seattle WA
+ADDRESS=121 Vine St, #2203, Seattle, WA
 AGENT=Mary Orvis / Jane Orvis
 PHONE=(206) 619-2000 / (206) 679-5901
 EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
-JOBNAME=Photoshoots and drone ${ADDRESS}
-SHOOTPRICE=200
-DATE=Dec 5, 2018
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=April 5, 2019
 
 !-- Flyer Properties --!
-HEADLINE1=Dramatic Front Row Views
-HEADLINE2=Leschi Contemporary Home Available for the First Time
+HEADLINE1=Highrise Elliott Bay Views
+HEADLINE2=Corner Home on Top of the City
 HEADLINE3=
 !-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
-PHOTO1=4
-PHOTO2=27
-PHOTO3=8
-PHOTO4=15
-PHOTO5=19
-HOUSEPRICE=$2,500,000
-BOXTEXT=4 bedrooms / 3.5 baths / 4,450 sq ft / 5,580 sq ft lot / 2018 taxes: $15,927
+PHOTO1=18
+PHOTO2=6
+PHOTO3=11
+PHOTO4=27
+PHOTO5=22
+HOUSEPRICE=$779,000
+BOXTEXT=2 bedrooms / 1.75 bathrooms / 1,065 sq ft / HOA dues are $839 / $6,886 for 2018 taxes 
 MAINTEXT=main
-MLS=MLS #1381636
+MLS=MLS #1435221
 CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
 WEBSITE=www.OrvisAndOrvisRealEstate.com
 PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

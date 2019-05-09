@@ -15,6 +15,7 @@ JOBNAME=Photoshoot of ${ADDRESS}
 SHOOTPRICE=500
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 DATE=Sept 10, 2017
+W9=true
 
 !-- Flyer Properties --!
 HEADLINE1=Windermere Splendor

@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=9713_NE_13th_St_Clyde_Hill
+UPLOADURL=${URL}
+ROOT_PATH=${basedir}/source-pics
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=9713 NE 13th St Clyde Hill, WA 98004
+AGENT=Connie Qian
+PHONE=425.777.5911
+EMAIL=cqian@wpirealestate.com
+JOBNAME=Exterior at ${ADDRESS}
+SHOOTPRICE=150
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=March 15, 2019

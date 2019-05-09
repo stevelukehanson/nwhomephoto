@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=TedAllisonPhotoshop
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=His House
+AGENT=Ted Allison
+PHONE=(206)719-7769
+EMAIL=ted@tedallison.com
+JOBNAME=Photoshop windows mockup
+SHOOTPRICE=75
+DATE=March 29, 2019
+

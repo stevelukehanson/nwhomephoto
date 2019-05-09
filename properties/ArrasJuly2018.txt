@@ -12,6 +12,7 @@ EMAIL=KathiW@secprop.com
 JOBNAME=Arras - Interiors at ${ADDRESS}
 SHOOTPRICE=650
 DATE=July 10 2018
+W9=true
 
 
 

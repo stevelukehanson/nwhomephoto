@@ -672,7 +672,6 @@
     url="jdbc:postgresql://localhost:5432/labkey"
     userid="sa"
     password="sa"
-    print="yes" 
     classpathref="antclasspath">
      INSERT INTO list.c5d27_anttable (EntityId, 
                                 Container, 

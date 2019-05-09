@@ -1,0 +1,16 @@
+!-- Basic/Common Properties --!
+URL=10637_Woodhaven_Lane_Bellevue
+UPLOADURL=${URL}
+ROOT_PATH=C:/Users/steveh/Pictures/RealEstate
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
+
+ADDRESS=10637 Woodhaven Lane Bellevue, WA 98004
+AGENT=Connie Qian
+PHONE=425.777.5911
+EMAIL=cqian@wpirealestate.com
+JOBNAME=new interiors at ${ADDRESS}
+SHOOTPRICE=250
+PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
+DATE=March 15, 2019

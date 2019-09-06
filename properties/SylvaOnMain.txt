@@ -14,3 +14,4 @@ JOBNAME=Exteriors and Drone photoshoot
 SHOOTPRICE=800
 VIDEO=https://youtu.be/oCVvZAZwC88
 DATE=Dec 30, 2017
+W9=true

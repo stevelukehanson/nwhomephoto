@@ -1,7 +1,7 @@
 @echo off
 setlocal enableDelayedExpansion
-set "file_start=<HTML><HEAD></HEAD><BODY><h3 style='padding:5;'>_ADDRESS_</h3>"
-set "image_start=<IMG width='600' style='padding:10;' src='"
+set "file_start=<HTML><HEAD></HEAD><BODY><br/><h2 style='padding:5; text-align:center; font-family: Arial, Helvetica, sans-serif;'>_ADDRESS_</h2>"
+set "image_start=<IMG width='600' style='padding:5;' src='"
 set "image_end='/>"
 set "file_end=</BODY></HTML>"
 set "file_name=gallery.html"

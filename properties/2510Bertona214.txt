@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=2510_W_Bertona_214
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2510 W Bertona St, #214, Seattle, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+VIDEO=https://my.matterport.com/show/?m=FLb8jA7GFob
+SHOOTPRICE=250
+DATE=June 29, 2019
+
+!-- Flyer Properties --!
+HEADLINE1=Magnolia Condominium
+HEADLINE2=Large 1 Bedroom with Major Upgrades Coming
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=26
+PHOTO2=2
+PHOTO3=11
+PHOTO4=15
+PHOTO5=21
+HOUSEPRICE=$375,000
+BOXTEXT=1 Beds / 1 bath / 818 sq ft / HOA dues: $427 / 2018 Taxes: $2,350 
+MAINTEXT=main
+MLS=MLS #1482280
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

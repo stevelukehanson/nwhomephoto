@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=9500_21st_Ave_NW
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=9500 21st Ave NW, Seattle, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+VIDEO=https://my.matterport.com/show/?m=6rduAMqMFNm
+DATE=July 21, 2019
+
+!-- Flyer Properties --!
+HEADLINE1=North Beach Gem
+HEADLINE2=Lovely Craftsman Home with Views
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=32
+PHOTO2=1
+PHOTO3=7
+PHOTO4=9
+PHOTO5=15
+HOUSEPRICE=$829,000
+MLS=MLS #1492187
+BOXTEXT=3 bedrooms / 1.5 baths / 2,194 sq ft / 5,000 sq ft lot / 2019 taxes 
+MAINTEXT=main
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

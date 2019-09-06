@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=3232_Miles_Rd_Rice
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=3232 Miles Rd, Rice, WA
+AGENT=Rick Diethrick
+EMAIL=rdiethrick@gmail.com 
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=July 5, 2019

@@ -13,6 +13,7 @@ JOBNAME=Kinects - Interiors at ${ADDRESS}
 SHOOTPRICE=800
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 DATE=July 2 2018
+W9=true
 
 
 

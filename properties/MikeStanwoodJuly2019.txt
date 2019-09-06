@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=2217_2nd_Ave_W
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2217 2nd Ave W, Seattle, WA
+AGENT=Mike Stanwood
+EMAIL=mstanwood@firstam.com 
+JOBNAME=Basement AirBnB at ${ADDRESS}
+SHOOTPRICE=350
+DATE=July 7, 2019

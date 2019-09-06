@@ -140,11 +140,12 @@
         <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
                 <arg line="/C start chrome 'https://s3.amazonaws.com/aws-website-hansonphotogroup-2pp1h/RealEstate/${URL}/index.html'" />
         </exec>		
-        <!--
-        <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-                <arg line="/C start chrome 'https://s3-us-west-2.amazonaws.com/hansonphotogroup/${URL}/index.html'" />
-        </exec>		
-        -->
+  </target>
+
+  <target name="edit">
+        <exec executable="C:\Program Files (x86)\Notepad++\Notepad++.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10">
+                <arg line="'${basedir}/${build}/${URL}/index.html'" />
+        </exec>
   </target>
 
   <target name="upload">
@@ -182,7 +183,7 @@
   </target>
   
   <target name="web" 
-	depends="validate,clean-web,staging,generate-gallery,string-replace, copy-to-build,clean-staging" 
+	depends="validate,clean-web,staging,generate-gallery,string-replace,copy-to-build,clean-staging" 
 	description="Deletes the web pages, builds the web pages, but no ftp">
   </target>
   <target name="clean-job" description="cleans up all of the build artifacts, returning the directory to its original template state.">
@@ -290,28 +291,6 @@
     <delete file="build_props.jsx"/>
     <echo>flyer done!!!</echo>  
   </target>
-
-  <target name="flyer-campaign" depends="validate, make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
-    <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
-    <delete file="build/xxx-flyer-done-xxx.jpg" failonerror="false"/>
-    <waitfor  maxwait="1" maxwaitunit="minute" checkevery="500" checkeveryunit="millisecond" >
-      <available file="build_props.jsx"/>
-    </waitfor>
-    <exec executable="cmd">
-      <arg value="/c"/>
-      <arg value="ps_make_flyer_email.cmd"/>
-    </exec>
-    <!-- ****** CompleteSignal Listener ****** -->
-    <waitfor maxwait="5" maxwaitunit="minute" 
-               checkevery="500" checkeveryunit="millisecond" >
-      <available file="build/xxx-flyer-done-xxx.jpg"/>
-    </waitfor>
-    <delete file="build/xxx-flyer-done-xxx.jpg"/>
-    <delete file="build_props.jsx"/>
-    <echo>flyer done!!!</echo>  
-  </target>
-
-  
   
   <target name="flyer-make-side2" depends="validate, make-js-prop-file" description="Creates a flyer with Photoshop, saves as a jpeg and a tiff.">
     <!-- ****** Stanza to clear any signal file and regenerate the js properties file.****** -->
@@ -672,7 +651,6 @@
     url="jdbc:postgresql://localhost:5432/externalsteve"
     userid="postgres"
     password="sa"
-    print="yes" 
     classpathref="antclasspath">
      INSERT INTO photolab.jobs ( 
 								url, 
@@ -681,7 +659,9 @@
 								shootprice,
 								agentphone,
 								agentemail,
-								date
+								date,
+								photographername,
+								notes
 								) 
 							VALUES (
 								'${URL}', 
@@ -690,12 +670,10 @@
 								'${SHOOTPRICE}',
 								'${PHONE}',
 								'${EMAIL}',
-								'${DATE}'
+								'${DATE}',
+								'${PHOTOGRAPHERNAME}',
+								'${NOTES}'
 								)
-
-        -- select * from core.Users 
-        -- INSERT INTO core.Users (email) VALUES ('myemail@email.com')
-        -- select * from core.Containers 
   </sql>
 </target>
 

@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=BellagioJuly2019
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+
+ADDRESS=2425 33rd Avenue W, #401, Seattle, WA
+AGENT=Jessica Malcolm
+PHONE=
+EMAIL=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=July 26 2019
+VIDEO=https://my.matterport.com/show/?m=GDp2SdsYJCc

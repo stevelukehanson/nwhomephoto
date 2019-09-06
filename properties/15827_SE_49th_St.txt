@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=15827_SE_49th_St
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+
+ADDRESS=15827 SE 49th St, Bellevue, WA 98006
+AGENT=Connie Qian
+PHONE=425.777.5911
+EMAIL=cqian@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=350
+DATE=July 24 2019

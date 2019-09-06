@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=826_NW_63rd_St
+ADDRESS=826 NW 63rd St, Seattle, WA 98107
+AGENT=David Marks
+PHONE=(206)550-3283
+EMAIL=david@davidkmarksre.com
+JOBNAME=Interior stills: $375 + 2 Drone stills: $50 + Matterport 3D: $200
+DATE=Aug 23, 2019
+SHOOTPRICE=625
+VIDEO=https://my.matterport.com/show/?m=TBKHCZPkTB4
+
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

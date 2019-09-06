@@ -13,6 +13,7 @@ JOBNAME=Photoshoot of ${ADDRESS}
 SHOOTPRICE=400
 PORTA_EXE=C:/Program Files (x86)/Porta/porta.exe
 DATE=March 1 2018
+W9=true
 
 !-- Flyer Properties --!
 HEADLINE1=Big Views of Lake Washington

@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=BobJones
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=5838 Seward Park Ave S, Seattle, WA 98118
+AGENT=Marcia Bartholme
+PHONE=(206) 805-6576
+EMAIL=mbeta@comcast.net
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=150
+DATE=Jan 7, 2018

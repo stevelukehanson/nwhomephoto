@@ -13,3 +13,4 @@ EMAIL=mgr.soma@secpropres.com
 JOBNAME=Photoshoot of 3 units: ${ADDRESS}
 SHOOTPRICE=800
 DATE=Dec 12, 2017
+W9=true

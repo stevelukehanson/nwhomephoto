@@ -1,0 +1,17 @@
+!-- Basic/Common Properties --!
+URL=ArrasFeb2019
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flash-layers
+
+ADDRESS=1201 121st Avenue NE, Bellevue, WA 98005
+AGENT=Kathi Williams, Security Properties
+PHONE=206.926.6151
+EMAIL=KathiW@secprop.com
+JOBNAME=Arras - 2 Units at ${ADDRESS}
+SHOOTPRICE=750
+DATE=Feb 21 2019
+
+
+

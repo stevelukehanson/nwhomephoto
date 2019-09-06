@@ -1,0 +1,38 @@
+!-- Basic/Common Properties --!
+URL=916_Harvard_Ave_E
+ROOT_PATH=${basedir}/source-pics
+RAW_PATH=${ROOT_PATH}/${URL}
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
+
+ADDRESS=916 Harvard Ave E, Seattle, WA
+AGENT=Mary Orvis
+PHONE=(206) 619-2000
+EMAIL=maryorvis@gmail.com
+FLICKR=
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=250
+DATE=5/13/2019
+VIDEO=https://my.matterport.com/show/?m=uzbrp9LXYHW
+
+!-- Flyer Properties --!
+HEADLINE1=Harvard-Belmont District
+HEADLINE2=One of Seattle's Best Addresses
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=5
+PHOTO3=11
+PHOTO4=6
+PHOTO5=23
+MAINTEXT=main text
+MLS=MLS #1453165
+BOXTEXT=4 bedrooms / 3 bathrooms / 2,930 sq ft / 5,000 sq ft lot / 2019 taxes $10,441
+HOUSEPRICE=Offered at $1,395,000
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+
+

@@ -6,7 +6,7 @@ RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
 FLASH_PATH=${ROOT_PATH}/${URL}/flash-layers
 
-ADDRESS=5211 154th Ave NE, Redmond, WA
+ADDRESS=5211 154th Ave NE Redmond, WA 98052
 AGENT=Mary Orvis
 PHONE=(206) 619-2000
 EMAIL=maryorvis@gmail.com
@@ -16,19 +16,20 @@ SHOOTPRICE=250
 DATE=5/6/2019
 
 !-- Flyer Properties --!
-HEADLINE1=Capitol Hill Location
-HEADLINE2=Fully Remodeled and Restored Farm House
+HEADLINE1=Bellevue Redmond Location
+HEADLINE2=Walking distance from Microsoft and upcoming Light Rail
 HEADLINE3=
 !-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
 PHOTO1=1
-PHOTO2=4
-PHOTO3=9
-PHOTO4=7
-PHOTO5=2
+PHOTO2=5
+PHOTO3=7
+PHOTO4=4
+PHOTO5=21
 LOGO=C:/Adobe CS6/nwhomephoto/resources
-MAINTEXT=MLS #968448
-BOXTEXT=3 bedrooms / 2.5 baths / 2,820 sq ft / 4,200 sq ft lot / 2016 taxes are $7,470 / Stevens Elementary assignment
-HOUSEPRICE=Offered at $1,150,000
+MAINTEXT=main text
+MLS=MLS #1454192
+BOXTEXT=4 Bed / 2.75 Bath / 2,100 Sq Ft / 10,425 Sq Ft Lot / 2018 Taxes: $6,416
+HOUSEPRICE=Offered at $895,000
 CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
 WEBSITE=www.OrvisAndOrvisRealEstate.com
 PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC

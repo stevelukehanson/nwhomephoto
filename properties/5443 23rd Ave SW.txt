@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=5443_23rd_Ave_SW
+ADDRESS=5443 23rd Ave SW, Seattle, WA
+AGENT=David Marks
+PHONE=(206)550-3283
+EMAIL=david@davidkmarksre.com
+JOBNAME=Stills: $375, 3D Matterport: $0 (freebee)
+DATE=July 31, 2019
+SHOOTPRICE=375
+VIDEO=https://my.matterport.com/show/?m=VYDB78VM7BA
+
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

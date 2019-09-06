@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=7706_223rd_Street_SW_Edmonds
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=7706 223rd Street SW, Edmonds, WA 98026
+AGENT=Yannis Lau
+PHONE=206.280.2896
+EMAIL=ylau@wpirealestate.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=375
+DATE=March 29, 2019

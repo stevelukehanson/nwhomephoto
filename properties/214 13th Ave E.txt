@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=214_13th_Ave_E
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=214 13th Ave E, Seattle, WA
+AGENT=Jane Orvis / Jo Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=
+SHOOTPRICE=0
+DATE=May 5, 2021
+VIDEO=
+
+
+!-- Flyer Properties --!
+HEADLINE1=The Crown of Beacon Hill
+HEADLINE2=5 Bedroom Tudor on Spacious Corner Lot
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=36
+PHOTO2=2
+PHOTO3=6
+PHOTO4=27
+PHOTO5=31
+HOUSEPRICE=$1,295,000
+MLS=MLS #1764916
+BOXTEXT=5 bedrooms / 3 bathrooms / 3,240 sq ft / 8,880 sq ft lot / 2021 taxes are $8,074
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

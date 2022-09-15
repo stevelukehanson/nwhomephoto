@@ -1,0 +1,12 @@
+!-- Basic/Common Properties --!
+URL=TrueBrands_SWENSONSAYFAGET
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best/best
+
+ADDRESS=True Brands, 1055 N 38th St, Seattle, WA 98103
+AGENT=Heidi Maki / Swenson Fay Faget
+PHONE=
+EMAIL=hmaki@ssfengineers.com
+JOBNAME=Licensing for photoshoot at TrueBrands, 6 photos x $100.
+SHOOTPRICE=600
+DATE=Dec 31, 2019

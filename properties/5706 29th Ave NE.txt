@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=5706_29th_Ave_NE
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=5706 29th Ave NE, Seattle, WA
+AGENT=Jane Orvis
+PHONE=(206) 679-5901
+EMAIL=janeorvis@gmail.com
+JOBNAME=
+SHOOTPRICE=0
+DATE=Feb 19, 2021
+VIDEO=https://my.matterport.com/show/?m=N787BrekMpJ
+PHOTOGRAPHER_NAME=TAK Images
+
+!-- Flyer Properties --!
+HEADLINE1=Storybook Craftsman Home in Bryant
+HEADLINE2=Thoughtful restoration of a classic home
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=18
+PHOTO2=12
+PHOTO3=4
+PHOTO4=5
+PHOTO5=7
+HOUSEPRICE=$1,395,000
+MLS=MLS #1732452
+BOXTEXT=4 bedrooms / 1.75 bathrooms / 2,520 sq ft / 4,968 sq ft lot / 1 car garage
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

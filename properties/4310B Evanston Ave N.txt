@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=4310B_Evanston_Ave_N
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=4310B Evanston Ave N, Seattle, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photos and Matterport
+SHOOTPRICE=350
+DATE=Sept 20, 2020
+VIDEO=https://my.matterport.com/show/?m=EcyxhUgxiKm
+
+!-- Flyer Properties --!
+HEADLINE1=Upper Fremont
+HEADLINE2=Modern Four Bedroom - Roof Deck Views
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=60
+PHOTO2=12
+PHOTO3=18
+PHOTO4=27
+PHOTO5=58
+HOUSEPRICE=$850,000
+MLS=MLS #1666783
+BOXTEXT=4 bedrooms / 2.25 baths / 1,582 sq ft. / 2019 taxes: $7,676 / 1 parking space 
+MAINTEXT=main
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

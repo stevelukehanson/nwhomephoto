@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=4715_139th_Ave_SE_Bellevue
+ADDRESS=4715 139th Ave SE, Bellevue
+AGENT=David Marks
+PHONE=(206)550-3283
+EMAIL=david@davidkmarksre.com
+JOBNAME=Exterior/View stills: $200
+DATE=Sept 12, 2019
+SHOOTPRICE=200
+
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

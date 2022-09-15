@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=19548_47th_AvenueNE_LakeForestParkWA98155
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=19548 47th Ave NE, Lake Forest Park, WA 98155
+AGENT=Jane Orvis / Jo Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=Photos and Matterport
+SHOOTPRICE=0
+DATE=July 23, 2021
+VIDEO=https://my.matterport.com/show/?m=vHej8TFu9pm
+
+!-- Flyer Properties --!
+HEADLINE1=Lake Forest Park Mid-Century
+HEADLINE2=Privacy and Style Meet in a Verdant Setting
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=43
+PHOTO2=15
+PHOTO3=44
+PHOTO4=7
+PHOTO5=32
+HOUSEPRICE=$1,150,000 
+MLS=MLS #1811853
+BOXTEXT=3 bedrooms, plus office / 2.5 baths / 2400 sq ft of living space / 15,261 size lot / 2021 taxes of $8,371
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

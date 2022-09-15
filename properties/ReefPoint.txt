@@ -1,0 +1,15 @@
+!-- Basic/Common Properties --!
+URL=ReefPoint
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=9367 Reef Point Ln, La Conner, WA
+AGENT=Steve and Jane
+PHONE=(206) 898-0444 / (206) 679-5901
+EMAIL=stevelukehanson@gmail.com / janeorvis@gmail.com
+JOBNAME=Main Marketing Photos
+SHOOTPRICE=0
+DATE=Jan 23, 2021
+

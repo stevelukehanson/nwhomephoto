@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=805_NE_102nd St, Seattle, WA
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=805 NE 102nd Street, Seattle, WA 98125
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photos and Matterport
+SHOOTPRICE=0
+DATE=Oct 9, 2020
+VIDEO=https://my.matterport.com/show/?m=pkyFYU5EbzZ
+PHOTOGRAPHER_NAME=tak_images
+
+!-- Flyer Properties --!
+HEADLINE1=Garden Bungalow with a View
+HEADLINE2=Cute bungalow on corner lot walking distance to Northgate Transit Hub
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=4
+PHOTO2=1
+PHOTO3=2
+PHOTO4=5
+PHOTO5=3
+HOUSEPRICE=$799,000
+MLS=MLS #1674979
+BOXTEXT=3 bedrooms / 1.75 baths / 1700 sq ft / 5,413 sq ft lot / $6,002 2020 taxes  
+MAINTEXT=main
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

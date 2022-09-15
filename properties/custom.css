@@ -1,0 +1,4 @@
+/* Remove the 'Forgot Password' link on the login page */
+.forget-password-link {
+  display: none;
+}

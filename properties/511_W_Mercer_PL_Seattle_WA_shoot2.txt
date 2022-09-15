@@ -1,8 +1,8 @@
 !-- Basic/Common Properties --!
 URL=511_W_Mercer_PL_Seattle_WA_shoot2
-ADDRESS=511_W_Mercer_PL_Seattle_WA	
-AGENT=Mary Orvis	
-PHONE=(206) 000 - 0000
+ADDRESS=511_W_Mercer_PL_Seattle_WA
+AGENT=Mary Orvis
+PHONE=(206)619-2000
 EMAIL=maryorvis@gmail.com
 JOBNAME=Photoshoot of ${ADDRESS}
 DATE=Feb 15, 2018

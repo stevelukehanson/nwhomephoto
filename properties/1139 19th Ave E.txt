@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=1139_19th_Ave_E
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=1139 19th Ave E, Seattle, WA
+AGENT=Jane Orvis / Jo Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=
+SHOOTPRICE=0
+DATE=April 14, 2021
+VIDEO=https://my.matterport.com/show/?m=JqBYbquiofK
+
+
+!-- Flyer Properties --!
+HEADLINE1=North Capitol Hill Jewel Box
+HEADLINE2=Updated and ready for the next 100 years
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=2
+PHOTO2=13
+PHOTO3=20
+PHOTO4=15
+PHOTO5=11
+HOUSEPRICE=$1,150,000
+MLS=MLS #1753749
+BOXTEXT=3 Bedrooms / 1 Bathroom / 2,270 sq ft / 4,800 sq ft lot / 2021 taxes
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

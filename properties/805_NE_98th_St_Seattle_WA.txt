@@ -1,8 +1,8 @@
 !-- Basic/Common Properties --!
 URL=805_NE_98th_St_Seattle_WA
-ADDRESS=805_NE_98th_St_Seattle_WA	
-AGENT=Jess Paulson	
-PHONE=(206) 909 - 3670
+ADDRESS=805_NE_98th_St_Seattle_WA
+AGENT=Jess Paulson
+PHONE=(206)909-3670
 EMAIL=jesse@jessepaulson.com
 JOBNAME=Photoshoot of ${ADDRESS}
 DATE=May 03, 2018

@@ -1,0 +1,33 @@
+!-- Basic/Common Properties --!
+URL=905FederalAvenueEast_Seattle_WA_98102
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=905 Federal Ave E, Seattle, WA 8102
+AGENT=Jane Orvis
+PHONE=206-679-5901
+EMAIL=jane@orvisandorvisrealestate.com 
+JOBNAME=Photos
+VIDEO=https://my.matterport.com/show/?m=QyWZt55WtYJ
+PHOTOGRAPHER_NAME=Noah
+DATE=Aug 17, 2022
+
+!-- Flyer Properties --!
+HEADLINE1=Capitol Hill Awesome
+HEADLINE2=
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=5
+PHOTO2=1
+PHOTO3=2
+PHOTO4=3
+PHOTO5=4
+HOUSEPRICE=$699,500
+MLS=MLS #1944753
+BOXTEXT=4 bedrooms / 2 bathrooms / 1853 sq ft / 2021 taxes $3,890 
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

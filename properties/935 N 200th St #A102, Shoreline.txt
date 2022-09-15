@@ -1,0 +1,12 @@
+!-- Basic/Common Properties --!
+URL=935_N_200th_St_A102_Shoreline
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=935 N 200th St #A102, Shoreline, WA
+AGENT=Mason Hwu
+PHONE=206-335-1778
+EMAIL=realestatebymason@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=350
+DATE=Oct 7, 2019

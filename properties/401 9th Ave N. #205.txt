@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=401_9th_Ave_N_205
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=401 9th Ave N. #205, Seattle, WA
+AGENT=Jane Orvis / Jo Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=
+SHOOTPRICE=0
+DATE=April 7, 2021
+VIDEO=https://my.matterport.com/show/?m=qdhBfrVwwqn
+
+
+!-- Flyer Properties --!
+HEADLINE1=Coveted Veer Lofts
+HEADLINE2=Cosmopolitan South Lake Union Condo
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=3
+PHOTO3=2
+PHOTO4=4
+PHOTO5=5
+HOUSEPRICE=$449,000
+MLS=MLS #1748750
+BOXTEXT=1 bedroom / 1 bath / 663 sq ft / HOA Dues: $350 / Taxes: $4,526
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

@@ -1,0 +1,34 @@
+!-- Basic/Common Properties --!
+URL=Ellington603Aug2021
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2801 1st Ave #603, Seattle, WA 98121
+AGENT=Jane Orvis / Joe Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=Aug 10, 2021
+
+!-- Flyer Properties --!
+HEADLINE1=Ellington One Bedroom
+HEADLINE2=Cosmopolitan Living In Belltown
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=4
+PHOTO3=9
+PHOTO4=11
+PHOTO5=13
+HOUSEPRICE=$449,500 
+MLS=MLS #1821216
+BOXTEXT=1 bed / 1 bath / 608 sq foot / HOA dues: $400 / Taxes: $4,518
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Jo Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

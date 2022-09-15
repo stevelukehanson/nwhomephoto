@@ -1,7 +1,7 @@
 !-- Basic/Common Properties --!
 URL=511_W_Mercer_PL_Seattle_WA
-ADDRESS=511 W Mercer Place #401, Seattle WA	
-AGENT=Mary Orvis	
+ADDRESS=511 W Mercer Place #401, Seattle WA
+AGENT=Mary Orvis
 PHONE=(206)619-2000
 EMAIL=maryorvis@gmail.com
 JOBNAME=Photoshoot of ${ADDRESS}

@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=Ellington701_2
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2801 1st Ave, #701, Seattle, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Night shoot at ${ADDRESS}
+SHOOTPRICE=100
+DATE=June 23, 2020
+VIDEO=https://my.matterport.com/show/?m=buQX5jKgbkt
+
+!-- Flyer Properties --!
+HEADLINE1=Stunning Two-Bedroom-plus-Den View Home
+HEADLINE2=Enjoy Sweeping City, Sound & Mountain Views
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=19
+PHOTO2=1
+PHOTO3=3
+PHOTO4=10
+PHOTO5=5
+HOUSEPRICE=$995,000
+MLS=MLS #1617558
+BOXTEXT=2 bedrooms + den / 2 baths / 1,390 sq ft / 2 parking space / HOA dues $918 
+MAINTEXT=main
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

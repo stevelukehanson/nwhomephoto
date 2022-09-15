@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=5128halfKeystonePlaceN
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=5128 1/2 Keystone Place N, Seattle, WA
+AGENT=Susan Cole
+PHONE=(443)624-1366
+EMAIL=susancole@earthlink.net
+JOBNAME=Photoshoot of upper unit ${ADDRESS}
+SHOOTPRICE=350
+DATE=Sept 13, 2019

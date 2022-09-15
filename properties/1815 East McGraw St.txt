@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=1815_E_McGraw_St
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=1815 East McGraw St, Seattle, WA
+AGENT=Jane Orvis
+PHONE=(206) 679-5901
+EMAIL=janeorvis@gmail.com
+JOBNAME=
+SHOOTPRICE=0
+DATE=March 4, 2021
+VIDEO=https://my.matterport.com/show/?m=N787BrekMpJ
+PHOTOGRAPHER_NAME=TAK Images - Noah Gabrielson
+
+!-- Flyer Properties --!
+HEADLINE1=Mysterious Beauty in Montlake
+HEADLINE2=Private, Serene, and Lovely
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=30
+PHOTO3=13
+PHOTO4=9
+PHOTO5=7
+HOUSEPRICE=$1,795,000
+MLS=MLS #1736131
+BOXTEXT=2 bedrooms / 2.5 bathrooms / 3,930 sq ft / 5,500 sq ft lot / solar panels / attached garage
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=LabKeyHeadshotsDec2019
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/mixes
+FLASH_PATH=${ROOT_PATH}/${URL}/flashes
+
+ADDRESS=LabKey Software
+AGENT=LabKey
+PHONE=
+EMAIL=jenniferk@labkey.com
+JOBNAME=Headshots for Employees
+SHOOTPRICE=0
+DATE=Dec 6, 2019

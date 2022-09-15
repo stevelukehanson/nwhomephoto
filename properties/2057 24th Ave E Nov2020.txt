@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=2057_24th_Ave_E_Nov2020
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2057 24th Ave E, Seattle, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Stills, matterport, and drone at ${ADDRESS}
+SHOOTPRICE=350
+VIDEO=https://my.matterport.com/show/?m=9pv9UiSYfcD
+DATE=May 17, 2020
+
+!-- Flyer Properties --!
+HEADLINE1=Montlake Craftsman
+HEADLINE2=Charming Updated Home in a Great Location
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=2
+PHOTO2=4
+PHOTO3=7
+PHOTO4=11
+PHOTO5=14
+HOUSEPRICE=$929,000
+BOXTEXT=4 bedrooms / 1 full bath / 2,620 sq ft / 4,920 sq ft lot / 2019 taxes $7,416
+MAINTEXT=main
+MLS=MLS #1603129
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

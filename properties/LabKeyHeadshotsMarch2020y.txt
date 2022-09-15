@@ -1,0 +1,12 @@
+!-- Basic/Common Properties --!
+URL=LabKeyHeadshotsMarch2020
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+
+ADDRESS=LabKey Software
+AGENT=LabKey
+PHONE=
+EMAIL=kelseyg@labkey.com
+JOBNAME=Headshots for Steve, Nick, Kevin
+SHOOTPRICE=0
+DATE=March 5, 2018

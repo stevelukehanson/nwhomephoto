@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=511_W_Mercer_Pl_304
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=511 W. Mercer Pl. #304 Seattle, WA 98109
+AGENT=Jane Orvis / Jo Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=Photos and Matterport
+SHOOTPRICE=0
+DATE=June 23, 2021
+VIDEO=
+
+!-- Flyer Properties --!
+HEADLINE1=Boutique Queen Anne Condo
+HEADLINE2=Spacious and updated with views
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=6
+PHOTO2=27
+PHOTO3=9
+PHOTO4=20
+PHOTO5=14
+HOUSEPRICE=$589,000
+MLS=MLS #1796151
+BOXTEXT=2 bedrooms / 1.75 baths / 1,181 sq ft / HOA dues: $695 / 2020 Taxes: $6,377
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

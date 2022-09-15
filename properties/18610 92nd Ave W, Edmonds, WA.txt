@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=18610_92nd_Ave_W_Edmonds_WA
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=18610 92nd Ave W, Edmonds, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Stills, matterport, and drone at ${ADDRESS}
+SHOOTPRICE=350
+VIDEO=https://my.matterport.com/show/?m=JiWNzZ3WeJz
+DATE=March 21, 2020
+
+!-- Flyer Properties --!
+HEADLINE1=Seaview Location
+HEADLINE2=Large 5 Bedroom Home on Near-Acre Lot
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=39
+PHOTO2=5
+PHOTO3=41
+PHOTO4=7
+PHOTO5=24
+HOUSEPRICE=$775,000
+BOXTEXT=5 bedrooms / 3 bathrooms / 3 car garage / 2,957 sq ft / 33,106 sq ft lot
+MAINTEXT=main
+MLS=MLS #1583926
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

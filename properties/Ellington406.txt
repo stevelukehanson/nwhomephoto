@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=Ellington406
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2801 1st Ave #406, Seattle WA 98121
+AGENT=Mary Welk
+PHONE=(206)495-1478 
+EMAIL=maryw@windermere.com
+JOBNAME=Photoshoot and Matterport at ${ADDRESS}
+SHOOTPRICE=350
+DATE=Sept 22, 2020
+VIDEO=https://my.matterport.com/show/?m=GTZXDfwH4qL
+
+
+!-- Flyer Properties --!
+HEADLINE1=The Ellington Condominiums
+HEADLINE2=Updated pied a terre in Belltown
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=1
+PHOTO3=8
+PHOTO4=14
+PHOTO5=1
+HOUSEPRICE=$375,000
+BOXTEXT=1 bedrooms / 1 bath / 447 sq ft. / HOA dues: $296 / 2020 taxes $608
+MAINTEXT=main
+MLS=MLS #1651025
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

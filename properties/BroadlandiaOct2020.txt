@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=BroadlandiaOct2020
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=917 Broadway E, Seattle, WA 98102
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Stills and Matterport
+SHOOTPRICE=0
+DATE=Oct 16, 2020
+VIDEO=https://my.matterport.com/show/?m=tdK9WebxmAP
+
+!-- Flyer Properties --!
+HEADLINE1=Magnolia Gem
+HEADLINE2=Spacious two bedroom home in a newly remodeled building
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=27
+PHOTO2=8
+PHOTO3=18
+PHOTO4=25
+PHOTO5=33
+HOUSEPRICE=$459,500
+MLS=MLS #1633164
+BOXTEXT=2 bedrooms / 1 bath / 1,051 sq ft. / HOA dues: $619 / 2019 taxes $2,206 
+MAINTEXT=main
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

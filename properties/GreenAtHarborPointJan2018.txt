@@ -6,7 +6,7 @@ RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
 
 ADDRESS=12303 Harbour Pointe Blvd, Mukilteo, WA 98275
-AGENT=Brooke Renshaw and Amy Floyd	
+AGENT=Brooke Renshaw and Amy Floyd
 PHONE=206.294.1130
 EMAIL=mgr.onthegreen@secpropres.com
 JOBNAME=Photoshoot of ${ADDRESS}

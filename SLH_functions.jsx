@@ -52,7 +52,7 @@ function batchResize2(sourcePath, sizesArray, destinationPath)
 
 			}
 		}
-	else alert("No files in the folder.");
+	else alert("No files in the folder: " + sourcePath);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -126,7 +126,7 @@ function saveJPEG( doc, saveFile, qty ) {
 function getFilesFunc(sourceFolder) {
 	// declare local variables
 	var fileArray = new Array();
-	var extRE = /\.(?:png|gif|jpg|bmp|tif|psd|cr2|dng)$/i;
+	var extRE = /\.(?:png|gif|jpg|JPEG|bmp|tif|psd|cr2|dng|PDF)$/i;
 
 	// get all files in source folder
 	var docs = sourceFolder.getFiles();

@@ -1,0 +1,36 @@
+!-- Basic/Common Properties --!
+URL=9345_57th_Ave_S
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=9345 57th Ave S, Seattle, WA
+AGENT=Jane Orvis / Jo Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=
+SHOOTPRICE=0
+DATE=April 2, 2021
+VIDEO=https://my.matterport.com/show/?m=qdhBfrVwwqn
+
+
+!-- Flyer Properties --!
+HEADLINE1=Quiet and Serene Upper Rainier Beach Location
+HEADLINE2=Two Story Traditional with View Decks on Both Levels
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=2
+PHOTO3=4
+PHOTO4=5
+PHOTO5=3
+HOUSEPRICE=$745,000
+MLS=MLS #1748851
+BOXTEXT=3 bedrooms / 2.5 baths / 1,640 sq ft / 5,250 sq ft lot / 2021 taxes $6,558
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

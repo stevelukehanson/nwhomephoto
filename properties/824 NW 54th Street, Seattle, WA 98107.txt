@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=824_NW_54th_Street_Seattle
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=824 NW 54th Street, Seattle, WA 98107
+AGENT=Jane Orvis / Joe Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=Sept 9, 2021
+VIDEO=https://my.matterport.com/show/?m=QyxoSrEj4qG
+
+!-- Flyer Properties --!
+HEADLINE1=Ballard Farmhouse Charm
+HEADLINE2=Wonderful Walking Location
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=3
+PHOTO3=9
+PHOTO4=14
+PHOTO5=31
+HOUSEPRICE=$825,000 
+MLS=MLS #1835379
+BOXTEXT=3 bedrooms / 1 bathroom / 1,870 sq ft / 4,000 sq ft lot / 2021 taxes are $6,496
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

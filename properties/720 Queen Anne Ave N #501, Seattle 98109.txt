@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=720_Queen_Anne_Ave_N_501
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=720 Queen Anne Ave N #501, Seattle 98109
+AGENT=Jane Orvis / Joe Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=Oct 28, 2021
+VIDEO=
+
+!-- Flyer Properties --!
+HEADLINE1=The Willis Condominiums
+HEADLINE2=Charming One Bedroom with Views
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=20
+PHOTO2=6
+PHOTO3=13
+PHOTO4=9
+PHOTO5=18
+HOUSEPRICE=$525,000 
+MLS=MLS #1858089
+BOXTEXT=1 bedroom / 1 full bath / Roof Deck / Secure Parking / HOA dues $469
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

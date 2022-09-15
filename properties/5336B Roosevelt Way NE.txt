@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=5336B_Roosevelt_Way_NE
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=5336B Roosevelt Way NE, Seattle 98105
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photos and Matterport
+SHOOTPRICE=0
+DATE=Dec 15, 2020
+VIDEO=https://my.matterport.com/show/?m=1FEdUxURvZP
+
+!-- Flyer Properties --!
+HEADLINE1=New Build Townhomes Designed for Investors
+HEADLINE2=Quality Construction in University Neighborhood
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=8
+PHOTO2=10
+PHOTO3=23
+PHOTO4=22
+PHOTO5=30
+HOUSEPRICE=$925,000
+MLS=MLS #1685414
+BOXTEXT=6 beds / 3.5 baths / 1,739 sq ft / Gas cooking / Tankless hot water 
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

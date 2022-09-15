@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=5115SAlaskaSt
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=5115 S Alaska St, Seattle, WA
+AGENT=Mary Orvis / Jane Orvis
+PHONE=(206) 619-2000 / (206) 679-5901
+EMAIL=maryorvis@gmail.com / janeorvis@gmail.com
+JOBNAME=Photoshoot of ${ADDRESS}
+SHOOTPRICE=350
+DATE=July 20, 2020
+VIDEO=https://my.matterport.com/show/?m=uUuUzUWQjAR
+
+!-- Flyer Properties --!
+HEADLINE1=A Rare Delight
+HEADLINE2=A Stunning Japanese-Influenced Home and Garden
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=24
+PHOTO3=8
+PHOTO4=11
+PHOTO5=62
+HOUSEPRICE=1,295,000
+BOXTEXT=3 bedrooms / 2 bathrooms / 2,140 sq ft plus garage / 7,200 sq ft lot / 2020 taxes are $10,164 
+MAINTEXT=main
+MLS=MLS #1633164
+CONTACT=Contact: Mary Orvis (206) 619-2000 or Jane Orvis (206) 679-5901
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

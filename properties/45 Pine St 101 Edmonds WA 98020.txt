@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=45_Pine_St_101_Edmonds
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=45 Pine St #101, Edmonds, WA 98020
+AGENT=Jane Orvis / Joe Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=Sept 30, 2021
+VIDEO=
+
+!-- Flyer Properties --!
+HEADLINE1=Point Edwards
+HEADLINE2=Large, Luxury 1 Bedroom
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=2
+PHOTO3=3
+PHOTO4=4
+PHOTO5=5
+HOUSEPRICE=$725,000 
+MLS=MLS #1845683
+BOXTEXT=1 bed / 1.5 bath / 1,199sq foot / HOA dues:  / Taxes: $4,896
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

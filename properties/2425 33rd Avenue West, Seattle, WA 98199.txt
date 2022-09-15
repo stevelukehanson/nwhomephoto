@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=2425_33rd_Ave_West
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2425 33rd Ave W #401, Seattle WA, 98199
+AGENT=Jane Orvis / Joe Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=jane@orvisandorvisrealestate.com / joe@orvisandorvisrealestate.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=April 25, 2022
+VIDEO=
+
+!-- Flyer Properties --!
+HEADLINE1=Enjoy carefree living at The Bellagio
+HEADLINE2=Easy access to vibrant Magnolia Village and the city beyond
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=5
+PHOTO2=1
+PHOTO3=2
+PHOTO4=3
+PHOTO5=4
+HOUSEPRICE=$995,000
+MLS=MLS #1918580
+BOXTEXT=2 bedrooms / 2 bathrooms / 1,372 sq ft / $6,803 2021 taxes
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

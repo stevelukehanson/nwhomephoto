@@ -7,7 +7,7 @@ RESIZE_PATH=${ROOT_PATH}/${URL}/best
 LUMINOSITY_PATH=${ROOT_PATH}/${URL}/luminosity-layers
 
 ADDRESS=12303 Harbour Pointe Blvd, Mukilteo, WA 98275
-AGENT=Brooke Renshaw 	
+AGENT=Brooke Renshaw
 PHONE=206.294.1130
 EMAIL=brenshaw@madronaridgellc.com, madronaridgellc@avidbill.com
 JOBNAME=Photoshoot of ${ADDRESS}

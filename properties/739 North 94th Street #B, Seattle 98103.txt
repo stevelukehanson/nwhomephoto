@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=739_North_94th_St_B
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=739 North 94th Street #B, Seattle 98103
+AGENT=Mary Orvis / Matt Mather
+PHONE=206-619-2000 / 310-600-0257
+EMAIL=mary@orvisandorvisrealestate.com / matt@orvisandorvisrealestate.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=Dec 3, 2021
+VIDEO=https://my.matterport.com/show/?m=CxEqqcTPqvv
+
+!-- Flyer Properties --!
+HEADLINE1=Modern Living in Desirable Greenwood
+HEADLINE2=Spotless, Spacious & Sun-Filled
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=5
+PHOTO2=2
+PHOTO3=1
+PHOTO4=4
+PHOTO5=3
+HOUSEPRICE=$675,000 
+MLS=MLS #1868130
+BOXTEXT=2 bedroom / 2 full bath / 1 half bath / Garage + Off-Street Parking / No HOA
+MAINTEXT=main
+CONTACT=Contact: Mary Orvis 206-619-2000 or Matt Mather 310-600-0257
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

@@ -1,0 +1,13 @@
+!-- Basic/Common Properties --!
+URL=3636_Courtland_Pl_S
+ADDRESS=3636B Courtland Pl S, Seattle, WA
+AGENT=David Marks
+PHONE=(206)550-3283
+EMAIL=david@davidkmarksre.com
+JOBNAME=interior stills $350
+DATE=March 16, 2020
+SHOOTPRICE=350
+
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers

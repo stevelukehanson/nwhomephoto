@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=10203_8th_Ave_NE
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=10203 8th Ave NE, Seattle 98125
+AGENT=Jane Orvis / Joe Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=Sept 27, 2021
+VIDEO=https://my.matterport.com/show/?m=G5qdYX4RfmK
+
+!-- Flyer Properties --!
+HEADLINE1=Maple Leaf Dutch Colonial Home
+HEADLINE2=Newly Remodeled and Ready for New Owners
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=7
+PHOTO3=8
+PHOTO4=29
+PHOTO5=23
+HOUSEPRICE=$950,000 
+MLS=MLS #1845769
+BOXTEXT=3 bedrooms / 1.75 bathrooms / 1,820 finished sq ft / 4,985 sq ft lot
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

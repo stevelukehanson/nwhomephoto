@@ -608,6 +608,10 @@
 </target>
 
 <target name="sql">
+  <!-- Generate a TSV file by adding the first line/column headers. -->
+  <echo file="jobs.tsv">URL	ADDRESS	AGENT	SHOOTPRICE	PHONE	EMAIL	DATE	PHOTOGRAPHERNAME	NOTES
+</echo>
+<!--
   <sql
     driver="org.postgresql.Driver"
     url="jdbc:postgresql://localhost:5432/externalsteve"
@@ -615,25 +619,23 @@
     password="sa"
     print="yes" 
     classpathref="antclasspath">
-     -- SELECT * from photolab.jobs;
      DELETE FROM photolab.jobs; 
   </sql>
+-->
   <foreach target="bar" param="theFile">
    <path>
     <fileset dir="C:\Users\SteveH\Documents\nwhomephoto\properties" casesensitive="yes">
       <include name="**/*.txt"/>
       <include name="**/*.properties"/>
-<!--
-      <include name="*.txt"/>
-      <include name="*.properties"/>
--->
-	  </fileset>
+    </fileset>
    </path>
   </foreach>
-  <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
-    <arg line="/C start chrome 'http://localhost:8080/labkey/Photolab/project-begin.view?'" />
-  </exec>
-  
+    <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+        <arg line="/C start chrome 'https://training-01.labkey.com/_webdav/Photolab/%40files/watched/'" />
+    </exec>
+    <exec executable="cmd.exe" os="Windows 2000,Windows NT,Windows XP,Windows 7,Windows 10" >
+        <arg line="/C start ." />
+    </exec>
 </target>
 
 <target name="bar">
@@ -645,7 +647,7 @@
  
 <!-- Experimental SQL Insert -->
 <target name="sqlinsert">
-
+<!--
   <sql
     driver="org.postgresql.Driver"
     url="jdbc:postgresql://localhost:5432/externalsteve"
@@ -675,6 +677,10 @@
 								'${NOTES}'
 								)
   </sql>
+-->
+  <!-- And generate a TSV file. -->
+  <echo append="true" file="jobs.tsv">${URL}	${ADDRESS}	${AGENT}	${SHOOTPRICE}	${PHONE}	${EMAIL}	${DATE}	${PHOTOGRAPHERNAME}	${NOTES}
+</echo> 
 </target>
 
 </project>

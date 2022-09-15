@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=MaryAndJane
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=Mary and Jane Orvis
+AGENT=Mary Orvis / Joe Flick
+PHONE=206-619-2000 / 425-301-7569
+EMAIL=mary@orvisandorvisrealestate.com / joe@orvisandorvisrealestate.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=May 15, 2022
+VIDEO=
+
+!-- Flyer Properties --!
+HEADLINE1=Sophisticated and elegant top floor Belltown condo
+HEADLINE2=
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=5
+PHOTO2=1
+PHOTO3=2
+PHOTO4=3
+PHOTO5=4
+HOUSEPRICE=$525,000
+MLS=MLS #1923795
+BOXTEXT=1 bedroom / 1 bathrooms / 608 sq ft / 2021 taxes $4,064 
+MAINTEXT=main
+CONTACT=Contact: Mary Orvis 206-619-2000 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

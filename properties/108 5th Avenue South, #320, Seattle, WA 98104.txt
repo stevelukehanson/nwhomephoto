@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=108_5th_Avenue_South_320_Seattle_WA_98104
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=108 5th Avenue South, #320, Seattle, WA 98104
+AGENT=Joe Flick / Matt Mather
+PHONE=425-301-7569 / 310-600-0257
+EMAIL=joe@orvisandorvisrealestate.com / matt@orvisandorvisrealestate.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=July 16, 2022
+VIDEO=
+
+!-- Flyer Properties --!
+HEADLINE1=Sophisticated and elegant top floor Belltown condo
+HEADLINE2=
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=5
+PHOTO2=1
+PHOTO3=2
+PHOTO4=3
+PHOTO5=4
+HOUSEPRICE=$279,950
+MLS=MLS #1965848
+BOXTEXT=Studio / 481 sq ft / 2022 taxes $2,246 
+MAINTEXT=main
+CONTACT=Contact: Joe Flick 425-301-7569 
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

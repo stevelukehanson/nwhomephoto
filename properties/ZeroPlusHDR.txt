@@ -1,0 +1,14 @@
+!-- Basic/Common Properties --!
+URL=ZeroPlusHDR
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=Zero+ Seattle WA
+AGENT=Josh B
+PHONE=
+EMAIL=
+JOBNAME=Various HDR Treatments
+SHOOTPRICE=0
+DATE=March 16, 2021

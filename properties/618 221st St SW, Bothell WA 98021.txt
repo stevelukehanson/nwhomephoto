@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=618_221st_St_SW_Bothell
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=618 221st St SW, Bothell, WA 98021
+AGENT=Jane Orvis / Joe Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=janeorvis@gmail.com / joelyleflick@gmail.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=Sept 9, 2021
+VIDEO=https://my.matterport.com/show/?m=S3Edee8EesJ
+
+!-- Flyer Properties --!
+HEADLINE1=Room to Move in Queensborough
+HEADLINE2=Spacious and Bright Interior on Sunny Lot
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=5
+PHOTO3=6
+PHOTO4=18
+PHOTO5=22
+HOUSEPRICE=$625,000 
+MLS=MLS #1834679
+BOXTEXT=3 bedrooms / 1.5 bathrooms / 1,574 sq ft / 7,405 sq ft lot / 2021 taxes are $5366
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+

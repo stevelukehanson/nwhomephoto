@@ -1,0 +1,35 @@
+!-- Basic/Common Properties --!
+URL=2914_South_Hill_Street
+ROOT_PATH=${basedir}/source-pics
+RESIZE_PATH=${ROOT_PATH}/${URL}/best
+LUMINOSITY_PATH=${ROOT_PATH}/${URL}/jpg/luminosity-layers
+FLASH_PATH=${ROOT_PATH}/${URL}/jpg/flashes
+
+ADDRESS=2914 South Hill Street, Seattle, WA 98144
+AGENT=Jane Orvis / Joe Flick
+PHONE=206-679-5901 / 425-301-7569
+EMAIL=jane@orvisandorvisrealestate.com / joe@orvisandorvisrealestate.com 
+JOBNAME=Photos
+SHOOTPRICE=0
+DATE=March 4, 2022
+VIDEO=https://my.matterport.com/show/?m=MMTVNe6Xw3p
+
+!-- Flyer Properties --!
+HEADLINE1=
+HEADLINE2=
+HEADLINE3=
+!-- Photos can be entered either by file name, or by a simple integer indicating the position in the folder.  First position is 1. --!
+PHOTO1=1
+PHOTO2=2
+PHOTO3=3
+PHOTO4=4
+PHOTO5=5
+HOUSEPRICE=$1,050,000
+MLS=MLS #1894483
+BOXTEXT=3 bedrooms / 2 bathrooms / 1,740 finished sq ft / 2021 taxes $5,276 
+MAINTEXT=main
+CONTACT=Contact: Jane Orvis 206-679-5901 or Joe Flick 425-301-7569
+WEBSITE=www.OrvisAndOrvisRealEstate.com
+PRESENTEDBY=Presented by Orvis and Orvis Real Estate, LLC
+LOGO=C:/Users/steve/Documents/Adobe Scripts/nwhomephoto/resources
+
